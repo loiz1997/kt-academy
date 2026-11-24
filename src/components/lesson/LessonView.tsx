@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { getLesson, imgSrc, type LessonContent } from "@/lib/lesson-content";
 import "@/styles/lesson.css";
+import SubmitCard from "./SubmitCard";
 import { isSoon } from "@/lib/lessons";
 import type { Doc, Profile } from "@/lib/types";
 
@@ -60,6 +61,8 @@ export default function LessonView({
     setTimeout(() => (b.textContent = old), 1500);
   }
 
+  const submit = me.role === "user" ? <SubmitCard doc={doc} docs={docs} me={me} /> : null;
+
   const footer = (
     <section className={`${box} mt-4 flex flex-wrap items-center gap-3`} data-testid="lesson-footer">
       <div className="min-w-0 flex-1 basis-56">
@@ -99,6 +102,7 @@ export default function LessonView({
           <h1 className="mt-2 text-2xl font-extrabold" data-testid="lesson-title">{doc.t}</h1>
         </section>
         <section className={`${box} mt-4`}>{doc.b || "No details have been added yet."}</section>
+        {submit}
         {footer}
       </>
     );
@@ -257,7 +261,8 @@ export default function LessonView({
             </section>
           )}
 
-          {footer}
+          {submit}
+        {footer}
         </div>
       </div>
 

@@ -45,7 +45,7 @@ function Row({ s, who, doc, no, open, onToggle, onReview }: {
   return (
     <div className="border border-slate-200 bg-white shadow-md" data-testid={`subs-row-${id}`}>
       <button type="button" onClick={onToggle} aria-expanded={open} data-testid={`subs-row-toggle-${id}`} className="flex w-full flex-wrap items-center gap-x-3 gap-y-1 p-3 text-left">
-        <Avatar name={who?.name ?? "?"} size={38} />
+        <Avatar name={who?.name ?? "?"} size={38} src={typeof who?.info?.avatar === "string" ? who.info.avatar : null} />
         <span className="min-w-0 flex-1 basis-40">
           <b className="block truncate text-slate-900">{who?.name ?? "Unknown trainee"}</b>
           <span className="text-xs text-slate-500">{String(who?.info?.team ?? NOTRIBE)}</span>

@@ -12,6 +12,7 @@ import { ALL_TRIBES, NOTRIBE, TRIBES } from "@/lib/tribes";
 
 const TCOL = ["#6d5efc", "#14c8b4", "#f59e0b", "#e5484d", "#2f6fed", "#a855f7", "#16a36a", "#ec4899"];
 const GREY = "#94a3b8";
+const str = (v: unknown) => (typeof v === "string" ? v : "");
 const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? "" : "s"}`;
 const card = "border border-slate-200 bg-white p-5 shadow-md";
 const btn = "inline-block bg-indigo-600 px-4 py-2 text-sm font-bold text-white shadow-md";
@@ -82,7 +83,7 @@ export default function AdminDashboard() {
                 <div className="mt-2 flex items-center gap-3">
                   <span className="relative">
                     <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-xl" aria-hidden="true">👑</span>
-                    <Avatar name={star.u.name} size={56} ring="#f5b301" />
+                    <Avatar name={star.u.name} size={56} ring="#f5b301" src={str(star.u.info?.avatar)} />
                   </span>
                   <div className="min-w-0">
                     <b className="block truncate text-slate-900" data-testid="admin-star-name">{star.u.name}</b>

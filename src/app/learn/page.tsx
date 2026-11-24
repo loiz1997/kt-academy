@@ -26,6 +26,18 @@ export default function LearnPage() {
           </span>
           <span className="bg-gradient-to-r from-indigo-600 to-teal-500 px-4 py-2 text-sm font-semibold text-white">View paths ›</span>
         </Link>
+        <div className="mb-4 grid gap-3 sm:grid-cols-2">
+          <Link href="/videos" data-testid="learn-videos-link" className="flex items-center gap-3 border border-slate-200 bg-white p-4 shadow-md hover:shadow-lg">
+            <span className="text-3xl" aria-hidden="true">🎬</span>
+            <span className="min-w-0 flex-1"><b className="block text-slate-900">Video tutorials</b><span className="text-sm text-slate-500">{me.role === "admin" ? "Add and manage short walkthroughs." : "Short walkthroughs you can watch at your own pace."}</span></span>
+            <span className="font-semibold text-indigo-600">›</span>
+          </Link>
+          <Link href="/documents" data-testid="learn-documents-link" className="flex items-center gap-3 border border-slate-200 bg-white p-4 shadow-md hover:shadow-lg">
+            <span className="text-3xl" aria-hidden="true">📎</span>
+            <span className="min-w-0 flex-1"><b className="block text-slate-900">KT documents</b><span className="text-sm text-slate-500">{me.role === "admin" ? "Add and manage shared guides and files." : "Guides and files shared by your KT lead."}</span></span>
+            <span className="font-semibold text-indigo-600">›</span>
+          </Link>
+        </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {docs.map((d, i) => {
             const soon = isSoon(d);

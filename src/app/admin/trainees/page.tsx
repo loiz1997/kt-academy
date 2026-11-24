@@ -91,7 +91,7 @@ export default function TraineesPage() {
                         <circle cx="32" cy="32" r="29" fill="none" stroke="rgba(80,90,150,.2)" strokeWidth="4" />
                         <circle cx="32" cy="32" r="29" fill="none" stroke="#6d5efc" strokeWidth="4" strokeLinecap="round" strokeDasharray={`${((C * p) / 100).toFixed(1)} ${C.toFixed(1)}`} transform="rotate(-90 32 32)" />
                       </svg>
-                      <span className="absolute inset-0 grid place-items-center"><Avatar name={u.name} size={44} /></span>
+                      <span className="absolute inset-0 grid place-items-center"><Avatar name={u.name} size={44} src={typeof u.info?.avatar === "string" ? u.info.avatar : null} /></span>
                     </div>
                     <div className="min-w-0 flex-1">
                       <b className="block truncate text-slate-900" data-testid={`trainee-name-${u.id}`}>{u.name}</b>
@@ -121,7 +121,7 @@ export default function TraineesPage() {
             <div className="grid gap-3 sm:grid-cols-2">
               {admins.map((u) => (
                 <div key={u.id} data-testid={`admin-row-${u.id}`} className="flex items-center gap-3 border border-slate-200 bg-white p-3 shadow-md">
-                  <Avatar name={u.name} size={36} />
+                  <Avatar name={u.name} size={36} src={typeof u.info?.avatar === "string" ? u.info.avatar : null} />
                   <div className="min-w-0 flex-1"><b className="block truncate text-slate-900">{u.name}</b><span className="text-sm text-slate-500">{u.id === me.id ? "You" : "Admin"}</span></div>
                   {u.id !== me.id && <Menu u={u} onRole={() => changeRole(u)} onRemove={() => remove(u)} />}
                 </div>

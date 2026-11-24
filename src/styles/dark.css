@@ -71,3 +71,27 @@ html[data-theme="dark"] .tag.t,html[data-theme="dark"] .tipb{background:#12362a;
 html[data-theme="dark"] .tag.a,html[data-theme="dark"] .tipb.warn{background:#3a2e10;color:#fcd34d}
 html[data-theme="dark"] .tipb.nt{background:var(--pr2);color:var(--pr)}
 html[data-theme="dark"] .snum,html[data-theme="dark"] .fn{color:#0f1420}
+
+/* ---- Step 2.12: gradient panels, soft colours and inline colours that stayed light in dark mode ---- */
+html[data-theme="dark"] .from-indigo-50{--tw-gradient-from:#1b2745}
+html[data-theme="dark"] .from-indigo-100{--tw-gradient-from:#223259}
+html[data-theme="dark"] .from-amber-50{--tw-gradient-from:#2f2610}
+html[data-theme="dark"] .via-white{--tw-gradient-via:#171e2e}
+html[data-theme="dark"] .to-white{--tw-gradient-to:#171e2e}
+html[data-theme="dark"] .to-teal-50{--tw-gradient-to:#0f2b2b}
+html[data-theme="dark"] .to-teal-100{--tw-gradient-to:#123a3a}
+html[data-theme="dark"] .bg-white\/80{background-color:rgba(23,30,46,.85)}
+html[data-theme="dark"] .bg-slate-300{background-color:#34415f}
+html[data-theme="dark"] .border-white{border-color:#171e2e}
+html[data-theme="dark"] .border-amber-300{border-color:#8a6a1f}
+html[data-theme="dark"] .border-red-300{border-color:#7a3036}
+html[data-theme="dark"] .hover\:border-indigo-300:hover{border-color:#4b6bc0}
+html[data-theme="dark"] .text-teal-600{color:#5eead4}
+html[data-theme="dark"] .text-emerald-600{color:#6ee7b7}
+html[data-theme="dark"] .text-amber-600{color:#fbbf24}
+html[data-theme="dark"] .hover\:text-indigo-700:hover{color:#b6ccff}
+html[data-theme="dark"] [style*="#eef0ff"]{background:linear-gradient(135deg,#1b2745,#171e2e 55%,#12302f) !important}
+html[data-theme="dark"] [style*="#fde8e8"]{background:#3d1a1f !important;color:#fca5a5 !important}
+html[data-theme="dark"] [style*="#efe7fb"]{background:#2d2360 !important;color:#c4b5fd !important}
+html[data-theme="dark"] .btn{color:#0f1420}
+html[data-theme="dark"] .shadow-indigo-200\/40,html[data-theme="dark"] .shadow-indigo-300\/50,html[data-theme="dark"] .shadow-indigo-300\/60{--tw-shadow-color:rgba(0,0,0,.45)}

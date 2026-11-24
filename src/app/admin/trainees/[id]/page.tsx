@@ -43,7 +43,7 @@ function TraineeDetail() {
         <Link href="/admin/trainees" data-testid="trainee-back-link" className="inline-block border border-slate-300 px-3 py-1.5 text-sm font-semibold text-slate-700">← Trainees</Link>
 
         <section className={`${box} mt-4 flex flex-wrap items-center gap-4`} data-testid="trainee-header">
-          <Avatar name={u.name} size={56} />
+          <Avatar name={u.name} size={56} src={typeof u.info?.avatar === "string" ? u.info.avatar : null} />
           <div className="min-w-0 flex-1">
             <h1 className="truncate text-2xl font-extrabold text-slate-900" data-testid="trainee-detail-name">{u.name}</h1>
             <p className="text-slate-500">{u.email}</p>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import { ALL_TRIBES } from "@/lib/tribes";
 import { createClient } from "@/lib/supabase/client";
 import { currentTheme, savedTheme, setTheme, type Theme } from "@/lib/theme";
 import OnboardingModal from "./OnboardingModal";
@@ -51,7 +52,18 @@ export default function AppHeader({ active }: { active: string }) {
       if (!m) return;
       setRole(m.role);
       if (m.role === "admin" && path === "/dashboard") router.replace("/admin");
-      if (m.role === "user" && !(m.info && m.info.team)) setOnb(m);
+      if (m.role === "user" && !(m.info && m.info.team)) {
+        // The tribe chosen on the sign-up form is applied here, after the first login.
+        let pt: string | null = null;
+        try { pt = localStorage.getItem("kt-pending-tribe"); } catch {}
+        if (pt && ALL_TRIBES.includes(pt)) {
+          try { localStorage.removeItem("kt-pending-tribe"); } catch {}
+          await sb.from("profiles").update({ info: { ...(m.info ?? {}), team: pt } }).eq("id", m.id);
+          window.location.reload();
+          return;
+        }
+        setOnb(m);
+      }
     })();
   }, [path, router]);
 

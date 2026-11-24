@@ -8,6 +8,7 @@ import PasswordModal from "@/components/profile/PasswordModal";
 import { CERTS } from "@/lib/certs";
 import { activeDocs } from "@/lib/lessons";
 import { certsEarned, lessonsDone, overallProgress } from "@/lib/progress";
+import { squareShrink } from "@/lib/image";
 import { createClient } from "@/lib/supabase/client";
 import { STATUS, type Submission } from "@/lib/submissions";
 import { currentTheme, setTheme, type Theme } from "@/lib/theme";
@@ -62,6 +63,23 @@ export default function ProfilePage() {
   const created = (me as Profile & { created_at?: string }).created_at;
   const since = created ? new Date(created).toLocaleDateString(undefined, { year: "numeric", month: "long" }) : "";
 
+  async function setPhoto(file: File | undefined) {
+    setError(""); setOk("");
+    if (!file) return;
+    if (!file.type.startsWith("image/")) return setError("Please choose an image file (JPG or PNG).");
+    if (file.size > 10e6) return setError("That image is too big (max 10 MB).");
+    try {
+      const avatar = await squareShrink(file);
+      if (!(await saveProfile({ name: me.name, info: { avatar } }))) setError("Could not save the photo. Please try again.");
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Could not save the photo.");
+    }
+  }
+  async function removePhoto() {
+    setError(""); setOk("");
+    if (!(await saveProfile({ name: me.name, info: { avatar: undefined } }))) setError("Could not remove the photo.");
+  }
+
   async function save() {
     if (!form) return;
     setError(""); setOk("");
@@ -84,13 +102,20 @@ export default function ProfilePage() {
         <section className="overflow-hidden border border-slate-200 bg-white shadow-md" data-testid="profile-header">
           <div className="h-20 bg-gradient-to-r from-indigo-500 to-teal-400" />
           <div className="flex flex-wrap items-end gap-4 px-5 pb-4">
-            <div className="-mt-9 rounded-full border-4 border-white bg-white"><Avatar name={me.name} size={72} /></div>
+            <div className="relative -mt-9 rounded-full border-4 border-white bg-white">
+              <Avatar name={me.name} size={72} src={str(info.avatar) || null} />
+              <label title="Change photo" className="absolute -right-1 -bottom-1 grid h-7 w-7 cursor-pointer place-items-center rounded-full border border-slate-300 bg-white text-sm shadow-md">
+                📷
+                <input type="file" accept="image/*" className="hidden" data-testid="profile-avatar-input" aria-label="Change photo" onChange={(e) => { setPhoto(e.target.files?.[0]); e.target.value = ""; }} />
+              </label>
+            </div>
             <div className="min-w-0 flex-1">
               <h1 className="truncate text-2xl font-extrabold text-slate-900" data-testid="profile-name">{me.name}</h1>
               <p className="text-slate-500" data-testid="profile-subtitle">{str(info.title) || "KT Academy member"}{str(info.team) ? ` · ${str(info.team)}` : ""}</p>
               <div className="mt-2 flex flex-wrap items-center gap-2 text-sm">
                 <span className={`px-2 py-0.5 text-xs font-semibold ${admin ? "bg-amber-100 text-amber-800" : "bg-indigo-50 text-indigo-700"}`} data-testid="profile-role">{admin ? "Admin" : "Trainee"}</span>
                 <span className="bg-green-100 px-2 py-0.5 text-xs font-semibold text-green-800" data-testid="profile-track">{me.track} track</span>
+                {str(info.avatar) && <button type="button" onClick={removePhoto} data-testid="profile-avatar-remove" className="text-sm font-semibold text-indigo-600 underline">Remove photo</button>}
                 {since && <span className="text-slate-500">Member since {since}</span>}
               </div>
             </div>

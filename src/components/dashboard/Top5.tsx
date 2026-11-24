@@ -43,7 +43,7 @@ export default function Top5({ learners, docs, meId, myScore }: { learners: Lear
             >
               {i === 0 && <span className="absolute -top-3 left-3 text-xl">👑</span>}
               <span className="relative">
-                <Avatar name={x.u.name} size={44} ring={RING[i]} />
+                <Avatar name={x.u.name} size={44} ring={RING[i]} src={x.u.info?.avatar} />
                 <span className="absolute -bottom-1.5 -right-1.5 grid h-5 w-5 place-items-center rounded-full border-2 border-white text-[10px] font-bold text-white" style={{ background: RING[i] }}>
                   {i + 1}
                 </span>

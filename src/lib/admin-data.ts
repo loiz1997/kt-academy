@@ -50,5 +50,29 @@ export function useAdminData() {
     [data]
   );
 
-  return { data, review, reload: load };
+  // Makes a trainee an admin (or an admin a trainee). Returns an error text, or "" when it worked.
+  const setRole = useCallback(
+    async (id: string, role: "user" | "admin") => {
+      if (!data) return "Not loaded yet.";
+      const { error } = await createClient().from("profiles").update({ role }).eq("id", id);
+      if (error) return "Could not change the role: " + error.message;
+      setData({ ...data, users: data.users.map((u) => (u.id === id ? { ...u, role } : u)) });
+      return "";
+    },
+    [data]
+  );
+
+  // Removes a person's profile (their sign-in account stays in Supabase Authentication).
+  const removeUser = useCallback(
+    async (id: string) => {
+      if (!data) return "Not loaded yet.";
+      const { error } = await createClient().from("profiles").delete().eq("id", id);
+      if (error) return "Could not remove: " + error.message;
+      setData({ ...data, users: data.users.filter((u) => u.id !== id), subs: data.subs.filter((x) => String(x.user_id) !== id) });
+      return "";
+    },
+    [data]
+  );
+
+  return { data, review, reload: load, setRole, removeUser };
 }

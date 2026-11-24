@@ -17,6 +17,7 @@ const traineeLinks = [
 const adminLinks = [
   { href: "/admin", label: "Dashboard", id: "nav-admin-dashboard" },
   { href: "/admin/submissions", label: "Submissions", id: "nav-admin-submissions" },
+  { href: "/admin/trainees", label: "Trainees", id: "nav-admin-trainees" },
   { href: "/learn", label: "Learning", id: "nav-learn" },
   { href: "/profile", label: "Profile", id: "nav-profile" },
 ];

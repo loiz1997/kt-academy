@@ -3,9 +3,9 @@
 import Link from "next/link";
 import AppHeader from "@/components/AppHeader";
 import Avatar from "@/components/dashboard/Avatar";
+import GrowthCard from "@/components/admin/GrowthCard";
 import Kpi from "@/components/admin/Kpi";
 import { scoreFromSubs, trainees, useAdminData } from "@/lib/admin-data";
-import { CERTS } from "@/lib/certs";
 import { activeDocs, isSoon } from "@/lib/lessons";
 import { certsEarned, lessonsDone, overallProgress } from "@/lib/progress";
 import { ALL_TRIBES, NOTRIBE, TRIBES } from "@/lib/tribes";
@@ -127,6 +127,17 @@ export default function AdminDashboard() {
           <Kpi id="admin-kpi-certs" icon="🏅" tint="bg-violet-100 text-teal-700" label="Certificates" value={certTotal} hint={`${plural(holders, "trainee")} certified`} percent={tr.length ? Math.round((holders / tr.length) * 100) : 0} />
         </div>
 
+        <div className="mt-4"><GrowthCard trainees={tr} docs={docs} /></div>
+
+        <Link href="/admin/trainees" data-testid="admin-trainees-banner" className={`${card} mt-4 flex flex-wrap items-center gap-3 hover:shadow-lg`}>
+          <span className="grid h-11 w-11 place-items-center bg-indigo-50 text-2xl" aria-hidden="true">🎓</span>
+          <span className="min-w-0 flex-1">
+            <b className="block text-slate-900">Trainees &amp; certificates</b>
+            <span className="text-sm text-slate-500">👥 {plural(tr.length, "trainee")} · 🏅 {holders} certified · 📜 {certTotal} earned</span>
+          </span>
+          <span className="font-semibold text-indigo-600">View all trainees →</span>
+        </Link>
+
         <section className={`${card} mt-4`} data-testid="admin-tribe-section">
           <div className="mb-3 flex items-end justify-between gap-3">
             <div>
@@ -149,7 +160,6 @@ export default function AdminDashboard() {
               );
             })}
           </div>
-          <p className="mt-3 text-xs text-slate-500">{CERTS.length} certifications · the full trainee list and growth graph come in the next step.</p>
         </section>
       </main>
     </>

@@ -1,0 +1,937 @@
+{
+ "prac": {
+  "sum": "7 activities and 7 lessons: 50 test cases, 30 test objects, 5 variables, 10 suites, 3 collections, 3 data files and 75 executions.",
+  "intro": "The Practitioner certification proves you can create and run automated tests in Katalon Studio. You earn it by doing the activities below in the product. There is no exam. Katalon Studio Free or Enterprise works.",
+  "links": [
+   [
+    "📋 Official requirements",
+    "https://academy.katalon.com/?p=353036"
+   ],
+   [
+    "🚀 Fast-track course",
+    "https://academy.katalon.com/learning-path/practitioner-certification-fast-track/"
+   ],
+   [
+    "🎓 My Academy dashboard",
+    "https://academy.katalon.com/dashboard/certifications/"
+   ]
+  ],
+  "acts": [
+   [
+    "Create test cases",
+    "50",
+    0
+   ],
+   [
+    "Create test objects",
+    "30",
+    1
+   ],
+   [
+    "Create variables in test cases",
+    "5",
+    2
+   ],
+   [
+    "Create test suites",
+    "10",
+    3
+   ],
+   [
+    "Create test suite collections",
+    "3",
+    4
+   ],
+   [
+    "Create data files for data-driven testing",
+    "3",
+    5
+   ],
+   [
+    "Run test case/suite/suite collection executions",
+    "75",
+    6
+   ]
+  ],
+  "mods": [
+   {
+    "t": "Create 50 test cases",
+    "counts": "Counts toward: Create test cases (50)",
+    "goal": "A test case is one automated check, for example “log in with a valid user”. You need to create 50 of them in Katalon Studio.",
+    "steps": [
+     "<b>Create a project.</b> In Katalon Studio go to <b>File → New → Project</b> and choose Web testing. Give it a clear name.",
+     "<b>Create a test case.</b> In the Tests Explorer, right-click <b>Test Cases → New → Test Case</b>. Name it clearly, for example <i>Verify login with valid user</i>.",
+     "<b>Add the steps.</b> Pick the way that suits you: <b>Record &amp; Playback</b> (click Record Web, enter the website address, use the site while Katalon records, then stop and save), <b>Manual view</b> (choose keywords from a list), or <b>Script view</b> (write Groovy code).",
+     "<b>Run it once</b> to check that it passes before you move on.",
+     "<b>Plan your 50.</b> Pick a practice website, list about 10 user flows (login, search, add to cart…) and write around 5 test cases per flow: valid data, wrong data, empty fields, and so on. This reaches 50 quickly and the tests are still useful."
+    ],
+    "tip": "Good names save time later. Use the same pattern every time, for example <i>Verify [what] [with what]</i>.",
+    "note": "Your progress can take 1 to 2 days to show on Katalon Academy. Use the same Katalon account in Studio and on Academy so your activity is counted."
+   },
+   {
+    "t": "Create 30 test objects",
+    "counts": "Counts toward: Create test objects (30)",
+    "goal": "A test object tells Katalon how to find one item on a page, like a button, a text box or a link. Test objects are saved in the <b>Object Repository</b>.",
+    "steps": [
+     "<b>Use Spy Web.</b> Click the <b>Spy Web</b> icon in the toolbar, enter the page address and start it. Hover over the items you need in the browser and capture them.",
+     "<b>Save them.</b> Select the captured items and choose <b>Add to Object Repository</b>.",
+     "<b>Or let recording do it.</b> Every item you click while using <b>Record Web</b> is saved as a test object automatically.",
+     "<b>Check each object.</b> Open it in the Object Repository and look at its locators (such as id, name, CSS or XPath). Make sure Katalon can find the element.",
+     "<b>Plan your 30.</b> For example 6 pages with 5 items each: the login page, the home page, search, the cart, and checkout."
+    ],
+    "tip": "Prefer simple, stable locators like <b>id</b> over long XPath. Then your tests do not break every time the page changes."
+   },
+   {
+    "t": "Create 5 variables in test cases",
+    "counts": "Counts toward: Create variables in test cases (5)",
+    "goal": "A variable lets one test case work with different values, such as a username or a search word.",
+    "steps": [
+     "<b>Open a test case</b> and select the <b>Variables</b> tab at the bottom.",
+     "<b>Click Add.</b> Give the variable a name (for example <i>username</i>), choose its type and set a default value.",
+     "<b>Use it in your steps.</b> In Manual view choose the variable as the input. In Script view use its name directly in the code.",
+     "<b>Create 5 variables</b> across your test cases, for example username, password, searchText, quantity and country."
+    ],
+    "note": "Variables are what lets a data file feed values into your tests in Lesson 6, so finish this lesson first."
+   },
+   {
+    "t": "Create 10 test suites",
+    "counts": "Counts toward: Create test suites (10)",
+    "goal": "A test suite is a group of test cases that run together, like “all login tests”.",
+    "steps": [
+     "<b>Create a suite.</b> Right-click <b>Test Suites → New → Test Suite</b> and give it a name, for example <i>Login suite</i>.",
+     "<b>Add test cases.</b> Open the suite, click <b>Add</b> and choose the test cases to include.",
+     "<b>Run the suite</b> with the Run button in the toolbar and pick a browser.",
+     "<b>Make 10 suites,</b> grouping your test cases by feature: login, search, cart, checkout, profile and so on."
+    ],
+    "tip": "Keep each suite small and focused. It is easier to read the results."
+   },
+   {
+    "t": "Create 3 test suite collections",
+    "counts": "Counts toward: Create test suite collections (3)",
+    "goal": "A test suite collection runs several test suites together, for example the same suite on different browsers.",
+    "steps": [
+     "<b>Create a collection.</b> Right-click <b>Test Suites → New → Test Suite Collection</b> and name it.",
+     "<b>Add suites.</b> Click <b>Add</b> and choose the test suites. Pick the browser or profile for each row.",
+     "<b>Choose how it runs.</b> Run the suites one after another, or at the same time (parallel), then click Run.",
+     "<b>Make 3 collections,</b> for example <i>Smoke</i>, <i>Regression</i> and <i>Cross-browser</i>."
+    ]
+   },
+   {
+    "t": "Create 3 data files for data-driven testing",
+    "counts": "Counts toward: Create data files for data-driven testing (3)",
+    "goal": "A data file keeps your test data outside the test case, like a table of usernames and passwords. One test can then run again and again with different data.",
+    "steps": [
+     "<b>Create the data file.</b> Right-click <b>Test Data → New → Test Data</b>. Choose a type: Internal Data (typed inside Katalon), Excel, CSV or Database.",
+     "<b>Fill it in.</b> Add columns and rows. Example columns: username, password, expectedResult.",
+     "<b>Connect it to a test case.</b> In a test suite, select the test case and use the <b>Data Binding</b> column to link each data column to a test case variable.",
+     "<b>Run the suite.</b> Katalon repeats the test once for every row of data.",
+     "<b>Make 3 data files</b> and use each one in at least one test suite."
+    ],
+    "warn": "Data files need variables. If the binding is empty, go back to Lesson 3."
+   },
+   {
+    "t": "Run 75 executions and read your reports",
+    "counts": "Counts toward: Run test case/suite/suite collection executions (75)",
+    "goal": "Every time you run a test case, a test suite or a collection, that is one execution. You need 75, and you should understand the results.",
+    "steps": [
+     "<b>Run something.</b> Use the green <b>Run</b> button in the toolbar and choose a browser.",
+     "<b>Read the result.</b> Open the <b>Log Viewer</b> and the report that opens after the run. See which steps passed and which failed.",
+     "<b>Fix and run again.</b> When a test fails, find the reason, fix it and run it again. This is real practice.",
+     "<b>Plan your 75.</b> Run each of your 10 suites several times, run your collections, and re-run after every fix."
+    ],
+    "tip": "Run on more than one browser. It builds your count and shows you how your tests behave."
+   }
+  ]
+ },
+ "ai": {
+  "sum": "9 activities: tests and runs plus AI activities: StudioAssist, the AI chat, AI agent with MCP tools and self-healing.",
+  "intro": "The AI-skilled Practitioner certification proves you can build and run automated tests with the help of AI in Katalon Studio. You need <b>Katalon Studio Enterprise</b>. There is no exam; you earn it by doing the activities below.",
+  "links": [
+   [
+    "📋 Official requirements",
+    "https://academy.katalon.com/?p=281367"
+   ],
+   [
+    "🚀 Fast-track course",
+    "https://academy.katalon.com/?p=281252"
+   ],
+   [
+    "🎓 My Academy dashboard",
+    "https://academy.katalon.com/dashboard/certifications/"
+   ]
+  ],
+  "acts": [
+   [
+    "Create test cases",
+    "30",
+    0
+   ],
+   [
+    "Create variables in test cases",
+    "5",
+    0
+   ],
+   [
+    "Run test case/suite/suite collection executions",
+    "30",
+    1
+   ],
+   [
+    "Run data-driven test executions",
+    "10",
+    1
+   ],
+   [
+    "Generate test artifacts with AI",
+    "20",
+    2
+   ],
+   [
+    "Explain complex test scripts with AI",
+    "1",
+    3
+   ],
+   [
+    "Ask questions and interact with AI through the chat window",
+    "50",
+    4
+   ],
+   [
+    "Ask AI agent to perform actions through MCP tools",
+    "75",
+    5
+   ],
+   [
+    "Run test executions with the Self-healing feature enabled",
+    "10",
+    6
+   ]
+  ],
+  "mods": [
+   {
+    "t": "Create 30 test cases and 5 variables",
+    "counts": "Counts toward: Create test cases (30) · Create variables in test cases (5)",
+    "goal": "These are the same basics as the Practitioner certification.",
+    "steps": [
+     "Follow <b>Lesson 1 (test cases)</b> and <b>Lesson 3 (variables)</b> of the Practitioner path.",
+     "You only need <b>30 test cases</b> and <b>5 variables</b> here.",
+     "Use <b>Katalon Studio Enterprise</b> for every activity on this path."
+    ],
+    "ref": "prac"
+   },
+   {
+    "t": "Run 30 executions, 10 of them data-driven",
+    "counts": "Counts toward: Run executions (30) · Run data-driven test executions (10)",
+    "goal": "Run your tests often, and run some of them with a data file.",
+    "steps": [
+     "Follow <b>Lesson 7 (executions)</b> of the Practitioner path to reach 30 runs.",
+     "Follow <b>Lesson 6 (data files)</b> to connect a data file to a test suite, then run it. Each run of a test with a data file counts toward your 10 data-driven executions."
+    ],
+    "ref": "prac"
+   },
+   {
+    "t": "Generate 20 test artifacts with AI",
+    "counts": "Counts toward: Generate test artifacts with AI (20)",
+    "goal": "Use the AI assistant built into Katalon Studio Enterprise (StudioAssist) to create test scripts and other test material for you.",
+    "steps": [
+     "<b>Open a test case in Script view.</b>",
+     "<b>Describe what you want</b> in a comment, for example: <i>open the login page and sign in with a valid user</i>.",
+     "<b>Ask StudioAssist to generate the code</b> from your description. Look for the StudioAssist option in the right-click menu of the script or in its toolbar.",
+     "<b>Review and run</b> what it created. AI can make mistakes, so always check it.",
+     "<b>Repeat</b> with different tasks until you reach 20."
+    ],
+    "tip": "Be specific. “Click the Login button and check the welcome message” works better than “test login”.",
+    "note": "Menu names can differ slightly between Katalon Studio versions. If you cannot find an option, search for StudioAssist in the Katalon documentation."
+   },
+   {
+    "t": "Explain a complex script with AI",
+    "counts": "Counts toward: Explain complex test scripts with AI (1)",
+    "goal": "Use AI to understand a longer script in plain language.",
+    "steps": [
+     "<b>Open a longer script</b> in Script view.",
+     "<b>Select the code</b> you want explained.",
+     "<b>Ask StudioAssist to explain it.</b> Use the StudioAssist option in the right-click menu.",
+     "<b>Read the explanation</b> and compare it with the code to check that it makes sense."
+    ]
+   },
+   {
+    "t": "Ask 50 questions in the AI chat window",
+    "counts": "Counts toward: Ask questions and interact with AI through the chat window (50)",
+    "goal": "Use the AI chat window to learn Katalon while you work.",
+    "steps": [
+     "<b>Open the AI chat window</b> in Katalon Studio.",
+     "<b>Ask real questions</b> about your work, for example: <i>Why did this step fail?</i>, <i>How do I wait for an element to appear?</i>, <i>How do I read data from a CSV file?</i>",
+     "<b>Keep going</b> until you reach 50 interactions. Ask follow-up questions, too."
+    ],
+    "tip": "Keep a list of your questions and the answers. It becomes your own study guide."
+   },
+   {
+    "t": "Ask the AI agent to do 75 actions with MCP tools",
+    "counts": "Counts toward: Ask AI agent to perform actions through MCP tools (75)",
+    "goal": "In AI agent mode, the assistant does tasks for you by using tools (called MCP tools). You tell it what you want, and it takes the actions.",
+    "steps": [
+     "<b>Take the course first.</b> Katalon Academy has a course called <i>Katalon Studio AI agent mode: Expanding test automation with external MCP servers</i>.",
+     "<b>Open AI agent mode</b> in Katalon Studio and check that its tools are available.",
+     "<b>Give it tasks,</b> for example: create a test case, add a test object, or run a test suite and summarise the result.",
+     "<b>Approve or review</b> the actions it asks to take, then keep going until you reach 75 actions."
+    ],
+    "note": "Ask your KT lead for the exact setup of MCP tools in your project."
+   },
+   {
+    "t": "Run 10 executions with self-healing turned on",
+    "counts": "Counts toward: Run test executions with the Self-healing feature enabled (10)",
+    "goal": "Self-healing helps a test keep working when a locator stops matching, by trying other ways to find the item.",
+    "steps": [
+     "<b>Turn self-healing on</b> in your project settings (look for <b>Self-Healing</b> under the project settings).",
+     "<b>Run your test cases or suites</b> 10 times with it enabled.",
+     "<b>See what happened.</b> After a run, open the <b>Self-healing Insights</b> tab at the bottom of Katalon Studio to see what was healed."
+    ],
+    "warn": "Some users report that this count takes a while to update on Academy. Be patient and check again after a day or two."
+   }
+  ]
+ },
+ "pro": {
+  "sum": "9 required activities, plus any 2 of 4 extras: custom keywords, AI, profiles, 100 runs, parallel and dynamic suites, Debug mode and logs.",
+  "intro": "The Professional certification proves you can build and scale test automation, including using AI to work faster. You need <b>Katalon Studio Enterprise</b>. There is no exam. The certificate is valid for 2 years.",
+  "links": [
+   [
+    "📋 Official requirements",
+    "https://academy.katalon.com/?p=353038"
+   ],
+   [
+    "🎓 My Academy dashboard",
+    "https://academy.katalon.com/dashboard/certifications/"
+   ]
+  ],
+  "acts": [
+   [
+    "Create custom keyword files",
+    "5",
+    0
+   ],
+   [
+    "Generate test artifacts with AI",
+    "10",
+    1
+   ],
+   [
+    "Create global variables in execution profiles",
+    "3",
+    2
+   ],
+   [
+    "Run test case/suite/suite collection executions",
+    "100",
+    3
+   ],
+   [
+    "Run data-driven test executions",
+    "10",
+    3
+   ],
+   [
+    "Run parallel executions with test suite collections",
+    "5",
+    4
+   ],
+   [
+    "Run dynamic test suite executions",
+    "5",
+    5
+   ],
+   [
+    "Run test executions with Debug mode",
+    "10",
+    6
+   ],
+   [
+    "View console logs",
+    "10",
+    7
+   ]
+  ],
+  "opt": {
+   "n": 2,
+   "rows": [
+    [
+     "Automate 2 types of applications (Web, API, Mobile)",
+     "2",
+     8
+    ],
+    [
+     "Run test executions with the command line (Katalon Runtime Engine)",
+     "3",
+     8
+    ],
+    [
+     "Run test executions in the cloud with Katalon TestCloud",
+     "3",
+     8
+    ],
+    [
+     "Use the AI agent to execute actions with MCP tools",
+     "20",
+     8
+    ]
+   ]
+  },
+  "mods": [
+   {
+    "t": "Create 5 custom keyword files",
+    "counts": "Counts toward: Create custom keyword files (5)",
+    "goal": "A custom keyword is a piece of reusable code that you write once and use in many test cases.",
+    "steps": [
+     "<b>Create a keyword file.</b> Right-click the <b>Keywords</b> folder → <b>New → Keyword</b>. Give it a package name and a class name.",
+     "<b>Write a method.</b> Inside the class, add a method marked with <b>@Keyword</b>, for example one that logs in to your website.",
+     "<b>Use it.</b> Call it from a test case, in Script view, with <i>CustomKeywords.'package.ClassName.methodName'(…)</i>.",
+     "<b>Make 5 keyword files.</b> Good ideas: login, waiting helpers, random data, screenshots and date formatting."
+    ],
+    "tip": "Keep each keyword small and give it one job."
+   },
+   {
+    "t": "Generate 10 test artifacts with AI",
+    "counts": "Counts toward: Generate test artifacts with AI (10)",
+    "goal": "Use StudioAssist to create test scripts for you.",
+    "steps": [
+     "Follow <b>Lesson 3 (generate with AI)</b> of the AI-skilled path.",
+     "You only need <b>10</b> here."
+    ],
+    "ref": "ai"
+   },
+   {
+    "t": "Create 3 global variables in execution profiles",
+    "counts": "Counts toward: Create global variables in execution profiles (3)",
+    "goal": "A global variable stores a value that any test case in your project can use, such as the website address.",
+    "steps": [
+     "<b>Open the Profiles folder</b> and open the <b>default</b> profile, or right-click <b>Profiles → New → Execution Profile</b>.",
+     "<b>Add a variable.</b> Click <b>Add</b>, then set a name (for example <i>baseUrl</i>), a type and a value.",
+     "<b>Use it in a script</b> as <i>GlobalVariable.baseUrl</i>.",
+     "<b>Create 3 global variables,</b> for example baseUrl, defaultUser and timeout."
+    ],
+    "tip": "You can make a second profile, such as <i>staging</i>, with other values and switch between them when you run."
+   },
+   {
+    "t": "Run 100 executions, 10 of them data-driven",
+    "counts": "Counts toward: Run executions (100) · Run data-driven test executions (10)",
+    "goal": "The same as Practitioner, with higher numbers.",
+    "steps": [
+     "Follow <b>Lesson 7 (executions)</b> and <b>Lesson 6 (data files)</b> of the Practitioner path.",
+     "Reach <b>100 executions</b>, and make sure <b>10</b> use a data file."
+    ],
+    "ref": "prac"
+   },
+   {
+    "t": "Run 5 parallel executions with test suite collections",
+    "counts": "Counts toward: Run parallel executions with test suite collections (5)",
+    "goal": "Running suites in parallel means they run at the same time, which saves time.",
+    "steps": [
+     "<b>Open a test suite collection</b> that has at least two test suites (see Practitioner Lesson 5).",
+     "<b>Set it to run in parallel</b> instead of one after another.",
+     "<b>Click Run</b> and watch the suites run together.",
+     "<b>Do it 5 times.</b>"
+    ]
+   },
+   {
+    "t": "Run 5 dynamic test suite executions",
+    "counts": "Counts toward: Run dynamic test suite executions (5)",
+    "goal": "A dynamic test suite picks test cases for you by rules (such as tags, names or properties), so you do not add them one by one.",
+    "steps": [
+     "<b>Give your test cases tags or clear names</b> so they can be grouped, for example <i>smoke</i> or <i>login</i>.",
+     "<b>Create a suite that uses a filter</b> instead of a fixed list. In Katalon Studio this is called a filtering (dynamic) test suite.",
+     "<b>Set the rule,</b> for example “all test cases with the tag smoke”, then run it.",
+     "<b>Do it 5 times.</b>"
+    ],
+    "note": "The menu path can differ by version. Search for “filtering test suite” in the Katalon documentation if you cannot find it."
+   },
+   {
+    "t": "Run 10 executions in Debug mode",
+    "counts": "Counts toward: Run test executions with Debug mode (10)",
+    "goal": "Debug mode lets you pause a test and go step by step to find problems.",
+    "steps": [
+     "<b>Open a test case in Script view.</b>",
+     "<b>Set a breakpoint</b> by double-clicking in the left margin next to a line of code.",
+     "<b>Start it with the Debug button</b> (next to Run) instead of Run.",
+     "<b>Step through the code</b> with the debug toolbar, and look at the values of your variables.",
+     "<b>Do this 10 times.</b>"
+    ]
+   },
+   {
+    "t": "View console logs 10 times",
+    "counts": "Counts toward: View console logs (10)",
+    "goal": "Logs show what happened during a run. Reading them is how you find out why a test failed.",
+    "steps": [
+     "<b>Run a test.</b>",
+     "<b>Open the Console and the Log Viewer</b> tabs at the bottom of Katalon Studio.",
+     "<b>Read the messages</b> from the start to where it stopped.",
+     "<b>Repeat after 10 runs.</b>"
+    ]
+   },
+   {
+    "t": "Complete any 2 of the 4 extra activities",
+    "counts": "Counts toward: Complete any 2 of these 4 activities",
+    "goal": "Choose two that suit you best.",
+    "steps": [
+     "<b>Automate 2 types of applications:</b> for example Web and API. Create an API test with <b>New → Web Service Request</b>, or add a mobile test project.",
+     "<b>Run 3 executions from the command line</b> using the Katalon Runtime Engine. Ask your KT lead for the command for your project.",
+     "<b>Run 3 executions in the cloud</b> with Katalon TestCloud (choose a cloud environment when you run).",
+     "<b>Use the AI agent for 20 actions</b> with MCP tools (see AI-skilled Lesson 6)."
+    ],
+    "note": "Your 30-day Katalon Studio Enterprise trial or your company license is needed for this certification."
+   }
+  ]
+ },
+ "tt": {
+  "sum": "9 activities in Katalon True Platform: AI-generated and manual tests, AI cloud runs, a live testing session and AI insights.",
+  "intro": "The True AI Tester certification proves you can manage <b>manual testing with AI</b> in Katalon True Platform. You create and approve test cases with AI, run them, review the results and share what you found. There is <b>no exam</b>. You earn it by doing the activities below in the product. You need access to <b>Katalon True Platform</b>, and the certification is free to pursue. It is valid for 2 years.",
+  "links": [
+   [
+    "📋 Official requirements",
+    "https://academy.katalon.com/certifications/true-ai-tester/"
+   ],
+   [
+    "🎓 My Academy dashboard",
+    "https://academy.katalon.com/dashboard/certifications/"
+   ]
+  ],
+  "acts": [
+   [
+    "Generate and approve AI-generated manual test cases",
+    "20",
+    0
+   ],
+   [
+    "Create manual test cases from scratch (without AI)",
+    "10",
+    1
+   ],
+   [
+    "Build test suites and organize test cases in them",
+    "3",
+    1
+   ],
+   [
+    "Run AI autonomous manual executions in cloud environments",
+    "10",
+    2
+   ],
+   [
+    "Run manual or automated test executions without AI",
+    "10",
+    3
+   ],
+   [
+    "Reach passed test executions",
+    "5",
+    3
+   ],
+   [
+    "Run a live testing session (exploratory testing)",
+    "1",
+    4
+   ],
+   [
+    "Review test results from completed executions",
+    "10",
+    5
+   ],
+   [
+    "Get AI insights in a dashboard",
+    "1",
+    6
+   ]
+  ],
+  "opt": {
+   "n": 1,
+   "rows": [
+    [
+     "Share execution reports with stakeholders",
+     "3",
+     7
+    ],
+    [
+     "Report issues to your connected ALM tool",
+     "3",
+     7
+    ]
+   ]
+  },
+  "mods": [
+   {
+    "t": "Generate and approve 20 manual test cases with AI",
+    "counts": "Counts toward: Generate and approve AI-generated manual test cases (20)",
+    "goal": "Let AI write the first draft of your manual test cases. You read each one, fix it if needed, and <b>approve</b> it. Only approved test cases count.",
+    "steps": [
+     "<b>Pick a source.</b> You can create them from <b>synced requirements</b> in your ALM tool (Jira or Azure DevOps), or by asking in the <b>AI chat window</b>. <a href=\"/lessons/find?t=ALM%20Integration%3A%20Jira%20and%20TestRail\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Lesson 14 shows how to connect Jira</a>.",
+     "<b>Ask the AI to generate manual test cases.</b> Describe the feature, for example: <i>a user signs in with a valid email and password</i>.",
+     "<b>Read every test case.</b> Check the steps and the expected result. Edit anything that is wrong or unclear.",
+     "<b>Approve the ones you accept.</b> Keep going until you have 20 approved test cases."
+    ],
+    "tip": "Use different features and flows (login, search, checkout) so the 20 test cases are all different and useful.",
+    "note": "Menu names can look a little different in your version of Katalon True Platform. If you cannot find something, use the search box in the product or ask your KT lead."
+   },
+   {
+    "t": "Create 10 manual test cases and 3 test suites",
+    "counts": "Counts toward: Create manual test cases from scratch (10) · Build test suites (3)",
+    "goal": "This time you write the test cases yourself, with no AI. Then you group test cases into test suites.",
+    "steps": [
+     "<b>Create a manual test case.</b> In your True Platform project, add a new test case and write its steps and expected results in plain words.",
+     "<b>Do not use AI for these 10.</b> The generated test cases from Lesson 1 do not count here.",
+     "<b>Create a test suite.</b> Make a new test suite, give it a clear name, such as <i>Login tests</i>.",
+     "<b>Add test cases to it.</b> Make <b>3 suites</b> and organize your test cases inside them by feature."
+    ],
+    "tip": "Name steps like a user would do them: <i>Click Sign in</i>, not <i>Do login</i>."
+   },
+   {
+    "t": "Run 10 AI autonomous manual executions in the cloud",
+    "counts": "Counts toward: Run AI autonomous manual executions with cloud environments (10)",
+    "goal": "In an <b>AI autonomous manual execution</b>, the AI follows your manual test steps by itself on a cloud environment, instead of you clicking through them.",
+    "steps": [
+     "<b>Choose manual test cases</b> that you wrote or approved. Clear steps help the AI a lot.",
+     "<b>Start an AI autonomous execution</b> and pick a <b>cloud environment</b> (for example a browser).",
+     "<b>Watch it run.</b> When it finishes, open the result and check what the AI did at each step.",
+     "<b>Repeat</b> until you have <b>10</b> AI autonomous executions."
+    ],
+    "warn": "AI can make mistakes. Always read the evidence and the result before you trust it.",
+    "note": "Menu names can look a little different in your version of Katalon True Platform. If you cannot find something, use the search box in the product or ask your KT lead."
+   },
+   {
+    "t": "Run 10 executions without AI and reach 5 passed",
+    "counts": "Counts toward: Run manual or automated test executions without AI (10) · Reach passed test executions (5)",
+    "goal": "Run your tests the normal way, without AI, and get at least 5 of them to <b>pass</b>.",
+    "steps": [
+     "<b>Run a manual execution yourself.</b> Open a test case, follow its steps and mark each step as passed or failed.",
+     "<b>Or run an automated execution.</b> Run a Katalon Studio test and send the result to True Platform. <a href=\"/lessons/find?t=Run%20Tests%20Using%20Katalon%20Runtime%20Engine%20(KRE)\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Lesson 13 shows how to run from the command line</a>.",
+     "<b>Do this 10 times</b> in total, without using AI.",
+     "<b>Make sure 5 of them pass.</b> If a run fails, find out why, fix the test or the data and run it again."
+    ],
+    "tip": "Start with simple, stable tests. They pass more easily, and then you can trust the 5 passed runs."
+   },
+   {
+    "t": "Run a live testing session",
+    "counts": "Counts toward: Run a live testing session for exploratory testing (1)",
+    "goal": "Exploratory testing means you explore the app freely and look for problems, with no fixed script. A <b>live testing session</b> records what you do while you explore.",
+    "steps": [
+     "<b>Start a live testing session</b> in True Platform and choose what to test: a <b>web browser</b> or a <b>mobile native app</b>.",
+     "<b>Explore the app.</b> Click around, try odd inputs and look for anything that seems wrong.",
+     "<b>Stop the session</b> when you are done and look at what was recorded."
+    ],
+    "tip": "Give yourself a small goal, like <i>explore the checkout page for 15 minutes</i>. It keeps you focused.",
+    "note": "Menu names can look a little different in your version of Katalon True Platform. If you cannot find something, use the search box in the product or ask your KT lead."
+   },
+   {
+    "t": "Review 10 test results",
+    "counts": "Counts toward: Review test results from completed executions (10)",
+    "goal": "Reading results is a big part of a tester's job. Open finished executions and look at what happened.",
+    "steps": [
+     "<b>Open the results</b> of an execution that has finished.",
+     "<b>Look at each step.</b> Check which steps passed or failed and read any notes or evidence.",
+     "<b>Review 10 different results.</b> Use results from both your manual and AI runs."
+    ],
+    "tip": "For every failed result, ask yourself: is it a real bug, a bad test, or bad data?"
+   },
+   {
+    "t": "Get AI insights in a dashboard",
+    "counts": "Counts toward: Get AI insights in at least one dashboard (1 dashboard)",
+    "goal": "Dashboards show your testing in charts. AI insights explain what the charts mean in simple words.",
+    "steps": [
+     "<b>Open a dashboard</b> in True Platform.",
+     "<b>Ask for AI insights</b> on that dashboard.",
+     "<b>Read the insights</b> and compare them with the charts to check that they make sense."
+    ],
+    "note": "Menu names can look a little different in your version of Katalon True Platform. If you cannot find something, use the search box in the product or ask your KT lead."
+   },
+   {
+    "t": "Share 3 reports or report 3 issues (choose one)",
+    "counts": "Counts toward: Share 3 execution reports with stakeholders, or report 3 issues to your ALM tool",
+    "goal": "Finish by telling others what you found. You only need to do <b>one</b> of these two.",
+    "steps": [
+     "<b>Option A: share reports.</b> Share <b>3</b> execution reports with stakeholders, for example your team lead.",
+     "<b>Option B: report issues.</b> Report <b>3</b> issues from failed results to your connected ALM tool, such as Jira. <a href=\"/lessons/find?t=ALM%20Integration%3A%20Jira%20and%20TestRail\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">See Lesson 14 for the connection</a>.",
+     "<b>Report only real bugs.</b> Do not create issues for a problem in the test itself."
+    ],
+    "warn": "Only report issues to a Jira <b>test project</b>, not to a real company project."
+   }
+  ]
+ },
+ "te": {
+  "sum": "14 activities across Katalon Studio and True Platform: connect, automate, sync with ALM, scale, schedule and get quality insights.",
+  "intro": "The True AI Expert certification proves you can <b>connect and scale AI-driven testing</b>. You work in both Katalon Studio and Katalon True Platform: you automate tests, manage them, run them at scale and read release and quality insights. There is <b>no exam</b> and no deadline. You need access to <b>Katalon True Platform and Katalon Studio</b>. Katalon recommends some hands-on experience first. It is valid for 2 years.",
+  "links": [
+   [
+    "📋 Official requirements",
+    "https://academy.katalon.com/certifications/true-ai-expert/"
+   ],
+   [
+    "🎓 My Academy dashboard",
+    "https://academy.katalon.com/dashboard/certifications/"
+   ]
+  ],
+  "acts": [
+   [
+    "Integrate Katalon Studio with a True Platform project",
+    "1",
+    0
+   ],
+   [
+    "Create automated test cases",
+    "20",
+    1
+   ],
+   [
+    "Run test executions locally",
+    "20",
+    1
+   ],
+   [
+    "Ask the AI agent questions",
+    "30",
+    2
+   ],
+   [
+    "Sync releases from your ALM integration",
+    "3",
+    3
+   ],
+   [
+    "Sync or upload automated test cases",
+    "10",
+    3
+   ],
+   [
+    "Generate and approve AI-generated manual tests",
+    "10",
+    4
+   ],
+   [
+    "Run automated test executions",
+    "20",
+    5
+   ],
+   [
+    "Run AI autonomous manual executions",
+    "10",
+    5
+   ],
+   [
+    "Schedule recurring test executions",
+    "3",
+    6
+   ],
+   [
+    "Generate test results",
+    "100",
+    8
+   ],
+   [
+    "View and evaluate the Release Health dashboard",
+    "1",
+    8
+   ],
+   [
+    "Generate AI insights from dashboards",
+    "2",
+    8
+   ],
+   [
+    "Analyze automated test failures with AI Analysis",
+    "3",
+    9
+   ]
+  ],
+  "opts": [
+   {
+    "t": "In Managing testing, complete",
+    "n": 1,
+    "rows": [
+     [
+      "Link tests to ALM requirements",
+      "3",
+      4
+     ],
+     [
+      "Link test runs to releases",
+      "3",
+      4
+     ],
+     [
+      "Link automated tests to manual tests",
+      "3",
+      4
+     ]
+    ]
+   },
+   {
+    "t": "In Scaling executions, complete",
+    "n": 2,
+    "rows": [
+     [
+      "Run web test executions",
+      "3",
+      7
+     ],
+     [
+      "Run mobile native app test executions",
+      "3",
+      7
+     ],
+     [
+      "Run API test executions",
+      "3",
+      7
+     ]
+    ]
+   },
+   {
+    "t": "In Quality insights, complete",
+    "n": 1,
+    "rows": [
+     [
+      "Share dashboards with stakeholders",
+      "3",
+      10
+     ],
+     [
+      "Report issues to your connected ALM tool",
+      "3",
+      10
+     ]
+    ]
+   }
+  ],
+  "mods": [
+   {
+    "t": "Connect Katalon Studio to a True Platform project",
+    "counts": "Counts toward: Integrate Katalon Studio with a True Platform project (1)",
+    "goal": "This is the bridge that sends your Studio test results to True Platform. It is a single task.",
+    "steps": [
+     "<b>Open your project</b> in Katalon Studio.",
+     "<b>Open the integration settings</b> of the project and connect it to your True Platform account and project.",
+     "<b>Test the connection</b> and save. Use the same account in Studio and in True Platform.",
+     "<b>Check it worked.</b> Run a small test and see if the result shows in True Platform."
+    ],
+    "note": "Menu names can look a little different in your version of Katalon True Platform. If you cannot find something, use the search box in the product or ask your KT lead. The lesson <i>TestOps: Connect Katalon Studio to TestOps</i> shows the same idea."
+   },
+   {
+    "t": "Create 20 automated test cases and run 20 locally",
+    "counts": "Counts toward: Create automated test cases (20) · Run test executions locally (20)",
+    "goal": "Build a base of automated tests in Katalon Studio and run them on your own computer.",
+    "steps": [
+     "<b>Create 20 automated test cases.</b> Record, use Manual view or write scripts. <a href=\"/lessons/find?t=Recording%20a%20Manual\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Lesson 2 shows how to record</a>.",
+     "<b>Run them locally.</b> Run each test case or suite on your own computer, <b>20 times</b> in total. <a href=\"/lessons/find?t=Running%20Tests%20Locally\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Lesson 3 shows how</a>.",
+     "<b>Fix failures</b> before you move on. Stable tests make the rest of this path easier."
+    ],
+    "tip": "The Practitioner path has full steps for creating 50 test cases. Reuse that work."
+   },
+   {
+    "t": "Ask the AI agent 30 questions",
+    "counts": "Counts toward: Ask the AI agent 30 questions",
+    "goal": "Use the AI agent to help with your testing. The questions must cover <b>three kinds of use</b>.",
+    "steps": [
+     "<b>Retrieve data from True Platform.</b> Ask about your projects, runs or results.",
+     "<b>Brainstorm test scenarios.</b> Ask for ideas, such as edge cases for a login page.",
+     "<b>Create or change automated scripts.</b> Ask the agent to write or fix a test script.",
+     "<b>Mix all three kinds</b> until you reach 30 questions."
+    ],
+    "tip": "Write your questions in a notebook with the answers. They make a great study guide.",
+    "note": "Menu names can look a little different in your version of Katalon True Platform. If you cannot find something, use the search box in the product or ask your KT lead."
+   },
+   {
+    "t": "Sync 3 releases and 10 automated test cases",
+    "counts": "Counts toward: Sync releases from ALM (3) · Sync or upload automated test cases (10)",
+    "goal": "Bring your releases from your ALM tool into True Platform, and get your automated tests there too.",
+    "steps": [
+     "<b>Connect your ALM tool</b> (such as Jira) to True Platform. <a href=\"/lessons/find?t=ALM%20Integration%3A%20Jira%20and%20TestRail\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Lesson 14 shows the steps</a>.",
+     "<b>Sync 3 releases</b> from the ALM integration.",
+     "<b>Sync or upload 10 automated test cases</b> to True Platform from Katalon Studio."
+    ],
+    "warn": "Use a Jira <b>test project</b> and training data only.",
+    "note": "Menu names can look a little different in your version of Katalon True Platform. If you cannot find something, use the search box in the product or ask your KT lead."
+   },
+   {
+    "t": "Approve 10 AI manual tests and link your tests",
+    "counts": "Counts toward: Generate and approve AI-generated manual tests (10) · Choose 1 of 3 linking activities",
+    "goal": "Create AI-generated manual tests, then connect your tests to the right requirement, release or manual test.",
+    "steps": [
+     "<b>Generate and approve 10 manual tests with AI.</b> Read each one and approve only the good ones.",
+     "<b>Choose ONE linking activity</b> and do it <b>3 times</b>:",
+     "<b>A:</b> link 3 tests to ALM requirements.",
+     "<b>B:</b> link 3 test runs to releases.",
+     "<b>C:</b> link 3 automated tests to manual tests."
+    ],
+    "tip": "Option C is often the easiest, because you already have your own automated and manual tests."
+   },
+   {
+    "t": "Run 20 automated and 10 AI manual executions",
+    "counts": "Counts toward: Run automated test executions (20) · Run AI autonomous manual executions (10)",
+    "goal": "Scale up. Run many tests in True Platform, including AI autonomous manual runs.",
+    "steps": [
+     "<b>Run 20 automated test executions</b> in True Platform. <a href=\"/lessons/find?t=Run%20Tests%20Using%20Katalon%20Runtime%20Engine%20(KRE)\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Lesson 13 can help</a>.",
+     "<b>Run 10 AI autonomous manual executions</b> on a cloud environment. The AI follows your manual test steps.",
+     "<b>Check each result</b> and fix any test that fails."
+    ],
+    "note": "Menu names can look a little different in your version of Katalon True Platform. If you cannot find something, use the search box in the product or ask your KT lead."
+   },
+   {
+    "t": "Schedule 3 recurring test executions",
+    "counts": "Counts toward: Schedule recurring test executions (3)",
+    "goal": "A schedule runs your tests again and again by itself, for example every night.",
+    "steps": [
+     "<b>Pick a test suite</b> that is stable.",
+     "<b>Create a schedule.</b> Choose how often it repeats (daily or weekly).",
+     "<b>Make 3 recurring schedules</b> with different tests or times.",
+     "<b>Check later</b> that the scheduled runs happened."
+    ],
+    "tip": "Schedule at quiet times, so you do not disturb other people using the same environment.",
+    "note": "Menu names can look a little different in your version of Katalon True Platform. If you cannot find something, use the search box in the product or ask your KT lead."
+   },
+   {
+    "t": "Choose 2 of 3: run web, mobile or API executions",
+    "counts": "Counts toward: Complete any 2 of: web (3) · mobile native app (3) · API (3) executions",
+    "goal": "Show that you can run more than one type of test. Choose any <b>two</b> types and run each <b>3 times</b>.",
+    "steps": [
+     "<b>Web:</b> run 3 web test executions.",
+     "<b>Mobile:</b> run 3 mobile native app test executions. <a href=\"/lessons/find?t=Android%20Mobile%20Testing%20in%20Katalon%20Studio\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Lesson 15 (Android)</a> and <a href=\"/lessons/find?t=iOS%20Mobile%20Testing%20in%20Katalon%20Studio\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Lesson 16 (iOS)</a> show how to set up.",
+     "<b>API:</b> run 3 API test executions. Create an API test with <b>New ▸ Web Service Request</b> in Katalon Studio.",
+     "<b>Pick any two</b> types that suit you best."
+    ],
+    "tip": "Web and API are usually the quickest. Mobile needs more setup time."
+   },
+   {
+    "t": "Get quality insights: 100 results, Release Health and AI insights",
+    "counts": "Counts toward: Generate test results (100) · Release Health dashboard (1) · AI insights from 2 dashboards (2)",
+    "goal": "Dashboards turn all your test results into a clear picture of how healthy a release is.",
+    "steps": [
+     "<b>Generate 100 test results.</b> They add up from all of your runs.",
+     "<b>Open the Release Health dashboard</b> and read it. Check if the release looks healthy, and say why.",
+     "<b>Get AI insights</b> from <b>at least 2 dashboards</b>.",
+     "<b>Read the insights</b> and compare them with the charts."
+    ],
+    "tip": "If you reach 100 results slowly, run small fast tests many times.",
+    "note": "Menu names can look a little different in your version of Katalon True Platform. If you cannot find something, use the search box in the product or ask your KT lead."
+   },
+   {
+    "t": "Analyze 3 failures with AI Analysis",
+    "counts": "Counts toward: Analyze automated test failures using AI Analysis (3)",
+    "goal": "When an automated test fails, AI Analysis helps you find the reason faster.",
+    "steps": [
+     "<b>Find a failed automated execution</b> in True Platform.",
+     "<b>Open AI Analysis</b> for that failure.",
+     "<b>Read the explanation.</b> Decide if it is a real bug, a bad test or a bad environment.",
+     "<b>Do this for 3 failures.</b>"
+    ],
+    "warn": "Do not trust it blindly. Check the logs and evidence yourself."
+   },
+   {
+    "t": "Choose 1 of 2: share 3 dashboards or report 3 issues",
+    "counts": "Counts toward: Share 3 dashboards with stakeholders, or report 3 issues to your ALM tool",
+    "goal": "Finish by telling others what you found. You only need <b>one</b> of these two.",
+    "steps": [
+     "<b>Option A: share dashboards.</b> Share <b>3</b> dashboards with stakeholders, for example your team lead.",
+     "<b>Option B: report issues.</b> Report <b>3</b> issues to your connected ALM tool, such as Jira.",
+     "<b>Report only real bugs.</b> Use a Jira <b>test project</b>."
+    ],
+    "note": "Menu names can look a little different in your version of Katalon True Platform. If you cannot find something, use the search box in the product or ask your KT lead."
+   }
+  ]
+ }
+}

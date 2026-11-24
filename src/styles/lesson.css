@@ -1,0 +1,25 @@
+
+/* ---- Lesson pages (added in Step 2.4) ---- */
+:root {
+  --pr: #4f46e5;
+  --pr2: #eef0ff;
+  --br: #e3e8f1;
+  --tx: #1b2433;
+  --mu: #66728a;
+}
+.tag { display: inline-block; padding: 2px 9px; font-size: 12px; font-weight: 600; background: var(--pr2); color: var(--pr); }
+.tag.t { background: #e6f7ef; color: #0f6b46; }
+.tag.a { background: #fff4dc; color: #8a5a00; }
+.snum { display: grid; place-items: center; flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--pr); color: #fff; font-weight: 700; }
+.tipb { margin-top: 10px; padding: 10px 12px; font-size: 14px; background: #e6f7ef; color: #0f6b46; }
+.tipb.nt { background: var(--pr2); color: var(--pr); }
+.tipb.warn { background: #fff4dc; color: #8a5a00; }
+.fn { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--pr); color: #fff; font-size: 12px; font-weight: 700; }
+.code { background: #0f172a; color: #e2e8f0; padding: 12px 14px; margin: 10px 0 8px; overflow-x: auto; max-width: 100%; font: 12.5px/1.55 ui-monospace, Menlo, Consolas, monospace; white-space: pre; tab-size: 4; }
+.stl { display: grid; gap: 8px; margin-top: 10px; }
+.stl .tag { margin-right: 6px; }
+.flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 12px; }
+.flow b { display: block; color: var(--tx); font-size: 14px; margin: 6px 0 2px; }
+.btn { display: inline-block; padding: 7px 12px; min-height: 34px; font-weight: 600; font-size: 13px; background: var(--pr); color: #fff; cursor: pointer; border: 0; }
+.btn.g { background: var(--pr2); color: var(--pr); }
+a[href^="/lessons/find"] { color: var(--pr); font-weight: 600; text-decoration: underline; }

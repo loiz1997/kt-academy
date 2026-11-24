@@ -1,0 +1,3176 @@
+{
+ "Katalon Studio: Install & Setup": {
+  "sum": "Activate your license, install Katalon Studio, log in and start the Practitioner course.",
+  "intro": "This lesson gets you ready to practise with Katalon. You will activate your license, install and open Katalon Studio, log in, and start the Practitioner Level Certification course on Katalon Academy. Follow the steps in order. Every step has a screenshot so you can check you are in the right place.",
+  "need": [
+   "The invitation email for your Katalon license",
+   "A computer where you can install apps",
+   "An internet connection"
+  ],
+  "links": [
+   [
+    "🎓 Academy profile",
+    "https://academy.katalon.com/dashboard/certifications/"
+   ],
+   [
+    "⬇ Download Katalon Studio",
+    "https://katalon.com/katalon-studio-dg"
+   ],
+   [
+    "📚 Practitioner courses",
+    "https://academy.katalon.com/learning-path/practitioner-certification-fast-track/"
+   ]
+  ],
+  "parts": [
+   {
+    "t": "Activate your Katalon license",
+    "s": "Your admin invites you by email. Accepting the invitation turns on your license.",
+    "steps": [
+     {
+      "t": "Find the invitation email",
+      "d": "Open your inbox and look for an email called <b>“Invitation to Join My Account_01 on Katalon”</b> from the Katalon Team.",
+      "tip": "Can’t see it? Check your <b>Spam</b> or <b>Promotions</b> folder. Still missing? Ask your KT admin to send it again.",
+      "img": "invite",
+      "cap": "The Katalon invitation email"
+     },
+     {
+      "t": "Click “Accept invitation”",
+      "d": "Press the green <b>Accept invitation</b> button inside the email. This activates your license."
+     },
+     {
+      "t": "Sign up or log in to Katalon",
+      "d": "A Katalon page opens. Choose how you want to sign in: Google, GitHub, SSO or email. If you do not have a Katalon account yet, click <b>Sign up</b> and create one.",
+      "tip": "Use the same email address that received the invitation.",
+      "img": "signup",
+      "cap": "The Katalon log in page"
+     },
+     {
+      "t": "Pick your account",
+      "d": "Select the <b>first option, My Account_01</b>, then click <b>Continue</b>.",
+      "note": "You may see two accounts with the same name. Choose the first one in the list.",
+      "img": "domain",
+      "cap": "Choose the domain you wish to access"
+     }
+    ]
+   },
+   {
+    "t": "Install Katalon Studio and log in",
+    "s": "Katalon Studio is the app you will use for every activity in this course.",
+    "steps": [
+     {
+      "t": "Download and install Katalon Studio",
+      "d": "If Katalon Studio is not on your computer yet, download it with the button below and install it.",
+      "note": "Already installed? Skip to the next step.",
+      "link": [
+       "⬇ Download Katalon Studio",
+       "https://katalon.com/katalon-studio-dg"
+      ]
+     },
+     {
+      "t": "Open Katalon Studio",
+      "d": "Search for <b>Katalon Studio</b> on your computer and open it."
+     },
+     {
+      "t": "Log in with your license account",
+      "d": "On the Welcome screen, click <b>Log in from Browser</b> and sign in with the account you just activated.",
+      "note": "You can log in from the browser or through the <b>License server</b>. Use the one your admin tells you to use.",
+      "img": "login",
+      "cap": "Welcome to Katalon Studio"
+     },
+     {
+      "t": "Check that you are logged in",
+      "d": "Click the <b>account icon</b> at the top right of Katalon Studio. The menu shows which account you are logged in with. If you see your account there, you are ready.",
+      "img": "studio",
+      "cap": "The account menu in Katalon Studio"
+     }
+    ]
+   },
+   {
+    "t": "Start the Practitioner certification course",
+    "s": "Katalon Academy gives you free courses and tracks your progress toward the certificate.",
+    "steps": [
+     {
+      "t": "Open your Academy certifications page",
+      "d": "Go to your Katalon Academy profile and open <b>Certifications</b>.",
+      "link": [
+       "🎓 Open Academy certifications",
+       "https://academy.katalon.com/dashboard/certifications/"
+      ]
+     },
+     {
+      "t": "Unlock the Practitioner Level Certification",
+      "d": "Find <b>L1 – Practitioner Level Certification</b> and click <b>Learn more</b> to unlock it.",
+      "img": "locked",
+      "cap": "Practitioner Level Certification, before it is unlocked"
+     },
+     {
+      "t": "Open the courses",
+      "d": "Once it is unlocked, find the note that says <b>“we recommend enrolling in these courses”</b> and click <b>these courses</b>.",
+      "link": [
+       "📚 Open Practitioner courses",
+       "https://academy.katalon.com/learning-path/practitioner-certification-fast-track/"
+      ],
+      "img": "courses",
+      "cap": "The “these courses” link"
+     },
+     {
+      "t": "Click “Start Course”",
+      "d": "You will land on a course page. Click <b>Start Course</b> to begin.",
+      "note": "The courses show you how to use Katalon. If you already know Katalon, you only need to finish the activities required for the Practitioner certificate.",
+      "img": "course",
+      "cap": "A Katalon Academy course page"
+     }
+    ]
+   },
+   {
+    "t": "Track your progress and get your certificate",
+    "s": "Do the activities, check your progress, and collect your certificate.",
+    "steps": [
+     {
+      "t": "Do your activities and check progress daily",
+      "d": "Work on the activities in Katalon Studio. Then check your <b>Academy certification profile</b> every day to see your percentage go up.",
+      "warn": "Your progress can take <b>1 to 2 days</b> to update on Katalon Academy, so do not worry if it does not change right away."
+     },
+     {
+      "t": "Reach 100% and get your certificate",
+      "d": "When your progress reaches <b>100%</b>, you receive your Practitioner certificate. Katalon also sends it to your email.",
+      "tip": "Save it in this portal: go to <b>Certifications → Practitioner</b> and upload an image or PDF of your certificate.",
+      "img": "cert",
+      "cap": "The Practitioner Level Certification"
+     }
+    ]
+   }
+  ],
+  "help": [
+   [
+    "I did not get the invitation email",
+    "Check your spam or promotions folder first. If it is not there, ask your KT admin to send the invitation again."
+   ],
+   [
+    "I can’t log in from the browser",
+    "You can also log in through the License server. Ask your KT admin which option to use."
+   ],
+   [
+    "The Practitioner certification is locked",
+    "On your Academy certifications page, click Learn more on the Practitioner Level Certification to unlock it."
+   ],
+   [
+    "My progress is not moving",
+    "Katalon Academy can take 1 to 2 days to update. Keep doing your activities and check again tomorrow."
+   ]
+  ],
+  "check": [
+   "I accepted the invitation and activated my license",
+   "I installed Katalon Studio",
+   "I logged in to Katalon Studio",
+   "I unlocked the Practitioner Level Certification",
+   "I started my first course on Katalon Academy",
+   "I know where to check my progress"
+  ]
+ },
+ "Recording a Manual Test as Automated": {
+  "sum": "Record your clicks once, then let Katalon replay them for you. No coding needed.",
+  "intro": "Think of Record &amp; Playback like a camcorder for your testing. You do a manual test once while Katalon watches and records every click and keystroke. Then Katalon replays it on demand, as many times as you like. In this lesson you will turn a simple manual test into your first automated one.",
+  "meta": [
+   "🟢 Beginner",
+   "⏱ 45–60 minutes",
+   "🚫 No coding needed"
+  ],
+  "links": [
+   [
+    "Open the CURA demo site ↗",
+    "https://katalon-demo-cura.herokuapp.com/"
+   ],
+   [
+    "Official Katalon guide ↗",
+    "https://docs.katalon.com/katalon-studio/record-and-spy/webui-record-and-spy-utilities/create-test-cases-with-record-and-playback-in-katalon-studio"
+   ]
+  ],
+  "obj": [
+   "Explain what Record &amp; Playback does",
+   "Create a basic Web UI test case from a manual scenario",
+   "Record clicks and text entry",
+   "Save the captured page elements in the Object Repository",
+   "Run the test and check whether it passed or failed"
+  ],
+  "need": [
+   "Katalon Studio installed and activated, and able to open a project. <a href=\"/lessons/find?t=Katalon%20Studio\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Not yet? See Lesson 1: Install &amp; Setup</a>",
+   "A web browser such as Google Chrome",
+   "The CURA demo website: <b>https://katalon-demo-cura.herokuapp.com/</b>",
+   "About 45–60 minutes. Read the practice scenario below before you start."
+  ],
+  "info": [
+   {
+    "t": "What is Record & Playback?",
+    "d": "It is the easiest way to create an automated test. You perform your manual test on a real website. <b>Katalon Studio watches</b> and turns each action into an automated step. Later, <b>Playback</b> repeats those steps by itself. You do not have to write any Groovy code.",
+    "img": "l2_1",
+    "cap": "The five stages of Record & Playback: Prepare, Record, Perform, Save and Playback",
+    "tip": "Each stage is one part of this lesson. The numbered steps below walk you through all five."
+   },
+   {
+    "t": "What does Katalon save for you?",
+    "d": "When you stop recording, Katalon keeps two things. The <b>test steps</b> (what to do) go into your test case. The <b>page elements</b> (which button or box to click) go into the <b>Object Repository</b>. Think of the steps as a recipe and the Object Repository as the ingredients shelf.",
+    "img": "l2_2",
+    "cap": "Test steps on one side, the page elements they use on the other. Your own recording will be shorter, because our test stops at the login page."
+   }
+  ],
+  "scn": {
+   "t": "Test case TC_WEB_001: Verify Login Page Navigation",
+   "pre": "The CURA website is reachable.",
+   "steps": [
+    [
+     "Open the CURA website",
+     "Data: https://katalon-demo-cura.herokuapp.com/",
+     "The home page is displayed"
+    ],
+    [
+     "Click <b>Make Appointment</b>",
+     "",
+     "The login page is displayed"
+    ],
+    [
+     "Check the login page heading",
+     "",
+     "The heading is visible"
+    ]
+   ],
+   "note": "This test stops at the login page on purpose. You will not enter any username, password or data, so nothing can be changed on the site."
+  },
+  "parts": [
+   {
+    "t": "Record your manual test",
+    "s": "You will do the test by hand while Katalon records every move. Take your time.",
+    "steps": [
+     {
+      "t": "Open your project",
+      "d": "Start Katalon Studio and open your project. Don't have one yet? Click <b>File ▸ New ▸ Project</b>, name it <b>Test_Project</b>, choose <b>Web</b> as the type, then click <b>OK</b>.",
+      "img": "l2_5",
+      "cap": "The New Project window: name it Test_Project and pick Web. (The Location field is hidden here for privacy. Yours will show a folder on your computer.)"
+     },
+     {
+      "t": "Click Record Web",
+      "d": "On the toolbar, click the <b>Record Web</b> button. It opens the Recorder window.",
+      "img": "l2_4",
+      "cap": "The Record Web button opens the Recorder window"
+     },
+     {
+      "t": "Choose your browser and website",
+      "d": "In the Recorder window, do these three things:<br>1. Pick <b>New Browser</b> and choose a supported browser.<br>2. In the address box, type the CURA address: <b>https://katalon-demo-cura.herokuapp.com/</b><br>3. If you see a selection mode, choose <b>Basic</b>.",
+      "tip": "The screenshot shows a different website address as an example. <b>Type the CURA address</b> instead.",
+      "img": "l2_4b",
+      "cap": "The Recorder settings. Replace the example address with the CURA website."
+     },
+     {
+      "t": "Click Start Record",
+      "d": "Click <b>Start Record</b> and wait. A browser window opens and loads the website. Do not click anything until the page has fully loaded."
+     },
+     {
+      "t": "Perform the test by hand",
+      "d": "Click <b>Make Appointment</b> on the CURA home page. Wait for the login page to appear. <b>Stop there.</b> Don't click anything else.",
+      "tip": "Katalon may record a few extra steps, such as a wait or a window setting. That is normal. Just keep the steps that match your scenario.",
+      "img": "l2_10",
+      "cap": "The CURA home page with the Make Appointment button"
+     },
+     {
+      "t": "Add a check (verification)",
+      "d": "A test needs to check something, otherwise it only clicks around. Right-click the <b>Login</b> heading on the page. Then choose <b>Katalon Recorder Plus ▸ Assert Element State ▸ Present</b>.",
+      "note": "Can't find that menu? No problem. You can add the same check later in <b>Manual view</b> by using the <b>Verify Element Present</b> keyword.",
+      "img": "l2_9",
+      "cap": "Right-click the Login heading and choose Assert Element State ▸ Present"
+     },
+     {
+      "t": "Stop recording and review",
+      "d": "Close the recorder window by clicking <b>Stop</b>, then <b>Save</b>. Katalon shows you the recorded steps. Read through them: each line is one thing you did on the website.",
+      "img": "l2_6",
+      "cap": "The recorded steps. Yours may have a few more or fewer lines."
+     },
+     {
+      "t": "Save the page elements",
+      "d": "Katalon asks where to keep the captured page elements. Choose a folder in the <b>Object Repository</b>. To make a new one, click <b>New Folder</b> and give it a clear name.",
+      "img": "l2_3",
+      "cap": "Choosing (or creating) an Object Repository folder"
+     },
+     {
+      "t": "Name your test case",
+      "d": "Give the test case a name that says what it does. Use exactly this one:<br><b>TC_WEB_001_Verify_Login_Page_Navigation</b><br>Then click <b>OK</b>. Your first automated test case is ready!",
+      "tip": "Good names save time later. Anyone should know what a test does just by reading its name."
+     }
+    ]
+   },
+   {
+    "t": "Play it back",
+    "s": "Now the fun part: let Katalon do all the clicking for you.",
+    "steps": [
+     {
+      "t": "Open the test case",
+      "d": "In <b>Test Explorer</b> on the left, open <b>Test Cases</b>. Double-click <b>TC_WEB_001_Verify_Login_Page_Navigation</b>."
+     },
+     {
+      "t": "Pick a browser to run on",
+      "d": "On the toolbar, open the <b>Run</b> drop-down arrow and choose a browser, for example <b>Chrome</b>.",
+      "img": "l2_7",
+      "cap": "Choosing a browser from the Run drop-down. This screenshot comes from another example project, so your test case name will be different."
+     },
+     {
+      "t": "Click Run",
+      "d": "Click the green <b>Run</b> button and watch. The browser opens and repeats your clicks all by itself.",
+      "tip": "Don't touch the mouse or keyboard while the test runs. Just watch and enjoy!"
+     },
+     {
+      "t": "Read the result",
+      "d": "When the run ends, open the <b>Log Viewer</b> at the bottom. A green <b>Passed</b> means every step worked. A red <b>Failed</b> means something did not work. Click the failed line to see why.",
+      "img": "l2_8",
+      "cap": "The Log Viewer after a run. This example shows Passed. It comes from another project, so the step names differ."
+     }
+    ]
+   }
+  ],
+  "concepts": [
+   [
+    "Test Case",
+    "One automated test. It is a list of steps."
+   ],
+   [
+    "Record Web",
+    "The tool that watches you and records your actions."
+   ],
+   [
+    "Test Object",
+    "One element on a page, such as a button or text box."
+   ],
+   [
+    "Object Repository",
+    "The folder where Katalon stores all the Test Objects."
+   ],
+   [
+    "Playback",
+    "Running the recorded test again, automatically."
+   ],
+   [
+    "Verification (Assertion)",
+    "A check that proves something is true, like \"the heading is visible\"."
+   ]
+  ],
+  "help": [
+   [
+    "Recording does not start",
+    "Some versions of Katalon Studio (8.x and 9.x) have a known problem with Chrome 142. Try another supported browser, or use <b>Active Browser</b> mode instead of New Browser."
+   ],
+   [
+    "A click was not captured",
+    "No worries. Record the test again, and wait for each page to load before you click."
+   ],
+   [
+    "The test fails during playback",
+    "Open the <b>Log Viewer</b> and read the error. Then check that the page finished loading, that you chose the right browser, and that the Test Object still matches the page."
+   ],
+   [
+    "The test passes but checks nothing",
+    "A test with no verification only clicks around. Add a check, like the Login heading assertion in Step 6."
+   ],
+   [
+    "The object names are hard to understand",
+    "Names like <b>Page_Login/button_Login</b> are normal. Katalon builds them from the page and the element. Keep them or rename them clearly."
+   ]
+  ],
+  "check": [
+   "Katalon Studio is open and my project is ready",
+   "I recorded the three steps of the scenario",
+   "I added a verification (check) on the Login heading",
+   "I saved the page elements in the Object Repository",
+   "I named the test case TC_WEB_001_Verify_Login_Page_Navigation",
+   "I ran the test and read the result in the Log Viewer"
+  ],
+  "done": [
+   "I can explain Record &amp; Playback in my own words",
+   "I created a Web UI test case from a manual scenario",
+   "My test case has a verification step",
+   "I can run it and tell if it passed or failed",
+   "I can name the parts that Katalon saved: test steps and Test Objects"
+  ],
+  "res": [
+   [
+    "Create test cases with Record & Playback",
+    "https://docs.katalon.com/katalon-studio/record-and-spy/webui-record-and-spy-utilities/create-test-cases-with-record-and-playback-in-katalon-studio"
+   ],
+   [
+    "Quick guide for testers",
+    "https://docs.katalon.com/katalon-studio/get-started/quick-guide-for-testers"
+   ],
+   [
+    "CURA demo website",
+    "https://katalon-demo-cura.herokuapp.com/"
+   ],
+   [
+    "Katalon Academy certifications",
+    "https://academy.katalon.com/dashboard/certifications/"
+   ],
+   [
+    "Practitioner Certification fast track",
+    "https://academy.katalon.com/learning-path/practitioner-certification-fast-track/"
+   ]
+  ],
+  "next": "This lesson covers Web UI only. Mobile, API, Groovy, test suites and TestOps come in later lessons. Your Katalon version may look slightly different from the screenshots, and that is fine.",
+  "cert": "Every test case and Test Object you record counts toward the Practitioner Certification goals (such as creating 50 test cases and 30 test objects). Keep recording!"
+ },
+ "Running Tests Locally & Reading Reports": {
+  "sum": "Run one test or a whole Test Suite on your own computer, then read the results and reports.",
+  "intro": "You have recorded a test. Now let's run it! In this lesson you will run a single test case, run several tests together in a Test Suite, and learn how to read the results. Reading the report is how you find out whether your application is working.",
+  "meta": [
+   "🟢 Beginner",
+   "⏱ 30–45 minutes",
+   "🚫 No coding needed"
+  ],
+  "links": [
+   [
+    "Katalon Studio documentation ↗",
+    "https://docs.katalon.com/katalon-studio"
+   ]
+  ],
+  "obj": [
+   "Run an automated test case on your computer",
+   "Run several test cases together in a Test Suite",
+   "Watch the execution and understand what is happening",
+   "Read the results in the Log Viewer",
+   "Find and understand the generated test report"
+  ],
+  "need": [
+   "Katalon Studio open with your training project",
+   "The test case you saved in Lesson 2. <a href=\"/lessons/find?t=Recording%20a%20Manual%20Test\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Need it? See Lesson 2: Record &amp; Playback</a>",
+   "The browser you will use (for example Google Chrome) installed on your computer"
+  ],
+  "info": [
+   {
+    "t": "What does \"running locally\" mean?",
+    "d": "It means the test runs <b>on your own computer</b>. Katalon opens a real browser, repeats the steps you recorded, and saves the results on your computer. Later lessons will show how to run tests in the cloud with TestOps."
+   },
+   {
+    "t": "What do the result statuses mean?",
+    "d": "After every run, each test gets one of these statuses:<div class=\"stl\"><div><span class=\"tag t\">Passed</span> The steps and checks all worked.</div><div><span class=\"tag\" style=\"background:#fde8e8;color:#b42318\">Failed</span> A step or check did not match what was expected.</div><div><span class=\"tag a\">Error</span> Something stopped the run, like a browser problem or a missing Test Object.</div><div><span class=\"tag\" style=\"background:var(--br);color:var(--mu)\">Skipped / Incomplete</span> The test was not run, or did not finish.</div></div>",
+    "tip": "A test can pass even if it only clicks buttons. Always include a verification step to check the expected result."
+   }
+  ],
+  "parts": [
+   {
+    "t": "Run one test case",
+    "s": "Start with the simplest run: one test, one browser.",
+    "steps": [
+     {
+      "t": "Open your test",
+      "d": "In <b>Tests Explorer</b> on the left, expand <b>Test Cases</b>. Double-click the test case you saved in Lesson 2."
+     },
+     {
+      "t": "Choose a browser",
+      "d": "On the toolbar, click the small <b>drop-down arrow</b> beside the <b>Run</b> button. Select <b>Chrome</b> (or another supported browser)."
+     },
+     {
+      "t": "Click Run",
+      "d": "Click <b>Run</b>. Katalon opens the browser and repeats your recorded actions."
+     },
+     {
+      "t": "Wait for it to finish",
+      "d": "Let the test finish by itself.",
+      "warn": "Do not click or type in the browser that Katalon opened. Doing so can make your test fail."
+     }
+    ]
+   },
+   {
+    "t": "Run many tests in a Test Suite",
+    "s": "A Test Suite is a folder of test cases that run one after another. It is perfect for running many tests at once.",
+    "steps": [
+     {
+      "t": "Open a Test Suite",
+      "d": "In Tests Explorer, expand <b>Test Suites</b> and open an existing suite. If you don't have one, create it: right-click <b>Test Suites</b>, then choose <b>New ▸ Test Suite</b> and give it a name."
+     },
+     {
+      "t": "Add your test cases",
+      "d": "Click <b>Add</b> and choose the test cases you want to run. Then <b>save</b> the suite."
+     },
+     {
+      "t": "Click Run and choose a browser",
+      "d": "Open the <b>Run</b> drop-down arrow, pick a browser, and run the suite.",
+      "img": "l3_2",
+      "cap": "Your Test Suite, the Run button and its browser list. This screenshot comes from an example project, so your test names will be different."
+     },
+     {
+      "t": "Watch the progress",
+      "d": "Watch the <b>Job Progress</b> panel on the right. It shows the suite while it runs, then displays the final result, such as \"3 Passed\"."
+     }
+    ]
+   },
+   {
+    "t": "Check the results",
+    "s": "Time to find out what happened during the run.",
+    "steps": [
+     {
+      "t": "Open the Log Viewer",
+      "d": "After the run, open the <b>Log Viewer</b> at the bottom. At the top you will see how many tests passed, failed, had errors, were incomplete or were skipped. Click any step to read its status and any error message.",
+      "img": "l3_4",
+      "cap": "The Log Viewer after a Test Suite run. This screenshot comes from an example project, so your test names will be different."
+     }
+    ]
+   },
+   {
+    "t": "Open the test report",
+    "s": "A report is a summary of the whole run that you can review or share.",
+    "steps": [
+     {
+      "t": "Open the report inside Katalon",
+      "d": "After running a Test Suite, open its <b>Result</b> tab. You can also open <b>Reports</b> in Tests Explorer and choose the latest run. You will see the status of each test case and a summary.",
+      "img": "l3_3",
+      "cap": "The report opened inside Katalon Studio. This screenshot comes from an example project, so your test names will be different."
+     },
+     {
+      "t": "Find the report on your computer",
+      "d": "Open your project folder, then <b>Reports</b>, then the latest execution folder. If your project settings create an HTML report, open it in your browser.",
+      "img": "l3_1",
+      "cap": "The Reports folder in the project on your computer. The folder names are based on the date and time of the run."
+     },
+     {
+      "t": "Know what to look for",
+      "d": "In any report, check:<br>• the overall status<br>• which test cases passed or failed<br>• how long the run took<br>• the error details, if something failed",
+      "note": "The available report formats can differ by Katalon version and project settings."
+     }
+    ]
+   }
+  ],
+  "concepts": [
+   [
+    "Test Suite",
+    "A group of test cases that run together."
+   ],
+   [
+    "Run",
+    "Starts your test or suite in the browser you pick."
+   ],
+   [
+    "Log Viewer",
+    "Shows every step of a run and its status."
+   ],
+   [
+    "Job Progress",
+    "A panel that shows a run while it is happening."
+   ],
+   [
+    "Report",
+    "A summary of the results of a whole run."
+   ],
+   [
+    "Execution",
+    "One complete run of a test or suite."
+   ]
+  ],
+  "help": [
+   [
+    "The browser does not open",
+    "Check that the browser is installed on your computer and that it works with your version of Katalon Studio."
+   ],
+   [
+    "The test cannot find an element",
+    "Check that the web page looks the way it did when you recorded, and check the Test Object saved in the Object Repository."
+   ],
+   [
+    "I cannot find the report",
+    "Open the latest execution folder inside <b>Reports</b>, and make sure the suite finished running."
+   ]
+  ],
+  "check": [
+   "I ran my test case using Chrome",
+   "I created or opened a Test Suite and ran it",
+   "I found the final result in the Log Viewer",
+   "I opened the latest report and found the result of my test"
+  ],
+  "done": [
+   "I can run one test case and a Test Suite",
+   "I can find a failed step and read its error",
+   "I can find the generated report without any help"
+  ],
+  "res": [
+   [
+    "Katalon Studio documentation",
+    "https://docs.katalon.com/katalon-studio"
+   ]
+  ],
+  "next": "Next topic: Spy Web and Object Repository. KRE and TestOps reporting will be covered in separate lessons. Your Katalon version may look slightly different from the screenshots.",
+  "cert": "Running tests and reading reports is a core skill for every certification path."
+ },
+ "TestOps: Connect Katalon Studio to TestOps": {
+  "sum": "Connect Katalon Studio to TestOps so your local test results upload automatically.",
+  "intro": "So far your tests ran only on your computer. TestOps is Katalon's online home for test results. In this lesson you will connect Katalon Studio to TestOps, so that each time you run a Test Suite, the report is sent there automatically. Your whole team can then see it.",
+  "meta": [
+   "🟢 Beginner",
+   "⏱ 30–45 minutes",
+   "🚫 No coding needed"
+  ],
+  "links": [
+   [
+    "Sign in to Katalon TestOps ↗",
+    "https://login.katalon.com/"
+   ],
+   [
+    "Official integration guide ↗",
+    "https://docs.katalon.com/katalon-studio/get-started/workspace-settings/integrate-katalon-platform-with-katalon-studio"
+   ]
+  ],
+  "obj": [
+   "Connect a Katalon Studio project to Katalon TestOps",
+   "Turn on automatic test report uploads",
+   "Run a Test Suite on your computer",
+   "Confirm the result appears in TestOps"
+  ],
+  "need": [
+   "Katalon Studio installed, and you are signed in",
+   "Access to your team's Katalon TestOps organization and project",
+   "A training project with at least one working test case saved inside a Test Suite. <a href=\"/lessons/find?t=Running%20Tests%20Locally\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Need one? See Lesson 3</a>",
+   "An internet connection"
+  ],
+  "info": [
+   {
+    "t": "How does the connection work?",
+    "d": "You still run your tests on your computer in Katalon Studio. After a Test Suite finishes, Katalon sends the report to the TestOps project you choose.<div class=\"flow\"><div><span class=\"fn\">1</span><b>Katalon Studio</b>Your Test Suite runs on your computer</div><div><span class=\"fn\">2</span><b>Integration settings</b>You pick your TestOps project</div><div><span class=\"fn\">3</span><b>Run the Test Suite</b>The report uploads after the run</div><div><span class=\"fn\">4</span><b>Katalon TestOps</b>You review the test results online</div></div>"
+   },
+   {
+    "t": "What will you see in TestOps?",
+    "d": "<div class=\"stl\"><div><span class=\"tag t\">Passed</span> The test finished successfully.</div><div><span class=\"tag\" style=\"background:#fde8e8;color:#b42318\">Failed</span> A step or check did not pass.</div><div><span class=\"tag a\">Error</span> A problem happened during the run.</div><div><span class=\"tag\" style=\"background:var(--br);color:var(--mu)\">No report</span> Check that you ran a Test Suite, picked the right project and turned on uploads.</div></div>",
+    "tip": "Remember: running a single test case does <b>not</b> upload its report. Add the test case to a Test Suite and run the suite instead."
+   }
+  ],
+  "parts": [
+   {
+    "t": "Connect Studio to TestOps",
+    "s": "You only need to do this once for each project.",
+    "steps": [
+     {
+      "t": "Open your project",
+      "d": "Start Katalon Studio, sign in, and open your training project."
+     },
+     {
+      "t": "Open the integration settings",
+      "d": "Go to <b>Project ▸ Settings</b>, then choose <b>Katalon TestOps Integration</b> from the list.",
+      "note": "Depending on your Studio version, this may be called <b>Katalon True Platform</b>, or you may find it under <b>Integration</b>. Choose the one that matches.",
+      "img": "l4_1",
+      "cap": "Project ▸ Settings in the top menu. This screenshot comes from an example project, so your names will be different."
+     },
+     {
+      "t": "Turn on the integration",
+      "d": "Tick <b>Enable Katalon TestOps Integration</b> (or <b>Enable Katalon True Platform Integration</b>).",
+      "img": "l4_2",
+      "cap": "The settings page: tick the Enable box, choose your project and keep the upload box ticked. This screenshot comes from an example project, so your names will be different."
+     },
+     {
+      "t": "Choose your TestOps project",
+      "d": "Pick your team's project from the <b>Project</b> drop-down. Don't see it? Click <b>Fetch Projects</b> to refresh the list, and check that your account has access to it."
+     },
+     {
+      "t": "Turn on automatic uploads",
+      "d": "Tick <b>Automatically upload all test reports to Katalon TestOps</b>. In some versions it is named <b>Automatically submit test run result</b>."
+     },
+     {
+      "t": "Save your settings",
+      "d": "Click <b>Apply and Close</b>. Your project is now ready to send reports to TestOps."
+     }
+    ]
+   },
+   {
+    "t": "Check that it works",
+    "s": "Let's run a Test Suite and see the result appear online.",
+    "steps": [
+     {
+      "t": "Run a Test Suite",
+      "d": "In Tests Explorer, open <b>Test Suites</b> and select your training suite. Click <b>Run</b> and choose Chrome (or another browser you have installed)."
+     },
+     {
+      "t": "Check the upload",
+      "d": "Wait for the run to finish. Then look at the <b>Job Progress</b> panel and make sure the report was generated and uploaded. If you see <b>View on Katalon TestOps</b> or <b>View result</b>, you can click it.",
+      "img": "l4_3",
+      "cap": "Job Progress shows \"Generated and uploaded test reports\". Test Runs lists the run under Katalon True Platform. This screenshot comes from an example project, so your names will be different."
+     },
+     {
+      "t": "Open TestOps",
+      "d": "Sign in to Katalon TestOps and open the <b>same project</b> you chose in Studio.",
+      "link": [
+       "Open the TestOps sign-in page ↗",
+       "https://login.katalon.com/"
+      ]
+     },
+     {
+      "t": "Review your report",
+      "d": "Open <b>Executions ▸ History</b> (the name may differ slightly). Find your latest run, then check the result, the status of each test case, the logs and how long it took.",
+      "img": "l4_4",
+      "cap": "The Executions History page in TestOps shows the uploaded run with its results. This screenshot comes from an example project, so your names will be different."
+     }
+    ]
+   }
+  ],
+  "concepts": [
+   [
+    "TestOps",
+    "Katalon's online place to store and view test results."
+   ],
+   [
+    "Integration",
+    "The connection between Katalon Studio and TestOps."
+   ],
+   [
+    "Test Suite",
+    "A group of test cases that run together."
+   ],
+   [
+    "Job Progress",
+    "The panel that shows a run and its upload."
+   ],
+   [
+    "Test Run",
+    "One run of a suite, as shown in TestOps."
+   ],
+   [
+    "Project",
+    "The TestOps folder where your team's results are stored."
+   ]
+  ],
+  "help": [
+   [
+    "My project is missing",
+    "Make sure you are signed in with the right Katalon account and that you have access to the organization and project. Then click <b>Fetch Projects</b> again."
+   ],
+   [
+    "The upload failed",
+    "Check your internet connection and the integration settings. Read the upload message in <b>Job Progress</b> for the reason."
+   ],
+   [
+    "I can't see my report in TestOps",
+    "Check that you picked the right TestOps project, that the Test Suite finished, and that you ran a <b>suite</b>, not a single test case. Then refresh TestOps."
+   ],
+   [
+    "The menu names look different",
+    "Studio versions may say TestOps Integration, Katalon Platform or Katalon True Platform. Follow the integration settings that match your version."
+   ]
+  ],
+  "check": [
+   "I connected my Studio project to the correct TestOps project",
+   "I turned on automatic report uploads",
+   "I ran one Test Suite on my computer",
+   "I opened the uploaded result in TestOps",
+   "I can show my trainer the Test Suite name and its status"
+  ],
+  "done": [
+   "I can connect a project to TestOps on my own",
+   "I can run a local Test Suite",
+   "I can find its uploaded report in Katalon TestOps"
+  ],
+  "res": [
+   [
+    "Katalon quick guide for testers",
+    "https://docs.katalon.com/katalon-studio/get-started/quick-guide-for-testers"
+   ],
+   [
+    "Integrate Katalon True Platform with Katalon Studio",
+    "https://docs.katalon.com/katalon-studio/get-started/workspace-settings/integrate-katalon-platform-with-katalon-studio"
+   ],
+   [
+    "Katalon sign-in",
+    "https://login.katalon.com/"
+   ]
+  ],
+  "next": "This lesson covers local runs and automatic uploads. KRE, CI/CD and TestOps scheduling are separate advanced topics. Your Katalon version may look slightly different from the screenshots."
+ },
+ "TestOps: Create Manual & Automated Test Cases": {
+  "sum": "Write a manual test case in TestOps and see how your automated tests fit in.",
+  "intro": "TestOps is more than a place to see results. You can also write test cases there. In this lesson you will create a manual test case with steps and expected results. Then you will see how automated tests made in Katalon Studio are managed and reported in TestOps.",
+  "meta": [
+   "🟢 Beginner",
+   "⏱ 30–45 minutes",
+   "✍️ Hands-on activity"
+  ],
+  "links": [
+   [
+    "Open Katalon TestOps ↗",
+    "https://testops.katalon.io/"
+   ],
+   [
+    "Katalon documentation ↗",
+    "https://docs.katalon.com/"
+   ]
+  ],
+  "obj": [
+   "Create a manual test case with steps and expected results in TestOps",
+   "Organize your test case in a folder",
+   "Understand how automated tests from Katalon Studio are managed in TestOps",
+   "Tell the difference between manual and automated test cases"
+  ],
+  "need": [
+   "You can sign in to your organization and project in Katalon TestOps",
+   "You have permission to create or edit test cases in the project",
+   "Katalon Studio is installed and connected to TestOps. <a href=\"/lessons/find?t=TestOps%3A%20Connect%20Katalon\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Not yet? See Lesson 4</a>"
+  ],
+  "info": [
+   {
+    "t": "Two ways to work",
+    "d": "Both ways end up in TestOps, but they start in different places.<div class=\"flow\"><div><b>Manual in TestOps</b><span style=\"color:var(--tx)\">1:</span> Create the test case<br><span style=\"color:var(--tx)\">2:</span> Add steps and expected results<br><span style=\"color:var(--tx)\">3:</span> Save and organize it</div><div><b>Automation + TestOps</b><span style=\"color:var(--tx)\">1:</span> Record or script it in Katalon Studio<br><span style=\"color:var(--tx)\">2:</span> Run the connected Test Suite<br><span style=\"color:var(--tx)\">3:</span> Review the results in TestOps</div></div>"
+   },
+   {
+    "t": "Manual vs automated",
+    "d": "<div class=\"flow\"><div><b>Manual</b><span style=\"color:var(--tx)\">Created in:</span> TestOps<br><span style=\"color:var(--tx)\">Run by:</span> a tester who follows the steps<br><span style=\"color:var(--tx)\">Results:</span> recorded in test management<br><span style=\"color:var(--tx)\">Best for:</span> exploring and human checks</div><div><b>Automated</b><span style=\"color:var(--tx)\">Created in:</span> Katalon Studio<br><span style=\"color:var(--tx)\">Run by:</span> Katalon, using scripted steps<br><span style=\"color:var(--tx)\">Results:</span> uploaded after a supported run<br><span style=\"color:var(--tx)\">Best for:</span> repeatable regression checks</div></div>",
+    "tip": "<b>Important:</b> TestOps manages test cases and results. The scripts that Katalon runs are written and kept in Studio. Creating a manual test case in TestOps does <b>not</b> turn it into an automation script."
+   }
+  ],
+  "scn": {
+   "t": "Example: TC_MAN_001 – Verify OrangeHRM login",
+   "pre": "Application: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+   "steps": [
+    [
+     "Open the OrangeHRM demo login URL",
+     "",
+     "The login page appears"
+    ],
+    [
+     "Enter the demo username and password",
+     "",
+     "The credentials are entered"
+    ],
+    [
+     "Click <b>Login</b>",
+     "",
+     "The Dashboard appears"
+    ]
+   ],
+   "note": "Use the current demo credentials shown on the demo page. Never store real passwords in a test case description."
+  },
+  "parts": [
+   {
+    "t": "Create a manual test case in TestOps",
+    "s": "You will write the steps a person would follow to test the login.",
+    "steps": [
+     {
+      "t": "Open TestOps",
+      "d": "Sign in to TestOps, then select your organization and project.",
+      "link": [
+       "Open TestOps ↗",
+       "https://testops.katalon.io/"
+      ],
+      "img": "l5_1",
+      "cap": "The Katalon login page. Sign in with the method your team uses."
+     },
+     {
+      "t": "Open the Test Cases area",
+      "d": "Check that your project is selected at the top left. Then open <b>Tests ▸ Test Cases</b>.",
+      "note": "Menu names may differ a little between TestOps versions.",
+      "img": "l5_2",
+      "cap": "Choosing your project from the drop-down at the top left. This screenshot comes from an example project, so your names will be different."
+     },
+     {
+      "t": "Create a test case",
+      "d": "Click <b>Create</b>, then <b>Create new test case</b>. Use this title:<br><b>TC_MAN_001 – Verify OrangeHRM login</b>",
+      "img": "l5_3",
+      "cap": "The Create menu in the Test Cases page. This screenshot comes from an example project, so your names will be different."
+     },
+     {
+      "t": "Add the test steps",
+      "d": "Enter the steps and expected results from the example above, one step per row. Then save the test case.",
+      "tip": "Click <b>Add new row</b> for each step. You can also press <b>Tab</b> at the end of the last step to add the next one.",
+      "img": "l5_4",
+      "cap": "A manual test case with steps, expected results and test data. This screenshot comes from an example project, so your names will be different."
+     },
+     {
+      "t": "Organize your test",
+      "d": "Put the test case in a suitable folder. If your workspace supports it, add a priority, a description or tags."
+     }
+    ]
+   },
+   {
+    "t": "Create an automated test and link it to TestOps",
+    "s": "Automated tests are made in Katalon Studio. TestOps then tracks them and their results.",
+    "steps": [
+     {
+      "t": "Open Katalon Studio",
+      "d": "Open the project you connected to TestOps in Lesson 4."
+     },
+     {
+      "t": "Create the automated test",
+      "d": "Use <b>Record Web</b> (Lesson 2), or Manual / Script view, to automate the OrangeHRM login steps. Add a verification that the Dashboard is displayed."
+     },
+     {
+      "t": "Save and organize",
+      "d": "Save it as <b>TC_AUTO_001_Verify_OrangeHRM_Login</b> and add it to a Test Suite."
+     },
+     {
+      "t": "Run the Test Suite",
+      "d": "Run the suite on your computer. Make sure the report upload to TestOps is turned on for your project."
+     },
+     {
+      "t": "Check TestOps",
+      "d": "Open your TestOps project and look at the uploaded execution results. Where your workspace supports it, synchronize or link the automated test to its test case record in TestOps."
+     }
+    ]
+   }
+  ],
+  "concepts": [
+   [
+    "Test case",
+    "A set of steps to check one thing."
+   ],
+   [
+    "Manual test case",
+    "Steps a person follows, written in TestOps."
+   ],
+   [
+    "Automated test case",
+    "A test that Katalon runs by itself, made in Studio."
+   ],
+   [
+    "Expected result",
+    "What should happen after a step."
+   ],
+   [
+    "Test data",
+    "Values used in a step, like a web address."
+   ],
+   [
+    "Folder",
+    "A place to keep related test cases together."
+   ]
+  ],
+  "help": [
+   [
+    "I can't create test cases",
+    "Check that you have access to the project and the right role permissions. Ask your KT lead if you are not sure."
+   ],
+   [
+    "No automated result appears",
+    "Check that you picked the right TestOps project, that Studio is connected, and that the report upload setting is on."
+   ],
+   [
+    "My automated test is not listed as a test case",
+    "Check your workspace's synchronization or linking steps. Uploading a result alone may not create the test case record."
+   ]
+  ],
+  "check": [
+   "I created one manual login test case with at least three steps and expected results",
+   "I created or reused one automated login test in Katalon Studio",
+   "I ran the automated test in a Test Suite",
+   "I found the execution in TestOps and can explain its status"
+  ],
+  "res": [
+   [
+    "Katalon documentation",
+    "https://docs.katalon.com/"
+   ],
+   [
+    "Katalon TestOps",
+    "https://testops.katalon.io/"
+   ]
+  ],
+  "next": "Menu names and the way automated tests synchronize can differ by workspace, subscription and product version. Check your menus first. Next, Lesson 6 shows how to group your test cases into a Test Suite."
+ },
+ "TestOps: Create Test Suites": {
+  "sum": "Group your manual and automated test cases into a Test Suite in TestOps.",
+  "intro": "A Test Suite is a group of related test cases, such as everything that checks the OrangeHRM login. In this lesson you will create a Test Suite in TestOps, add the test cases from Lesson 5, and review it. You will not run it yet.",
+  "meta": [
+   "🟢 Beginner",
+   "⏱ 25–35 minutes",
+   "🚫 No coding needed"
+  ],
+  "links": [
+   [
+    "Open Katalon TestOps ↗",
+    "https://testops.katalon.io/"
+   ],
+   [
+    "TestOps documentation ↗",
+    "https://docs.katalon.com/katalon-testops"
+   ]
+  ],
+  "obj": [
+   "Create a Test Suite in TestOps",
+   "Add existing manual and automated test cases to it",
+   "Review the suite before it is run"
+  ],
+  "need": [
+   "You can sign in to Katalon TestOps and open your training project",
+   "You have test cases from Lesson 5 (manual, and/or automated ones that were synchronized). <a href=\"/lessons/find?t=TestOps%3A%20Create%20Manual\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Need them? See Lesson 5</a>",
+   "You have permission to create and manage Test Suites"
+  ],
+  "info": [
+   {
+    "t": "What is a Test Suite?",
+    "d": "A Test Suite is a group of related test cases with one testing purpose. It helps you manage what is covered. You make one in four steps:<div class=\"flow\"><div><span class=\"fn\">1</span><b>Open</b>Your TestOps project</div><div><span class=\"fn\">2</span><b>Create</b>A new Test Suite</div><div><span class=\"fn\">3</span><b>Add</b>Existing test cases</div><div><span class=\"fn\">4</span><b>Review</b>Save and check it</div></div>",
+    "tip": "Creating a suite does <b>not</b> run the tests. It only groups them."
+   },
+   {
+    "t": "Manual or automated?",
+    "d": "<b>Manual</b> cases are done by a tester in a manual test run. <b>Automated</b> cases need an automation setup, such as a connected Katalon Studio project. A suite only organizes cases. It does not turn manual steps into automation."
+   },
+   {
+    "t": "Practice example",
+    "d": "Here is the kind of suite you will build. Use your own Lesson 5 test cases.<div class=\"stl\"><div><b>TC_LOGIN_001</b> Verify login with valid credentials <span class=\"tag t\">Manual</span></div><div><b>TC_LOGIN_002</b> Verify login with invalid credentials <span class=\"tag t\">Manual</span></div><div><b>TC_LOGIN_003</b> Verify successful login <span class=\"tag\" style=\"background:#efe7fb;color:#6b3fb5\">Automated</span></div></div>",
+    "tip": "These IDs are only examples. An automated case must already be in TestOps before you can select it."
+   }
+  ],
+  "parts": [
+   {
+    "t": "Create your Test Suite",
+    "s": "Follow these six steps. Take your time and check each one.",
+    "steps": [
+     {
+      "t": "Sign in to TestOps",
+      "d": "Open TestOps and select your training organization and project.",
+      "link": [
+       "Open TestOps ↗",
+       "https://testops.katalon.io/"
+      ],
+      "img": "l5_1",
+      "cap": "The Katalon login page."
+     },
+     {
+      "t": "Open test management",
+      "d": "Go to the test management area and find <b>Test Suites</b>.",
+      "note": "Menu labels and layout may differ by TestOps version or workspace."
+     },
+     {
+      "t": "Create a Test Suite",
+      "d": "Click <b>Create ▸ Test Suite</b>. Name it <b>OrangeHRM_Login_Test_Suite</b>. For the description, write: <b>Verify the OrangeHRM login feature.</b>",
+      "img": "l6_2",
+      "cap": "Create ▸ Test Suite on the Test Suites page. This screenshot comes from an example project, so your names will be different."
+     },
+     {
+      "t": "Add existing test cases",
+      "d": "Use the <b>Add Test Case</b> action. Search for the login test cases from Lesson 5, click the <b>+</b> beside each one you want, and confirm.",
+      "note": "Choose <b>MANUAL</b> as the suite type if you are creating a manual suite.",
+      "img": "l6_3",
+      "cap": "Choosing MANUAL, and the + buttons that add test cases. This screenshot comes from an example project, so your names will be different."
+     },
+     {
+      "t": "Review and save",
+      "d": "Open the <b>Test Case List</b> and check that your selected test cases are there. Then save or confirm, as your workspace asks.",
+      "img": "l6_4",
+      "cap": "Two test cases chosen. Their count shows in Test Case List. This screenshot comes from an example project, so your names will be different."
+     },
+     {
+      "t": "Verify your suite",
+      "d": "Open the Test Suite again. Check its name, its description and the test cases inside.",
+      "warn": "Do not start an execution in this lesson."
+     }
+    ]
+   }
+  ],
+  "concepts": [
+   [
+    "Test Suite",
+    "A group of related test cases."
+   ],
+   [
+    "Manual suite",
+    "A suite carried out by a tester during a manual test run."
+   ],
+   [
+    "Automated case",
+    "A test Katalon runs, which must be available in TestOps first."
+   ],
+   [
+    "Synchronize",
+    "Bring an automated test from Studio into TestOps."
+   ]
+  ],
+  "help": [
+   [
+    "I can't see Test Suites",
+    "Check that you selected the correct organization and project, and that you have the required permissions."
+   ],
+   [
+    "A test case is missing",
+    "Check that it exists in the right project and is available to select."
+   ],
+   [
+    "The automated case is not available",
+    "Check that it was synchronized or imported into this TestOps project."
+   ],
+   [
+    "My suite has no test cases",
+    "Open it again and add the test cases you meant to include before you continue."
+   ]
+  ],
+  "check": [
+   "I created a suite named OrangeHRM_Login_Test_Suite",
+   "I added at least two existing login test cases",
+   "I confirmed the cases appear in the suite",
+   "I can say which cases are manual and which are automated"
+  ],
+  "done": [
+   "I can create a Test Suite on my own",
+   "I can add existing test cases and save the suite",
+   "I can explain what the suite is for"
+  ],
+  "res": [
+   [
+    "Katalon TestOps documentation",
+    "https://docs.katalon.com/katalon-testops"
+   ]
+  ],
+  "next": "Sample names and IDs are examples. Use your own Lesson 5 test cases. Running Test Suites in TestOps and reviewing the results can be covered in a later lesson."
+ },
+ "TestOps: Run with AI": {
+  "sum": "Let AI carry out your manual test cases in a real browser, then review the evidence.",
+  "intro": "Until now, a person had to follow manual test steps by hand. With Run with AI, Katalon TestOps can read your manual steps and carry them out in a real browser for you. It takes screenshots as it goes, so you can check what happened. In this lesson you will create a manual test run, start it with AI, and review the results.",
+  "meta": [
+   "🟢 Beginner",
+   "⏱ 30–45 minutes",
+   "🚫 No scripting needed"
+  ],
+  "links": [
+   [
+    "Open Katalon TestOps ↗",
+    "https://testops.katalon.io/"
+   ],
+   [
+    "Official guide ↗",
+    "https://docs.katalon.com/katalon-platform/execute/manual-executions/create-a-manual-test-run"
+   ]
+  ],
+  "obj": [
+   "Create a manual test run in TestOps",
+   "Run manual test cases with AI",
+   "Monitor the AI while it runs",
+   "Understand the test results and the evidence"
+  ],
+  "need": [
+   "You can sign in to Katalon True Platform (the new name of TestOps) and open your training project",
+   "A manual Test Suite from Lesson 6 with clear steps and expected results. <a href=\"/lessons/find?t=TestOps%3A%20Create%20Test%20Suites\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Need it? See Lesson 6</a>",
+   "A demo application that anyone can open. Example: <b>https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</b>",
+   "Run with AI is turned on for your account, and you can create test runs"
+  ],
+  "info": [
+   {
+    "t": "What is Run with AI?",
+    "d": "You give TestOps a manual test case. The AI reads each step, does it in a real browser, and checks the expected result. Here is the full journey:<div class=\"flow\"><div><span class=\"fn\">1</span><b>Select your suite</b></div><div><span class=\"fn\">2</span><b>Create a manual run</b></div><div><span class=\"fn\">3</span><b>Run with AI</b></div><div><span class=\"fn\">4</span><b>Watch the AI Sessions</b></div><div><span class=\"fn\">5</span><b>Review the results</b></div></div>",
+    "tip": "AI execution is <b>not</b> the same as running a Katalon Studio automation script. Always check the AI's verdict against the expected result yourself."
+   },
+   {
+    "t": "Example manual test case",
+    "d": "<b>Verify OrangeHRM login page loads</b><div class=\"stl\"><div><b>1.</b> Open the OrangeHRM demo login URL.</div><div><b>2.</b> Wait for the page to load.</div><div><b>3.</b> Confirm that the Username field, the Password field and the Login button are visible.</div></div>",
+    "tip": "<b>Expected result:</b> all three controls are displayed."
+   },
+   {
+    "t": "What the results mean",
+    "d": "<div class=\"stl\"><div><span class=\"tag t\">Passed</span> The AI completed the step and its check passed.</div><div><span class=\"tag\" style=\"background:#fde8e8;color:#b42318\">Failed</span> A step or expected result did not pass. Read the AI Verdict and the AI Log.</div><div><span class=\"tag a\">Needs input</span> The AI is waiting for your instruction. Give it the guidance it asks for.</div><div><span class=\"tag\" style=\"background:var(--br);color:var(--mu)\">Run failure</span> The AI service, your quota or the tunnel may have failed. Find the cause before you run again.</div></div>"
+   }
+  ],
+  "parts": [
+   {
+    "t": "Create a manual test run",
+    "s": "A test run is a copy of your tests that is ready to be executed.",
+    "steps": [
+     {
+      "t": "Open Executions",
+      "d": "In your TestOps project, go to <b>Executions</b>. Click <b>+ Create</b>, then choose <b>Create Manual Test Run</b>.",
+      "img": "l7_1",
+      "cap": "Executions ▸ History, with the Create menu open. This screenshot comes from an example project, so your names will be different."
+     },
+     {
+      "t": "Select your tests",
+      "d": "Type a name for the run, such as <b>OrangeHRM_Login_AI_Run</b>. Click <b>Select Tests</b>, then choose the Login Test Suite from Lesson 6 and click <b>Save</b>.",
+      "img": "l7_2",
+      "cap": "The Create Manual Test Run page. Click Select Tests. This screenshot comes from an example project, so your names will be different.",
+      "img2": "l7_3",
+      "cap2": "The Select Tests window. Add your suite with the + button, then Save. This screenshot comes from an example project, so your names will be different."
+     },
+     {
+      "t": "Choose a configuration",
+      "d": "Click <b>Select Configuration</b> and pick the testing environment, such as an operating system and browser.",
+      "warn": "If the test needs a login, add it under <b>Secrets &amp; Variables</b>. Never write passwords inside test steps.",
+      "img": "l7_4",
+      "cap": "The Select Configurations window with Windows, Chrome and a version. This screenshot comes from an example project, so your names will be different."
+     },
+     {
+      "t": "Create the run",
+      "d": "Click <b>Create Test Run</b>. On the test run page, click <b>Run with AI</b>.",
+      "img": "l7_5",
+      "cap": "A new test run. The Run with AI button is at the top right. This screenshot comes from an example project, so your names will be different."
+     }
+    ]
+   },
+   {
+    "t": "Run with AI and check the results",
+    "s": "Now let the AI do the work, and watch what it does.",
+    "steps": [
+     {
+      "t": "Choose the AI environment",
+      "d": "In the <b>Run with AI</b> window, choose the <b>Environment</b>: the operating system, the browser and its version. Then click the start button.",
+      "note": "Which options you see depends on your TestCloud license. The start button may be named <b>Start AI Execution</b> or <b>Create New and Run Now</b>. If the AI uses a different environment than your run, it makes a copy and your original run stays as it is.",
+      "img": "l7_6",
+      "cap": "The Run with AI window. This screenshot comes from an example project, so your names will be different."
+     },
+     {
+      "t": "Watch the run",
+      "d": "Open the <b>AI Sessions</b> tab. Watch the <b>Test Steps</b> tab and the <b>AI Log</b>. If the AI asks for help, type your guidance in <b>Your Instruction</b> and submit it.",
+      "img": "l7_7",
+      "cap": "AI Sessions: each step shows its status. The video and screenshots are on the right. This screenshot comes from an example project, so your names will be different."
+     },
+     {
+      "t": "Review the evidence",
+      "d": "When the run ends, check each test step and its Passed or Failed result. Look at the <b>Screenshots</b>, the <b>AI Log</b> and the <b>Video</b>, when available.",
+      "note": "AI runs on Windows may not have a video."
+     },
+     {
+      "t": "Finish and review",
+      "d": "If a <b>Review Now</b> message appears, review the pending results. The run ends by itself when it is done. If you stop it early, use <b>End Test Run</b>. Then read the final test run summary."
+     }
+    ]
+   }
+  ],
+  "concepts": [
+   [
+    "Test Run",
+    "One go at running a set of tests."
+   ],
+   [
+    "Run with AI",
+    "The AI follows your manual steps in a real browser."
+   ],
+   [
+    "AI Session",
+    "One AI run of one test case, shown in its own tab."
+   ],
+   [
+    "AI Log",
+    "A written record of what the AI did and thought."
+   ],
+   [
+    "Evidence",
+    "Screenshots, logs and video that prove the result."
+   ],
+   [
+    "Secrets & Variables",
+    "The safe place to keep logins and values."
+   ]
+  ],
+  "help": [
+   [
+    "Run with AI is not available",
+    "Ask your project admin to check your permissions, the AI services and your license entitlements."
+   ],
+   [
+    "The environment I want is missing",
+    "Choose an operating system, browser and version that the environment list shows."
+   ],
+   [
+    "The application cannot be reached",
+    "Check the URL. A private application may need an active Katalon Tunnel."
+   ],
+   [
+    "The AI run fails",
+    "Read the <b>AI Verdict</b>, fix the cause it reports, and use <b>Rerun</b> if that makes sense."
+   ]
+  ],
+  "check": [
+   "I created one manual test run using the Lesson 6 Test Suite",
+   "I ran it with AI",
+   "I found the AI Sessions tab and checked the step results",
+   "I looked at a screenshot or the AI Log and can explain the final status"
+  ],
+  "done": [
+   "I can create a manual test run",
+   "I can start Run with AI and watch it run",
+   "I can explain the result using the evidence"
+  ],
+  "res": [
+   [
+    "Manual Test Run and Run with AI",
+    "https://docs.katalon.com/katalon-platform/execute/manual-executions/create-a-manual-test-run"
+   ],
+   [
+    "Katalon AI Assistant",
+    "https://docs.katalon.com/katalon-platform/katalon-ai-assistant"
+   ]
+  ],
+  "next": "Screen labels may differ between TestOps Legacy and Katalon True Platform. Remember: always compare the AI verdict with the expected result."
+ },
+ "Custom Keywords in Katalon Studio": {
+  "sum": "Write a reusable keyword once, then use it in any test case.",
+  "intro": "Imagine writing the same check in 20 different tests. Then the page changes, and you must fix all 20! A Custom Keyword solves this. You write the check once, give it a name, and call it wherever you need it. In this lesson you will build a keyword that checks the text of a heading, and use it in a real test.",
+  "meta": [
+   "🟡 Intermediate",
+   "⏱ 30–45 minutes",
+   "👨‍💻 Groovy code (copy and paste)"
+  ],
+  "links": [
+   [
+    "Practice site: CURA ↗",
+    "https://katalon-demo-cura.herokuapp.com/"
+   ],
+   [
+    "Official guide ↗",
+    "https://docs.katalon.com/katalon-studio/keywords/custom-keywords"
+   ]
+  ],
+  "obj": [
+   "Understand why Custom Keywords are useful",
+   "Create a reusable text check using Groovy",
+   "Use the keyword in a local Web UI test case",
+   "Read Passed and Failed results in the Log Viewer"
+  ],
+  "need": [
+   "Katalon Studio installed, with your training Web project open",
+   "A saved test case, and a captured Test Object for a text element you can see. <a href=\"/lessons/find?t=Recording%20a%20Manual%20Test\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Need these? See Lesson 2</a>",
+   "The practice site: <b>https://katalon-demo-cura.herokuapp.com/</b>. Its home page heading says <b>CURA Healthcare Service</b>."
+  ],
+  "info": [
+   {
+    "t": "What is a Custom Keyword?",
+    "d": "A Custom Keyword is a <b>reusable piece of Groovy code</b>. Instead of writing the same check in many test cases, you create it once and call it whenever you need it. Here is the plan for this lesson:<div class=\"flow\"><div><span class=\"fn\">1</span><b>Create</b>The Keywords folder</div><div><span class=\"fn\">2</span><b>Code</b>A Groovy keyword</div><div><span class=\"fn\">3</span><b>Call</b>It in a test case</div><div><span class=\"fn\">4</span><b>Run</b>In a local browser</div><div><span class=\"fn\">5</span><b>Check</b>The Log Viewer</div></div>",
+    "tip": "You will copy and paste the code, so you do not need to be a programmer. Just follow the steps carefully."
+   },
+   {
+    "t": "How does the keyword work?",
+    "d": "Our keyword is named <b>verifyTextEquals</b>. It needs two things:<div class=\"stl\"><div><b>element</b> The page element you saved earlier, like the heading.</div><div><b>expectedText</b> The text you expect to see.</div></div>It reads the text that is shown on the page and compares it with your expected text. If they are different, the test <b>fails</b>."
+   }
+  ],
+  "parts": [
+   {
+    "t": "Create the Custom Keyword",
+    "s": "You will make a keyword package, a keyword class, and add the code.",
+    "steps": [
+     {
+      "t": "Create a keyword package",
+      "d": "In Tests Explorer, right-click <b>Keywords</b>, then choose <b>New ▸ Package</b>. Type the name <b>customKeywords</b> and click <b>OK</b>. If you already have a package, you can use it.",
+      "img": "l8_1",
+      "cap": "Right-click Keywords, then New ▸ Package. This screenshot comes from an example project, so your folders will be different.",
+      "img2": "l8_2",
+      "cap2": "Name the package customKeywords."
+     },
+     {
+      "t": "Create a keyword class",
+      "d": "Right-click the <b>customKeywords</b> package, then choose <b>New ▸ Keyword</b>. Name it <b>TextAssertions</b> and click <b>OK</b>. Katalon creates a Groovy class for you.",
+      "img": "l8_3",
+      "cap": "The New Keyword window. Your Package field will show customKeywords. This screenshot comes from an example project, so your folders will be different."
+     },
+     {
+      "t": "Add the keyword code",
+      "d": "Open <b>TextAssertions.groovy</b>. Delete the sample contents and paste this code. Then save with <b>Ctrl+S</b> (or <b>Cmd+S</b> on a Mac).<pre class=\"code\">package customKeywords\n\nimport com.kms.katalon.core.annotation.Keyword\nimport com.kms.katalon.core.testobject.TestObject\nimport com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI\nimport com.kms.katalon.core.model.FailureHandling\n\nclass TextAssertions {\n    @Keyword\n    def verifyTextEquals(TestObject element, String expectedText) {\n        WebUI.verifyElementText(element, expectedText,\n            FailureHandling.STOP_ON_FAILURE)\n    }\n}</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>",
+      "img": "l8_4",
+      "cap": "The finished keyword file, TextAssertions.groovy. This screenshot comes from an example project, so your folders will be different."
+     }
+    ]
+   },
+   {
+    "t": "Use the keyword in a test case",
+    "s": "Now we will call the keyword from a test.",
+    "steps": [
+     {
+      "t": "Capture the heading",
+      "d": "Use <b>Spy Web</b> or <b>Record Web</b> to save the CURA home page heading in the Object Repository. Give it a clear name, such as <b>Page_Home/heading_CURA</b>.",
+      "warn": "Make sure the object points to the <b>heading only</b>, not the whole page.",
+      "img": "l8_5",
+      "cap": "Spy Web (Object Spy) with the CURA address, ready to capture the heading."
+     },
+     {
+      "t": "Call the keyword",
+      "d": "Open your test case and switch to <b>Script</b> view with the tab at the bottom. Use this sample:<pre class=\"code\">import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject\nimport com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI\n\nWebUI.openBrowser('')\nWebUI.navigateToUrl('https://katalon-demo-cura.herokuapp.com/')\nCustomKeywords.'customKeywords.TextAssertions.verifyTextEquals'(\n    findTestObject('Page_Home/heading_CURA'),\n    'CURA Healthcare Service'\n)\nWebUI.closeBrowser()</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>",
+      "note": "The object path is an example. Use the exact folder and name from <b>your</b> Object Repository. The expected text must match the heading exactly.",
+      "img": "l8_6",
+      "cap": "The test case in Script view, calling the custom keyword."
+     }
+    ]
+   },
+   {
+    "t": "Run and read the result",
+    "s": "Let's see the keyword pass, and then fail on purpose.",
+    "steps": [
+     {
+      "t": "Run it on your computer",
+      "d": "Save the test case, click <b>Run</b> and choose Chrome or another supported browser. Wait for the test to finish."
+     },
+     {
+      "t": "Check the Log Viewer",
+      "d": "Open the <b>Log Viewer</b>. If the heading matches, the keyword step <b>passes</b>. If it is different, the check <b>fails</b> and the test stops, because we chose <b>STOP_ON_FAILURE</b>.",
+      "tip": "Try it: change the expected text to <b>Wrong Heading</b> and run again. It should fail. Then read the failure message in the Log Viewer to see why."
+     }
+    ]
+   }
+  ],
+  "concepts": [
+   [
+    "Custom Keyword",
+    "Your own reusable action or check."
+   ],
+   [
+    "Groovy",
+    "The coding language Katalon uses."
+   ],
+   [
+    "Package",
+    "A folder that keeps your keyword files together."
+   ],
+   [
+    "Test Object",
+    "A saved page element, such as a heading."
+   ],
+   [
+    "Verification",
+    "A check that something is true."
+   ],
+   [
+    "Script view",
+    "The view where you see a test case as code."
+   ]
+  ],
+  "help": [
+   [
+    "Keyword not found",
+    "Check the package name, the class name, the <b>@Keyword</b> line and the exact way you call it. Even one wrong letter or capital will break it."
+   ],
+   [
+    "Object not found",
+    "Make sure the Test Object exists and that the <b>findTestObject</b> path matches its name."
+   ],
+   [
+    "The text does not match",
+    "Check spaces and capital letters, and check that you captured the right element."
+   ],
+   [
+    "Browser or page error",
+    "Check that your browser works with Katalon, that you are online, and that the page has loaded."
+   ]
+  ],
+  "check": [
+   "I created the TextAssertions keyword",
+   "I ran the test with the correct heading, CURA Healthcare Service, and it Passed",
+   "I changed the expected text to Wrong Heading, ran it again, and it Failed",
+   "I can explain the failure message in the Log Viewer"
+  ],
+  "done": [
+   "I can create a Custom Keyword",
+   "I can use it in a local test case",
+   "I can explain a passed and a failed text check"
+  ],
+  "res": [
+   [
+    "Katalon custom keywords documentation",
+    "https://docs.katalon.com/katalon-studio/keywords/custom-keywords"
+   ],
+   [
+    "CURA practice site",
+    "https://katalon-demo-cura.herokuapp.com/"
+   ]
+  ],
+  "next": "This lesson is for local Web UI testing in Katalon Studio. You do not need TestOps for it."
+ },
+ "Test Listeners in Katalon Studio": {
+  "sum": "Open and close the browser automatically, so you do not repeat it in every test.",
+  "intro": "Do you add \"Open Browser\" and \"Close Browser\" to every test case? That is a lot of repeating! A Test Listener does it for you. It is a small Groovy class that runs by itself before and after your test cases. In this lesson you will build one that opens the CURA website before a test and closes the browser after it.",
+  "meta": [
+   "🟡 Intermediate",
+   "⏱ 30–45 minutes",
+   "💻 Local testing · Groovy (copy and paste)"
+  ],
+  "links": [
+   [
+    "Practice site: CURA ↗",
+    "https://katalon-demo-cura.herokuapp.com/"
+   ],
+   [
+    "Official guide ↗",
+    "https://docs.katalon.com/katalon-studio/extend-katalon-studio/extension-with-plugin/test-listeners"
+   ]
+  ],
+  "obj": [
+   "Explain what a Test Listener is and when it runs",
+   "Create a listener that opens and closes the browser",
+   "Write a test case without Open Browser or Close Browser steps",
+   "Run it locally and check the Log Viewer"
+  ],
+  "need": [
+   "Katalon Studio open with your local Web testing project",
+   "A saved Web test case that checks a page element but does <b>not</b> open or close the browser itself. <a href=\"/lessons/find?t=Recording%20a%20Manual%20Test\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Need one? See Lesson 2</a>",
+   "The CURA demo website: <b>https://katalon-demo-cura.herokuapp.com/</b>"
+  ],
+  "info": [
+   {
+    "t": "What is a Test Listener?",
+    "d": "A Test Listener is a Groovy class that runs actions when a certain test event happens. These events are called <b>hooks</b>:<div class=\"stl\"><div><b>@BeforeTestCase</b> Runs before a test case starts.</div><div><b>@AfterTestCase</b> Runs after a test case ends.</div><div><b>@BeforeTestSuite</b> Runs before a test suite starts.</div><div><b>@AfterTestSuite</b> Runs after a test suite ends.</div></div>",
+    "tip": "Think of a helper who opens the door before you walk in and closes it after you leave. You never have to ask."
+   },
+   {
+    "t": "The plan for this lesson",
+    "d": "Your test case will only check the page. The listener will do the rest:<div class=\"flow\"><div><span class=\"fn\">1</span><b>Before test</b>Open the browser</div><div><span class=\"fn\">2</span><b>Test case</b>Verify the home page</div><div><span class=\"fn\">3</span><b>After test</b>Close the browser</div></div>"
+   },
+   {
+    "t": "Good to know",
+    "d": "<div class=\"stl\"><div><b>Careful</b> A listener affects <b>every</b> test case in the project. Use this one only for the Web tests it is meant for.</div><div><b>No double work</b> Do not open or close the same browser again inside the test case, or the actions can clash.</div><div><b>Mixed projects</b> If you also have API or mobile tests, add conditions, or use a separate project.</div><div><b>Keep it clean</b> Put your checks (assertions) in the test case, not in the listener.</div></div>"
+   }
+  ],
+  "scn": {
+   "t": "What should happen when you run it",
+   "pre": "You have created BrowserListener and the test case TC_Verify_CURA_Home (Part 1 and Part 2).",
+   "steps": [
+    [
+     "Before the test",
+     "The listener runs first.",
+     "The browser opens and goes to the CURA home page."
+    ],
+    [
+     "During the test",
+     "Your test case runs.",
+     "The Make Appointment button is verified."
+    ],
+    [
+     "After the test",
+     "The listener runs again.",
+     "The browser closes, even when the check fails (as long as the listener hook runs)."
+    ]
+   ],
+   "note": "Watch the screen the first time you run it. Seeing the browser open and close by itself is the best way to understand a listener."
+  },
+  "parts": [
+   {
+    "t": "Create the Test Listener",
+    "s": "You will make the listener and add the code.",
+    "steps": [
+     {
+      "t": "Create a listener",
+      "d": "In Tests Explorer, right-click <b>Test Listeners</b>, then choose <b>New ▸ Test Listener</b>. Type the name <b>BrowserListener</b> and click <b>OK</b>. Katalon creates a Groovy class for you.",
+      "img": "l9_1",
+      "cap": "Right-click Test Listeners, then New ▸ Test Listener. This screenshot comes from an example project, so your folders will be different.",
+      "img2": "l9_2",
+      "cap2": "Name it BrowserListener. You can leave the sample method boxes empty."
+     },
+     {
+      "t": "Add the Groovy code",
+      "d": "Open <b>BrowserListener.groovy</b>. Delete the sample contents and paste this code.<pre class=\"code\">import com.kms.katalon.core.annotation.BeforeTestCase\nimport com.kms.katalon.core.annotation.AfterTestCase\nimport com.kms.katalon.core.context.TestCaseContext\nimport com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI\n\nclass BrowserListener {\n    @BeforeTestCase\n    def openBrowser(TestCaseContext context) {\n        WebUI.openBrowser('')\n        WebUI.navigateToUrl('https://katalon-demo-cura.herokuapp.com/')\n    }\n\n    @AfterTestCase\n    def closeBrowser(TestCaseContext context) {\n        WebUI.closeBrowser()\n    }\n}</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>",
+      "note": "If Katalon added a <b>package</b> line at the top for your project, keep it.",
+      "img": "l9_3",
+      "cap": "The finished BrowserListener.groovy file."
+     },
+     {
+      "t": "Save the listener",
+      "d": "Press <b>Ctrl+S</b> (Windows) or <b>Cmd+S</b> (Mac). Check that the editor shows no red error marks."
+     }
+    ]
+   },
+   {
+    "t": "Create a simple test case",
+    "s": "This test will not open or close the browser. The listener does it.",
+    "steps": [
+     {
+      "t": "Create the verification",
+      "d": "Create a test case named <b>TC_Verify_CURA_Home</b>. In <b>Manual</b> view, add <b>Verify Element Present</b> for the Make Appointment button. Use the Test Object saved in your Object Repository.",
+      "warn": "Do <b>not</b> add Open Browser, Navigate To URL or Close Browser. The listener already does these.",
+      "img": "l9_4",
+      "cap": "An example test case. The red marks show the Open Browser and Close Browser steps that you should remove."
+     }
+    ]
+   },
+   {
+    "t": "Run and check the result",
+    "s": "Let's see the listener at work.",
+    "steps": [
+     {
+      "t": "Run it on your computer",
+      "d": "Select the test case, choose <b>Chrome</b> from the Run dropdown and run it. The listener opens the browser, the test checks the button, then the listener closes the browser."
+     },
+     {
+      "t": "Review the results",
+      "d": "Open the <b>Log Viewer</b>. Confirm that the test passed and that the browser opened and closed. If the check fails, look at the Test Object and the failed step."
+     }
+    ]
+   }
+  ],
+  "concepts": [
+   [
+    "Test Listener",
+    "A class that runs actions around your tests."
+   ],
+   [
+    "Hook",
+    "An event, such as before or after a test case."
+   ],
+   [
+    "@BeforeTestCase",
+    "Runs before each test case."
+   ],
+   [
+    "@AfterTestCase",
+    "Runs after each test case."
+   ],
+   [
+    "Test Object",
+    "A saved page element, such as a button."
+   ],
+   [
+    "Cleanup",
+    "Tidying up after a test, such as closing the browser."
+   ]
+  ],
+  "help": [
+   [
+    "The browser opens twice",
+    "Remove any Open Browser step from your test case. The listener already opens it."
+   ],
+   [
+    "The listener runs for tests that are not Web tests",
+    "A listener affects <b>every</b> test case in the project. Add conditions, or use a separate project for API or mobile tests."
+   ],
+   [
+    "The browser stays open after a crash",
+    "<b>@AfterTestCase</b> is a cleanup hook, but it may not run if you stop the run by force or the program crashes. Close the browser by hand."
+   ],
+   [
+    "The check fails",
+    "Look at the Test Object and the failed step in the Log Viewer. Make sure the object points to the right button."
+   ]
+  ],
+  "check": [
+   "I created BrowserListener with both annotations",
+   "I created a test case that verifies the CURA Make Appointment button",
+   "I ran the test locally and checked the Log Viewer",
+   "I can explain what @BeforeTestCase and @AfterTestCase do"
+  ],
+  "done": [
+   "I can create and save a Test Listener",
+   "I can explain when a listener runs",
+   "I can run a local test with it and fix a failed run"
+  ],
+  "res": [
+   [
+    "Katalon Test Listeners documentation",
+    "https://docs.katalon.com/katalon-studio/extend-katalon-studio/extension-with-plugin/test-listeners"
+   ],
+   [
+    "CURA practice site",
+    "https://katalon-demo-cura.herokuapp.com/"
+   ]
+  ],
+  "next": "This is a local testing lesson. You do not need TestOps for it."
+ },
+ "Checkpoints in Katalon Studio": {
+  "sum": "Save expected database results and compare them with the live data.",
+  "intro": "Sometimes data in a database changes when it should not. A Checkpoint helps you catch that. It saves the expected result of a database query. When you run your test, Katalon runs the query again and compares the new result with the saved one. In this lesson you will create a Checkpoint for one employee record.",
+  "meta": [
+   "🟡 Intermediate",
+   "⏱ 30–45 minutes",
+   "🗄 Database validation"
+  ],
+  "links": [
+   [
+    "Official docs ↗",
+    "https://docs.katalon.com/katalon-studio"
+   ]
+  ],
+  "obj": [
+   "Explain what a database Checkpoint does",
+   "Create a Checkpoint and save the expected query result",
+   "Add a Verify Checkpoint step to a test case",
+   "Understand why a comparison passes or fails"
+  ],
+  "need": [
+   "Katalon Studio installed with a training project open",
+   "<b>Read-only</b> access to a <b>training</b> database and its connection details: host, port, database name, username and password",
+   "A suitable <b>JDBC driver</b>, if your database needs one",
+   "A sample <b>employees</b> table, or a similar table from your trainer"
+  ],
+  "info": [
+   {
+    "t": "What is a Checkpoint?",
+    "d": "A database Checkpoint stores the expected results of a database query. When the test runs, Katalon compares the current query results with those saved values. This helps you spot unexpected data changes. Here is how it works:<div class=\"flow\"><div><span class=\"fn\">1</span><b>Connect</b>Database access</div><div><span class=\"fn\">2</span><b>Query</b>Select test data</div><div><span class=\"fn\">3</span><b>Save</b>Expected values</div><div><span class=\"fn\">4</span><b>Compare</b>Actual vs expected</div><div><span class=\"fn\">5</span><b>Review</b>Pass or fail</div></div>",
+    "tip": "Use a record that does not change, so your Checkpoint stays steady."
+   }
+  ],
+  "scn": {
+   "t": "TC_DB_001_Verify_Employee_Record",
+   "pre": "Use <b>training data only</b>. Replace the example values with the real values from your own test database.",
+   "steps": [
+    [
+     "Look up employee 1001",
+     "Table: employees. Columns: employee_id, employee_name, status.",
+     "The row is <b>1001 · Maria Santos · Active</b>."
+    ]
+   ],
+   "note": "The Checkpoint will save this row as the expected result. Later, if the data changes, the check will fail."
+  },
+  "parts": [
+   {
+    "t": "Create the Checkpoint",
+    "s": "You will connect to the database, write a query and save the expected data.",
+    "steps": [
+     {
+      "t": "Open your project",
+      "d": "Start Katalon Studio and open your local training project."
+     },
+     {
+      "t": "Create a Checkpoint",
+      "d": "In Tests Explorer, right-click <b>Checkpoints</b> and choose <b>New ▸ Checkpoint</b> (the wording can change by version). Name it <b>CP_Employee_1001</b>. Set <b>Data Type</b> to <b>Database Data</b>, then click <b>Next</b>.",
+      "img": "l10_1",
+      "cap": "The Create Checkpoint window with Data Type set to Database Data. This screenshot comes from an example project, so your folders will be different."
+     },
+     {
+      "t": "Choose the database source",
+      "d": "Fill in the connection with the details from your trainer. Click <b>Test Connection</b> before you continue. The options depend on your Katalon version and JDBC driver.",
+      "note": "You can only create a Checkpoint if you have already created a <b>data file</b> that connects to your database.",
+      "img": "l10_2",
+      "cap": "Database Connection and Query Settings. The sample URLs near the bottom show how each database type looks."
+     },
+     {
+      "t": "Enter a query",
+      "d": "Use a <b>read-only</b> query like this one. Change the table and column names to match your training database.<pre class=\"code\">SELECT employee_id, employee_name, status\nFROM employees\nWHERE employee_id = 1001;</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>"
+     },
+     {
+      "t": "Save the expected data",
+      "d": "Run the query and check the values. Then save the Checkpoint.",
+      "warn": "Do not accept wrong live data as your expected result. Check the values first!"
+     }
+    ]
+   },
+   {
+    "t": "Use it in a test case",
+    "s": "Now we will check the data when the test runs.",
+    "steps": [
+     {
+      "t": "Add the Checkpoint check",
+      "d": "Open a test case. In <b>Manual</b> view or with the keyword browser, add the built-in <b>Verify Checkpoint</b> step. Then choose <b>CP_Employee_1001</b>.",
+      "note": "The exact screen can look a little different in other Katalon versions."
+     },
+     {
+      "t": "Run it on your computer",
+      "d": "Run the test case in Katalon Studio, then open the <b>Log Viewer</b> to see if the comparison passed or failed.",
+      "tip": "Try it: in a <b>copy</b> of the Checkpoint, change one expected value and run again. It should fail. Then restore the right value."
+     }
+    ]
+   },
+   {
+    "t": "Read the results",
+    "s": "What did Katalon tell you?",
+    "steps": [
+     {
+      "t": "Understand the result",
+      "d": "<div class=\"stl\"><div><b>Passed</b> The live database result matches the saved expected data.</div><div><b>Failed</b> A value, row count or comparison does not match.</div><div><b>Error</b> The query or the connection could not run correctly.</div></div>"
+     }
+    ]
+   }
+  ],
+  "concepts": [
+   [
+    "Checkpoint",
+    "Saved expected data that Katalon compares with live data."
+   ],
+   [
+    "Query",
+    "A request that asks the database for data."
+   ],
+   [
+    "JDBC driver",
+    "The file that lets Katalon talk to your database."
+   ],
+   [
+    "Data file",
+    "A saved database connection used by the Checkpoint."
+   ],
+   [
+    "Verify Checkpoint",
+    "The step that runs the comparison."
+   ],
+   [
+    "Expected data",
+    "The values you saved as correct."
+   ]
+  ],
+  "help": [
+   [
+    "Cannot connect",
+    "Check the database host, port, permissions and JDBC driver."
+   ],
+   [
+    "No rows returned",
+    "Check that the employee ID and the test data exist."
+   ],
+   [
+    "The Checkpoint failed",
+    "Compare the actual result with the saved expected values. Check for data changes and column types."
+   ],
+   [
+    "Unstable results",
+    "Use a steady training record. If the query returns many rows, sort them the same way every time."
+   ]
+  ],
+  "check": [
+   "I created CP_Employee_1001 using my training database",
+   "I saved the correct expected employee values",
+   "I added the Checkpoint check to a test case",
+   "I ran the test locally and checked the Log Viewer",
+   "I changed the expected data in a copy to see a failed comparison, then restored it"
+  ],
+  "done": [
+   "I can explain what a database Checkpoint does",
+   "I can create one and run a verification",
+   "I can tell why a comparison passes or fails"
+  ],
+  "res": [
+   [
+    "Katalon Studio documentation (search \"Database Checkpoints\" and \"Verify Checkpoint\")",
+    "https://docs.katalon.com/katalon-studio"
+   ]
+  ],
+  "next": "This lesson is about <b>database</b> Checkpoints. To check text on a web page, use the WebUI verification keywords, or the Custom Keyword from <a href=\"/lessons/find?t=Custom%20Keywords\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Lesson 8</a>."
+ },
+ "Profiles and Global Variables in Katalon Studio": {
+  "sum": "Run the same test with different settings, without editing the script.",
+  "intro": "Imagine your test opens a website. Today it uses one address. Tomorrow you need the QA site, then SIT, then PROD. Do you edit the script every time? No! You use Execution Profiles and Global Variables. You save the address once, use it in your script, and switch profiles with one click.",
+  "meta": [
+   "🟡 Intermediate",
+   "⏱ 30–45 minutes",
+   "💻 Local testing"
+  ],
+  "links": [
+   [
+    "Official guide ↗",
+    "https://docs.katalon.com/katalon-studio/data-driven-testing/global-variables-and-execution-profile"
+   ],
+   [
+    "Practice site: CURA ↗",
+    "https://katalon-demo-cura.herokuapp.com/"
+   ]
+  ],
+  "obj": [
+   "Explain Execution Profiles and Global Variables",
+   "Create default and QA profiles with a baseUrl variable",
+   "Use GlobalVariable.baseUrl in a test case",
+   "Run the same test with two profiles"
+  ],
+  "need": [
+   "Katalon Studio installed with a Web UI training project open",
+   "A saved web test case from earlier lessons",
+   "Basic knowledge of Test Cases and the Script view"
+  ],
+  "info": [
+   {
+    "t": "Simple explanation",
+    "d": "<div class=\"stl\"><div><b>Execution Profile</b> A named set of values, such as <b>default</b> or <b>QA</b>.</div><div><b>Global Variable</b> A reusable value, such as <b>baseUrl</b>, that test cases can use.</div></div>When you change the selected profile, the same script uses a different value. Here is the idea:<div class=\"flow\"><div><span class=\"fn\">1</span><b>Profile</b>default or QA</div><div><span class=\"fn\">2</span><b>Variable</b>baseUrl</div><div><span class=\"fn\">3</span><b>Test</b>WebUI.navigateToUrl(...)</div></div>",
+    "tip": "This is why we never \"hard-code\" a website address inside a script."
+   },
+   {
+    "t": "Keep secrets safe",
+    "d": "Do <b>not</b> save passwords, tokens or other secrets as plain-text Global Variables in shared repositories. Use the secure method that your team approves."
+   }
+  ],
+  "parts": [
+   {
+    "t": "Create profiles and variables",
+    "s": "You will make two profiles and give each one a baseUrl.",
+    "steps": [
+     {
+      "t": "Open Profiles",
+      "d": "In Tests Explorer, expand <b>Profiles</b>. Katalon normally gives you a <b>default</b> profile. You can add more, such as <b>QA</b>, <b>SIT</b> or <b>PROD</b>.",
+      "img": "l11_1",
+      "cap": "Right-click Profiles, then New ▸ Execution Profile. This screenshot comes from an example project, so your folders will be different."
+     },
+     {
+      "t": "Add a Global Variable",
+      "d": "Double-click <b>default</b>. Click <b>Add</b> and create a variable named <b>baseUrl</b>. Set Type to <b>String</b> and Value to <b>https://katalon-demo-cura.herokuapp.com/</b>. Save. Katalon shows text values inside single quotes.",
+      "warn": "Names are case-sensitive. The example screenshot below spells the name <b>baseURI</b>. In your project, use <b>baseUrl</b> in every profile and in your code.",
+      "img": "l11_2",
+      "cap": "The default profile with the new variable circled in red. This screenshot comes from an example project, so your folders will be different."
+     },
+     {
+      "t": "Create a QA profile",
+      "d": "Right-click <b>Profiles</b> and choose <b>New ▸ Execution Profile</b> (the menu words can change by version). Name it <b>QA</b>. Add a String variable with the same name, <b>baseUrl</b>, and the same value. Save.",
+      "img": "l11_3",
+      "cap": "The QA profile with its baseUrl variable."
+     },
+     {
+      "t": "Understand the example",
+      "d": "Both profiles use the same public demo address, so practice is safe. In a real project, <b>default</b> and <b>QA</b> usually hold <b>different</b> approved environment addresses."
+     }
+    ]
+   },
+   {
+    "t": "Use the variable in a test case",
+    "s": "Now your script reads the address from the profile.",
+    "steps": [
+     {
+      "t": "Open a Web UI test case",
+      "d": "Open an existing test case and switch to <b>Script</b> view. Add this Groovy code, or adapt the navigation step to your test.<pre class=\"code\">import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject\nimport internal.GlobalVariable\nimport com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI\n\nWebUI.openBrowser('')\ntry {\n    WebUI.navigateToUrl(GlobalVariable.baseUrl)\n    WebUI.verifyElementPresent(\n        findTestObject('Object Repository/Page_CURA/button_MakeAppointment'), 10)\n} finally {\n    WebUI.closeBrowser()\n}</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>",
+      "note": "The findTestObject path is an example. Replace it with the real path in your Object Repository. If a Test Listener already opens and closes the browser (<a href=\"/lessons/find?t=Test%20Listeners\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Lesson 9</a>), do not repeat those actions."
+     },
+     {
+      "t": "Run with default",
+      "d": "In the toolbar, choose the <b>default</b> Execution Profile, pick Chrome and click <b>Run</b>.",
+      "img": "l11_4",
+      "cap": "The Execution Profile dropdown in the toolbar, circled in red. This screenshot comes from an example project, so your folders will be different."
+     },
+     {
+      "t": "Run with QA",
+      "d": "Change the Execution Profile to <b>QA</b> and run the same test case again. You do not need to change the script."
+     }
+    ]
+   },
+   {
+    "t": "Check your results",
+    "s": "Did both runs work?",
+    "steps": [
+     {
+      "t": "Read the Log Viewer",
+      "d": "Open the <b>Log Viewer</b> after each run. Check that the navigation and the element check passed. If a test fails, look at the failed step, the selected profile and the object path."
+     }
+    ]
+   }
+  ],
+  "concepts": [
+   [
+    "Execution Profile",
+    "A named set of values, like default or QA."
+   ],
+   [
+    "Global Variable",
+    "A value that many test cases can share."
+   ],
+   [
+    "baseUrl",
+    "The variable that holds the website address."
+   ],
+   [
+    "GlobalVariable.baseUrl",
+    "How your Groovy script reads that value."
+   ],
+   [
+    "Hard-coded",
+    "A value typed straight into a script. Try to avoid it."
+   ],
+   [
+    "Environment",
+    "A place where the app runs, like QA or PROD."
+   ]
+  ],
+  "help": [
+   [
+    "No such property: baseUrl",
+    "Check that the selected profile has a variable named <b>baseUrl</b>, with the same spelling and capital letters."
+   ],
+   [
+    "The wrong website opens",
+    "Check the selected profile and the value of baseUrl."
+   ],
+   [
+    "Object not found",
+    "Replace the sample object path with the real path from your Object Repository."
+   ],
+   [
+    "The browser opens twice",
+    "Remove the extra openBrowser call if a Test Listener already opens the browser."
+   ]
+  ],
+  "check": [
+   "I created default and QA Execution Profiles",
+   "I added a String Global Variable named baseUrl to both profiles",
+   "I used GlobalVariable.baseUrl in a test case",
+   "I ran the test with both profiles and checked the Log Viewer",
+   "I can explain why profiles help avoid hard-coded environment addresses"
+  ],
+  "done": [
+   "I can create a profile and add a Global Variable",
+   "I can use it in Groovy code",
+   "I can run the same test under two profiles"
+  ],
+  "res": [
+   [
+    "Katalon: Global Variables and Execution Profiles",
+    "https://docs.katalon.com/katalon-studio/data-driven-testing/global-variables-and-execution-profile"
+   ],
+   [
+    "CURA practice site",
+    "https://katalon-demo-cura.herokuapp.com/"
+   ]
+  ],
+  "next": "This is a local testing lesson. You do not need TestOps for it."
+ },
+ "Connecting Katalon Studio to GitHub": {
+  "sum": "Save your Katalon project on GitHub safely, using a feature branch.",
+  "intro": "Your automation tests are valuable, so keep them safe and share them with your team. Git and GitHub save every version of your project, so people can work together without overwriting each other. In this advanced lesson you will connect a Katalon project to GitHub, work on a feature branch, and safely commit, push and pull your changes.",
+  "meta": [
+   "🔴 Advanced",
+   "🔀 Git and GitHub",
+   "⌨️ Terminal commands"
+  ],
+  "links": [
+   [
+    "Katalon docs ↗",
+    "https://docs.katalon.com/katalon-studio"
+   ],
+   [
+    "GitHub help ↗",
+    "https://docs.github.com/en/repositories"
+   ]
+  ],
+  "obj": [
+   "Connect a Katalon project to a GitHub repository",
+   "Create and use a feature branch",
+   "Stage, commit and push your changes safely",
+   "Pull the latest changes before new work"
+  ],
+  "need": [
+   "Katalon Studio installed, and a working automation project saved on your computer",
+   "<b>Git</b> installed. To check, open Terminal (Mac) or Command Prompt (Windows) and type <b>git --version</b>",
+   "A GitHub account with access to a repository, and permission to push to a feature branch",
+   "A <b>personal access token (PAT)</b> or an <b>SSH key</b> for signing in to GitHub. Do <b>not</b> use your GitHub password as a Git credential.",
+   "A backup of your project, or commit your current work, before you change any Git settings"
+  ],
+  "info": [
+   {
+    "t": "The big picture",
+    "d": "You work on your computer, save your work on a branch, then send it to GitHub for review:<div class=\"flow\"><div><span class=\"fn\">1</span><b>Work</b>Katalon Studio</div><div><span class=\"fn\">2</span><b>Save</b>Local Git repository</div><div><span class=\"fn\">3</span><b>Branch</b>Feature branch</div><div><span class=\"fn\">4</span><b>Push</b>GitHub remote</div></div>",
+    "tip": "<b>Local</b> means the copy on your computer. <b>Remote</b> (called <b>origin</b>) is the copy on GitHub. A <b>branch</b> is your own safe space to work, so the main branch stays clean."
+   },
+   {
+    "t": "Common Git commands",
+    "d": "<div class=\"stl\"><div><b>git status</b> See modified and untracked files.</div><div><b>git remote -v</b> Check the connected GitHub remote.</div><div><b>git switch -c feature/katalon-training</b> Create a feature branch and switch to it.</div><div><b>git add &lt;file&gt;</b> Stage a specific file.</div><div><b>git commit -m \"message\"</b> Save a version of your changes.</div><div><b>git push -u origin feature/katalon-training</b> Upload your feature branch.</div><div><b>git fetch origin</b> Get remote branch information.</div><div><b>git pull --ff-only</b> Update your branch without creating a merge commit.</div></div>",
+    "tip": "The Git menu names in Katalon Studio change between versions. Terminal commands are the reliable way to do these steps."
+   }
+  ],
+  "parts": [
+   {
+    "t": "Get ready",
+    "s": "Check your tools and prepare the repository.",
+    "steps": [
+     {
+      "t": "Prepare Git",
+      "d": "Open Terminal or Command Prompt and run this command. If Git is missing, install it from <b>git-scm.com</b> and restart Katalon Studio.<pre class=\"code\">git --version</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>"
+     },
+     {
+      "t": "Enable Git integration",
+      "d": "Open your project in Katalon Studio and look at the Git toolbar or menu. If the Git option is missing, turn on the Git integration plugin with the plugin option that your Katalon version offers."
+     },
+     {
+      "t": "Prepare the GitHub repository",
+      "d": "On <b>github.com</b>, create a <b>private</b> repository for your training project, or use the one your team gave you. Copy its HTTPS or SSH clone URL.",
+      "warn": "If your project already has Git history, do not create unrelated starter commits in the new remote."
+     }
+    ]
+   },
+   {
+    "t": "Connect the project",
+    "s": "Link your local project to the GitHub repository.",
+    "steps": [
+     {
+      "t": "Start Git (if needed)",
+      "d": "In Katalon Studio, use the Git sharing or initialization option if you can see it. Or open Terminal in your Katalon project folder and run:<pre class=\"code\">git init</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>",
+      "note": "Skip this step if your project already has a <b>.git</b> folder."
+     },
+     {
+      "t": "Add the remote",
+      "d": "In Terminal, in your project folder, run this command. Replace the text in angle brackets with your own repository URL.<pre class=\"code\">git remote add origin &lt;repository-url&gt;</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>",
+      "note": "If <b>origin</b> already exists, check it with <b>git remote -v</b>. Do not add it twice."
+     },
+     {
+      "t": "Protect sensitive files",
+      "d": "Create or check your <b>.gitignore</b> file <b>before</b> you stage anything. Leave out <b>Reports/</b>, test output, local caches, credentials, tokens and files that only belong to your computer.",
+      "warn": "Never commit real passwords in Profiles or test data."
+     }
+    ]
+   },
+   {
+    "t": "Work on a feature branch",
+    "s": "Make your changes safely, away from the main branch.",
+    "steps": [
+     {
+      "t": "Create a feature branch",
+      "d": "Run this command:<pre class=\"code\">git switch -c feature/katalon-training</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>",
+      "note": "If the branch already exists, switch to it instead. Avoid committing straight to a protected main branch."
+     },
+     {
+      "t": "Stage and commit",
+      "d": "Run <b>git status</b> to see what changed. Add only the files you mean to save, then commit them with a clear message:<pre class=\"code\">git status\ngit add &lt;specific-files&gt;\ngit commit -m \"Add Katalon training test case\"</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>",
+      "tip": "Look at the staged changes before you commit."
+     },
+     {
+      "t": "Push to GitHub",
+      "d": "Send your branch to GitHub. Sign in with your approved PAT or SSH setup when you are asked.<pre class=\"code\">git push -u origin feature/katalon-training</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>"
+     },
+     {
+      "t": "Check the upload",
+      "d": "Open your repository on GitHub in a browser. Switch to your feature branch and check that your test cases and project files are there. Create a <b>Pull Request</b> if your team needs a code review."
+     }
+    ]
+   },
+   {
+    "t": "Pull the latest changes",
+    "s": "Always update before you start new work.",
+    "steps": [
+     {
+      "t": "Update your branch",
+      "d": "Before you edit a shared branch, get the latest changes:<pre class=\"code\">git fetch origin\ngit pull --ff-only</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>",
+      "warn": "If Git cannot fast-forward, stop and talk to your team. Never force-push to a shared branch.",
+      "note": "In Katalon Studio, refresh the project after Git changes made outside of it."
+     }
+    ]
+   }
+  ],
+  "concepts": [
+   [
+    "Repository",
+    "A project folder tracked by Git."
+   ],
+   [
+    "Remote (origin)",
+    "The copy of your repository on GitHub."
+   ],
+   [
+    "Branch",
+    "Your own line of work, away from main."
+   ],
+   [
+    "Commit",
+    "A saved version of your changes."
+   ],
+   [
+    "Push",
+    "Send your commits to GitHub."
+   ],
+   [
+    "Pull Request",
+    "A request for your team to review your changes."
+   ],
+   [
+    "PAT",
+    "A personal access token used to sign in to GitHub."
+   ]
+  ],
+  "help": [
+   [
+    "Authentication failed",
+    "Use a valid PAT with the right access, or set up SSH. Also check your organization permissions."
+   ],
+   [
+    "Remote origin already exists",
+    "Run <b>git remote -v</b>. Only change the URL if the current remote is wrong."
+   ],
+   [
+    "Push rejected",
+    "Fetch the remote changes and look at the branch history. Never force-push to a shared branch without approval."
+   ],
+   [
+    "Files are missing on GitHub",
+    "Check <b>git status</b>, the branch you selected, your <b>.gitignore</b> rules, and whether the commit was pushed."
+   ],
+   [
+    "Merge conflict",
+    "Fix it together with your team, check the affected test scripts, then run the related tests again."
+   ]
+  ],
+  "check": [
+   "I confirmed Git is installed and my project is backed up",
+   "I connected the project to a private GitHub repository",
+   "I created a feature branch",
+   "I committed one Katalon test case or an approved project change",
+   "I pushed the branch and found the file on GitHub",
+   "I can explain why credentials and generated reports should not be committed"
+  ],
+  "done": [
+   "I can explain local vs remote repositories",
+   "I can create a feature branch, then stage and commit changes",
+   "I can push safely and check the changes on GitHub"
+  ],
+  "res": [
+   [
+    "Katalon documentation",
+    "https://docs.katalon.com/katalon-studio"
+   ],
+   [
+    "GitHub authentication",
+    "https://docs.github.com/en/authentication"
+   ],
+   [
+    "GitHub repositories and branches",
+    "https://docs.github.com/en/repositories"
+   ],
+   [
+    "Git reference",
+    "https://git-scm.com/docs"
+   ]
+  ],
+  "next": "Katalon Git menu labels change between Studio versions. The Terminal commands in this lesson are a reliable alternative."
+ },
+ "Run Tests Using Katalon Runtime Engine (KRE)": {
+  "sum": "Run a Test Suite from the command line and read its report, without clicking through Studio.",
+  "intro": "So far you have pressed the Run button in Katalon Studio. But what if a test must run at night, on a server, or inside a CI/CD pipeline, where nobody is clicking buttons? That is the job of the Katalon Runtime Engine (KRE). It runs your Test Suite from a single command line. In this lesson you will generate that command, run it, and read the report.",
+  "meta": [
+   "🟡 Intermediate",
+   "⏱ 30–45 minutes",
+   "💻 Local · Command line"
+  ],
+  "links": [
+   [
+    "Official KRE guide ↗",
+    "https://docs.katalon.com/katalon-studio/execute-tests/katalon-runtime-engine"
+   ]
+  ],
+  "obj": [
+   "Explain what KRE is and when to use it",
+   "Generate a KRE command from Katalon Studio",
+   "Run the command in Terminal or Command Prompt",
+   "Find the report and tell if the run passed or failed",
+   "Fix the most common run errors"
+  ],
+  "need": [
+   "A Katalon Studio project with a saved Test Suite that <b>already passes in Studio</b> (for example, <b>OrangeHRM_Login_Suite</b>). <a href=\"/lessons/find?t=Running%20Tests%20Locally\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Need a reminder? See Lesson 3</a>",
+   "KRE installed or available through your company, with the right license and account access",
+   "A supported browser installed (for example Chrome), with compatible drivers",
+   "The path to your <b>.prj</b> file and the exact path of the Test Suite"
+  ],
+  "info": [
+   {
+    "t": "What is KRE?",
+    "d": "Katalon Runtime Engine (KRE) runs Katalon tests from a <b>command line</b>. It is made for runs without a screen and without clicking, such as:<div class=\"stl\"><div><b>Unattended runs</b> Start a test and walk away.</div><div><b>Batch files</b> Run several suites one after another.</div><div><b>CI/CD pipelines</b> Let your build server run the tests for you.</div></div>A valid KRE license and activation may be required.",
+    "tip": "Studio is your workshop where you build tests. KRE is the delivery truck that runs them anywhere."
+   },
+   {
+    "t": "The plan for this lesson",
+    "d": "<div class=\"flow\"><div><span class=\"fn\">1</span><b>Check</b>Suite passes in Studio</div><div><span class=\"fn\">2</span><b>Generate</b>Copy the KRE command</div><div><span class=\"fn\">3</span><b>Run</b>Paste in Terminal</div><div><span class=\"fn\">4</span><b>Report</b>Read the result</div></div>"
+   }
+  ],
+  "scn": {
+   "t": "What should happen when you run it",
+   "pre": "Your Test Suite already passes in Katalon Studio, and you copied the KRE command.",
+   "steps": [
+    [
+     "Run the command",
+     "Paste it in Terminal or Command Prompt and press Enter.",
+     "KRE starts and prints logs and an execution status."
+    ],
+    [
+     "Wait for it to finish",
+     "Do not close the window.",
+     "The browser may open and close by itself, then the terminal shows the final status."
+    ],
+    [
+     "Open the report",
+     "Go to the <b>Reports</b> folder of your project.",
+     "You find the latest run with HTML, CSV and log files."
+    ]
+   ],
+   "note": "Run the suite in Studio first. If it fails there, it will also fail in KRE, and it is easier to fix in Studio."
+  },
+  "parts": [
+   {
+    "t": "Get your command ready",
+    "s": "You will start from a working suite and let Studio build the command for you.",
+    "steps": [
+     {
+      "t": "Open your project",
+      "d": "Open Katalon Studio and run your Test Suite once. Confirm that it passes before you move to KRE."
+     },
+     {
+      "t": "Generate the command",
+      "d": "Open the Test Suite and use the <b>Generate Command</b> option (the name and place can change between Studio versions). Choose the suite, the browser and the <b>Execution Profile</b>, then copy the command.",
+      "note": "The command from your own Studio version is the source of truth. Use the example below only to understand its parts."
+     },
+     {
+      "t": "Check the important values",
+      "d": "Read the command and confirm these parts:<div class=\"stl\"><div><b>KRE program</b> The location of katalonc (or katalonc.exe on Windows).</div><div><b>-projectPath</b> The full path to your .prj file.</div><div><b>-testSuitePath</b> The exact suite path, such as Test Suites/OrangeHRM_Login_Suite.</div><div><b>-browserType</b> The browser, such as Chrome.</div><div><b>-executionProfile</b> The profile, such as default.</div></div>Here is an example. Your paths will be different:<pre class=\"code\">katalonc -noSplash -runMode=console -projectPath=\"/path/to/OrangeHRM.prj\" -retry=0 -testSuitePath=\"Test Suites/OrangeHRM_Login_Suite\" -browserType=\"Chrome\" -executionProfile=\"default\"</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>",
+      "warn": "This is an <b>example only</b>. Replace the program and paths with your own values. Flags can change between Katalon versions."
+     }
+    ]
+   },
+   {
+    "t": "Run it and read the result",
+    "s": "Time to run your suite without opening Studio.",
+    "steps": [
+     {
+      "t": "Open Terminal or Command Prompt",
+      "d": "On a Mac, open <b>Terminal</b>. On Windows, open <b>Command Prompt</b> or <b>PowerShell</b>. Go to the KRE folder, or use the full path to the program."
+     },
+     {
+      "t": "Run the command",
+      "d": "Paste the generated command and press <b>Enter</b>. Sign in or activate your license if asked.",
+      "warn": "Never put passwords or API keys in shared documents or in Git."
+     },
+     {
+      "t": "Watch the terminal",
+      "d": "KRE runs the suite and prints its logs and status. Wait until it finishes."
+     },
+     {
+      "t": "Open the report",
+      "d": "Open the <b>Reports</b> folder of your project and find the latest suite run. Open the HTML report, and look at the CSV and log files too. If something failed, find the failed test step."
+     }
+    ]
+   }
+  ],
+  "concepts": [
+   [
+    "KRE",
+    "Katalon Runtime Engine. It runs tests from the command line."
+   ],
+   [
+    "Command line",
+    "A text window where you type commands (Terminal or Command Prompt)."
+   ],
+   [
+    "Test Suite",
+    "A group of test cases that run together."
+   ],
+   [
+    "Execution Profile",
+    "A saved set of settings, such as the website address."
+   ],
+   [
+    "CI/CD",
+    "A pipeline that builds and tests your software automatically."
+   ],
+   [
+    ".prj file",
+    "The file that opens your Katalon project."
+   ]
+  ],
+  "help": [
+   [
+    "Command not found",
+    "Use the full path to the KRE program, or go to its installation folder first."
+   ],
+   [
+    "Project or suite not found",
+    "Check the .prj path and the exact suite path. Spaces and capital letters matter."
+   ],
+   [
+    "The browser does not start",
+    "Check that the browser is installed and that Katalon and the browser versions work together."
+   ],
+   [
+    "License or sign-in error",
+    "Ask your Katalon administrator to check your KRE license and activation."
+   ],
+   [
+    "It fails only in KRE",
+    "Compare the Execution Profile, the browser, the environment variables, permissions and timing with your Studio run."
+   ]
+  ],
+  "check": [
+   "My suite passes in Katalon Studio",
+   "I generated a KRE command and checked every path",
+   "I ran the command in Terminal or Command Prompt",
+   "I found the report and the final result",
+   "I can explain one fix for a failed run"
+  ],
+  "done": [
+   "I can explain what KRE is and when to use it",
+   "I can generate and run a KRE command for an existing suite",
+   "I can find the report and explain the result",
+   "Result guide: <b>Passed</b> means all steps and checks worked. <b>Failed</b> means open the report and find the failed step. <b>Execution error</b> means check the paths, browser, license and logs."
+  ],
+  "res": [
+   [
+    "Katalon Runtime Engine documentation",
+    "https://docs.katalon.com/katalon-studio/execute-tests/katalon-runtime-engine"
+   ]
+  ],
+  "next": "This is a local lesson. You do not need TestOps for it."
+ },
+ "ALM Integration: Jira and TestRail": {
+  "sum": "Connect Jira to Katalon True (TestOps) and TestRail to Katalon Studio, and know where each result goes.",
+  "intro": "Real teams track requirements and bugs in tools like Jira, and test cases in tools like TestRail. These are called ALM tools. In this lesson you will learn two separate connections: Jira with Katalon True (TestOps), and TestRail Cloud with Katalon Studio. The most important idea is that these two connections are <b>separate</b>, so each one sends results to a different place.",
+  "meta": [
+   "🔴 Advanced",
+   "⏱ 45–60 minutes",
+   "☁️ Katalon True / TestOps + Katalon Studio"
+  ],
+  "links": [
+   [
+    "Jira integration guide ↗",
+    "https://docs.katalon.com/katalon-platform/integrations/alm-and-test-management/jira-integration"
+   ],
+   [
+    "TestRail in Studio ↗",
+    "https://docs.katalon.com/katalon-studio/integrations/test-management/configure-testrail-integration-in-katalon-studio"
+   ]
+  ],
+  "obj": [
+   "Connect Jira to Katalon True and synchronize requirements and defects",
+   "Set up TestRail Cloud in Katalon Studio and map a test case",
+   "Run a mapped suite and find the result",
+   "Explain which integration sends results where"
+  ],
+  "need": [
+   "A Katalon True account. You need <b>Account Admin or System Admin</b> for the account connection and <b>Project Admin</b> for the project settings",
+   "A Jira Cloud site, a Jira project and an <b>Atlassian API token without scopes</b>. The token owner needs <b>Browse Projects</b>, and <b>Create Issues</b> to create defects",
+   "Katalon Studio with an active license and the <b>TestRail Integration plugin</b>, plus a TestRail Cloud account with the API enabled",
+   "Existing test cases and a test suite to test the connection"
+  ],
+  "info": [
+   {
+    "t": "Which tool connects to which?",
+    "d": "There are three paths. Only two are supported connections:<div class=\"stl\"><div><b>Jira → Katalon True / TestOps</b> Account connection, project mapping, sync of requirements and defects, then traceability.</div><div><b>TestRail Cloud → Katalon Studio</b> Install the plugin, connect, map case IDs, run suites and upload results.</div><div><b>TestRail ↔ Katalon True / TestOps</b> <b>Not</b> a native connector in the current Katalon True catalog. Do not expect automatic sync.</div></div>",
+    "tip": "Think of two separate mailboxes. Jira results go to TestOps. TestRail results go to TestRail. One does not fill the other."
+   },
+   {
+    "t": "Where do results go?",
+    "d": "<div class=\"flow\"><div><span class=\"fn\">1</span><b>Jira work item</b>Katalon True requirements and defects</div><div><span class=\"fn\">2</span><b>Studio test suite</b>Katalon True execution report</div><div><span class=\"fn\">3</span><b>Studio test suite + plugin</b>TestRail Cloud results</div></div>"
+   },
+   {
+    "t": "Good to know",
+    "d": "<div class=\"stl\"><div><b>New screens</b> The current Katalon True screens are different from the older TestOps Legacy guides. Follow the steps in this lesson.</div><div><b>Menus</b> Exact menus can change with your permissions.</div><div><b>Secrets</b> Never put API tokens in test scripts or in shared documents.</div><div><b>Self-hosted</b> The official TestRail plugin documents TestRail Cloud, not self-hosted TestRail.</div></div>"
+   }
+  ],
+  "scn": {
+   "t": "Practice scenario: story QA-101",
+   "pre": "Use a Jira <b>test project</b> and training data only.",
+   "steps": [
+    [
+     "Sync the story",
+     "Jira story QA-101: \"User can sign in with valid credentials.\"",
+     "The story appears in Katalon True as a requirement."
+    ],
+    [
+     "Link a test",
+     "Connect your login test case to that requirement.",
+     "You can trace the requirement to its test."
+    ],
+    [
+     "Run the test",
+     "Run the test case from Katalon Studio.",
+     "The result shows in Katalon True."
+    ],
+    [
+     "Only if it really fails",
+     "Link or create a Jira defect.",
+     "Do not create a defect for a problem in the test itself."
+    ]
+   ],
+   "note": "The goal is a clear line from the requirement to the test to the result."
+  },
+  "parts": [
+   {
+    "t": "Part A: Connect Jira to Katalon True",
+    "s": "First at the account level, then at the project level.",
+    "steps": [
+     {
+      "t": "Create the account connection",
+      "d": "Sign in to Katalon True. Go to <b>Account ▸ Integrations ▸ + Create Integration</b> and choose <b>Jira</b>."
+     },
+     {
+      "t": "Enter the Jira details",
+      "d": "For Jira Cloud, enter an integration name, your Jira URL (like <b>https://yourcompany.atlassian.net</b>), the token owner email and the Atlassian API token without scopes. For Jira Data Center, use its HTTPS URL and a Data Center personal access token (PAT)."
+     },
+     {
+      "t": "Test and save",
+      "d": "Click <b>Test Connection</b>, then <b>Save</b>. Check that the integration shows <b>Active</b> in <b>Admin ▸ System ▸ Integrations</b>.",
+      "warn": "If it shows <b>Error</b>, check the URL, the token and the permissions."
+     },
+     {
+      "t": "Connect your project",
+      "d": "Open your Katalon True project, then <b>Settings ▸ Integrations</b>. Open the settings (gear icon) of the linked Jira connection. Choose the Jira project and, if you want, a board."
+     },
+     {
+      "t": "Choose what to sync",
+      "d": "Turn on <b>Pull Requirements</b> for requirements, releases and sprints, and/or <b>Bug Mapping</b> for defects. Review the priority, status, work item types and required fields, then click <b>Proceed</b>."
+     },
+     {
+      "t": "Check it worked",
+      "d": "Open the <b>requirements</b> and look for your Jira work items. Use one sample test case and one defect to confirm the trace."
+     }
+    ]
+   },
+   {
+    "t": "Part B: Connect TestRail Cloud to Katalon Studio",
+    "s": "Here the connection lives inside Katalon Studio.",
+    "steps": [
+     {
+      "t": "Turn on the TestRail API",
+      "d": "In TestRail Cloud open <b>Administration ▸ Site Settings ▸ API</b>, enable the API and save. Ask your TestRail administrator if you cannot see it."
+     },
+     {
+      "t": "Install the plugin",
+      "d": "Install the official <b>TestRail Integration</b> plugin that matches your Studio version. Restart Studio if it asks."
+     },
+     {
+      "t": "Set up the connection",
+      "d": "In Studio go to <b>Project ▸ Settings ▸ Plugins ▸ TestRail</b>. Tick <b>Enable TestRail</b>. Enter your TestRail Cloud URL, username, the credential your plugin supports and the numeric TestRail project ID."
+     },
+     {
+      "t": "Test the connection",
+      "d": "Click <b>Test Connection</b>. When it works, click <b>Apply and Close</b>."
+     },
+     {
+      "t": "Map a test case",
+      "d": "In TestRail, find the case ID (example: <b>C25</b>). In Studio open the matching test case, go to the <b>Integration</b> tab and type the number only (<b>25</b>), then save. Some Studio versions allow several IDs separated by commas or semicolons."
+     },
+     {
+      "t": "Run and check",
+      "d": "Run the mapped test case inside a Test Suite. Check the result in the TestRail test run you chose.",
+      "note": "No result? Check the project ID, the mapping and any required TestRail fields."
+     }
+    ]
+   }
+  ],
+  "concepts": [
+   [
+    "ALM",
+    "Application Lifecycle Management. Tools that track requirements, tests and bugs."
+   ],
+   [
+    "Jira",
+    "A tool for work items such as stories and bugs."
+   ],
+   [
+    "TestRail",
+    "A tool for managing test cases and test runs."
+   ],
+   [
+    "Katalon True",
+    "The Katalon platform, formerly called TestOps."
+   ],
+   [
+    "Requirement",
+    "What the software must do, such as a Jira story."
+   ],
+   [
+    "Traceability",
+    "A clear link from requirement to test to result."
+   ],
+   [
+    "API token",
+    "A secret key that lets one tool talk to another."
+   ],
+   [
+    "Case ID mapping",
+    "Linking a Studio test case to a TestRail case number."
+   ]
+  ],
+  "help": [
+   [
+    "Jira Test Connection fails",
+    "Check the Jira Cloud URL, the unscoped token with the matching email, and the permissions."
+   ],
+   [
+    "Jira issues are not visible",
+    "Check the Jira project, the Pull Requirements option, the work item and status mapping, and run the sync again."
+   ],
+   [
+    "TestRail connection fails",
+    "Check the Cloud URL, that the API is enabled, the plugin version, the credential and the numeric project ID."
+   ],
+   [
+    "TestRail results do not show",
+    "Check the case ID mapping, that you ran a test suite, the result upload settings and any required custom fields."
+   ],
+   [
+    "TestOps has results but TestRail does not",
+    "These are two separate integrations. Check the TestRail plugin settings."
+   ]
+  ],
+  "check": [
+   "My Jira connection shows Active",
+   "At least one Jira requirement is synced to Katalon True",
+   "I linked a login test case to that requirement",
+   "I set up the TestRail plugin and mapped one case ID",
+   "I ran the mapped suite and found the result",
+   "I can explain Jira to TestOps versus TestRail to Studio"
+  ],
+  "done": [
+   "I can set up and check the Jira integration in Katalon True",
+   "I can set up TestRail Cloud and map a case in Katalon Studio",
+   "I can say where each result goes"
+  ],
+  "res": [
+   [
+    "Jira integration in Katalon Platform",
+    "https://docs.katalon.com/katalon-platform/integrations/alm-and-test-management/jira-integration"
+   ],
+   [
+    "Integrations in Katalon Platform",
+    "https://docs.katalon.com/katalon-platform/integrations/integrations-in-katalon-platform"
+   ],
+   [
+    "Configure TestRail in Katalon Studio",
+    "https://docs.katalon.com/katalon-studio/integrations/test-management/configure-testrail-integration-in-katalon-studio"
+   ],
+   [
+    "Quick guide for testers",
+    "https://docs.katalon.com/katalon-studio/get-started/quick-guide-for-testers"
+   ]
+  ],
+  "next": "This lesson needs admin rights and accounts that belong to your company. Ask your trainer for a Jira test project and a TestRail test project."
+ },
+ "Android Mobile Testing in Katalon Studio": {
+  "sum": "Set up an Android Emulator, record a mobile test with Appium, add a check, run it and read the results.",
+  "intro": "Can you test an app on a phone without holding a phone? Yes! A Android Emulator lets you run a real mobile app on your computer, and Katalon Studio taps through it for you using a tool called Appium. In this lesson you will set up the Android Emulator, record a mobile test, add a check, run it and read the results. The setup takes the longest, so be patient.",
+  "meta": [
+   "🔴 Advanced",
+   "⏱ 60–90 minutes (setup can take longer)",
+   "📱 Local mobile automation · Hands-on"
+  ],
+  "links": [
+   [
+    "Mobile testing quick start ↗",
+    "https://docs.katalon.com/katalon-studio/get-started/quick-start-guide-for-mobile-testing"
+   ],
+   [
+    "Appium execution guide ↗",
+    "https://docs.katalon.com/katalon-studio/manage-projects/set-up-projects/mobile-testing/execute-mobile-tests-with-appium"
+   ]
+  ],
+  "obj": [
+   "Set up the Android Emulator",
+   "Connect it to Katalon Studio through Appium",
+   "Record a mobile test and add a check",
+   "Run the test and read the results"
+  ],
+  "need": [
+   "Katalon Studio 11.x, Node.js 20.19+ and npm 10+",
+   "<b>Android Studio</b>, the Android SDK and the Android Emulator (or a real Android phone with Developer options and USB debugging on)",
+   "Appium 3 and the <b>UiAutomator2</b> driver",
+   "The sample app <b>APIDemos.apk</b> from the Katalon sample project",
+   "Internet access and permission to install tools and SDK parts"
+  ],
+  "info": [
+   {
+    "t": "How the pieces fit together",
+    "d": "<div class=\"flow\"><div><span class=\"fn\">1</span><b>Katalon Studio</b>Runs your test</div><div><span class=\"fn\">2</span><b>Appium</b>Talks to the phone</div><div><span class=\"fn\">3</span><b>UiAutomator2</b>Android driver</div><div><span class=\"fn\">4</span><b>Android Emulator</b>Runs the app</div></div>",
+    "tip": "Katalon is the driver, Appium is the translator, and the Android Emulator is the phone that does what it is told."
+   },
+   {
+    "t": "Version note",
+    "d": "The commands here follow <b>Katalon Studio 11 and Appium 3</b>. Older Studio versions can need a different Appium and driver combination. Katalon Studio can start its own Appium process, so do <b>not</b> run a second server on the same port unless your setup needs one."
+   }
+  ],
+  "scn": {
+   "t": "Practice scenario",
+   "pre": "You will use the sample app <b>API Demos</b>. Do <b>not</b> send a message to a real phone number.",
+   "steps": [
+    [
+     "Open the app",
+     "Start API Demos.",
+     "The app list shows."
+    ],
+    [
+     "Find SMS Messaging",
+     "Go to <b>OS ▸ SMS Messaging</b>.",
+     "The SMS screen opens."
+    ],
+    [
+     "Type sample text",
+     "Enter any sample text.",
+     "The text shows in the field."
+    ],
+    [
+     "Verify",
+     "Check that the expected screen or field is visible.",
+     "Your check passes."
+    ]
+   ],
+   "note": "You are not sending any message. The test only checks that the screen and field are there."
+  },
+  "parts": [
+   {
+    "t": "Install and check Appium",
+    "s": "You will install Appium and the driver for your phone type.",
+    "steps": [
+     {
+      "t": "Check Node.js and npm",
+      "d": "Open Terminal or Command Prompt and type:<pre class=\"code\">node --version\nnpm --version</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>",
+      "note": "You need Node.js 20.19 or newer and npm 10 or newer."
+     },
+     {
+      "t": "Install Appium 3",
+      "d": "Run this command:<pre class=\"code\">npm i --location=global appium@3.0.0</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>"
+     },
+     {
+      "t": "Check Appium",
+      "d": "Run:<pre class=\"code\">appium --version\nappium driver list --installed</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>"
+     },
+     {
+      "t": "Install the driver",
+      "d": "Run this command:<pre class=\"code\">appium driver install uiautomator2@7.0.0</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>Then run <b>appium driver list --installed</b> again and confirm that your driver is listed."
+     }
+    ]
+   },
+   {
+    "t": "Prepare the Android Emulator",
+    "s": "Get your phone ready before you open Katalon.",
+    "steps": [
+     {
+      "t": "Create the emulator",
+      "d": "Open <b>Android Studio ▸ Device Manager ▸ Create Device</b>. Pick a phone and install a matching Android system image."
+     },
+     {
+      "t": "Start it",
+      "d": "Start the emulator and wait until the Android home screen shows."
+     },
+     {
+      "t": "Check the connection",
+      "d": "In Terminal or Command Prompt run <b>adb devices</b>. Your emulator should be listed with the status <b>device</b>."
+     },
+     {
+      "t": "Using a real phone instead?",
+      "d": "Turn on <b>Developer options</b> and <b>USB debugging</b>, connect the phone with a USB cable and accept the trust prompt on the phone."
+     },
+     {
+      "t": "Install the app first, if needed",
+      "d": "You can install the sample app by hand:<pre class=\"code\">adb install -r /path/to/APIDemos.apk</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>",
+      "note": "Replace the path with the real location of APIDemos.apk."
+     }
+    ]
+   },
+   {
+    "t": "Set up Katalon Studio",
+    "s": "Tell Katalon where Appium lives.",
+    "steps": [
+     {
+      "t": "Open the Mobile settings",
+      "d": "Open <b>Katalon Studio ▸ Preferences (or Settings) ▸ Katalon ▸ Mobile</b>."
+     },
+     {
+      "t": "Set the Appium Directory",
+      "d": "Choose the real Appium folder. Run <b>npm root -g</b> to find your global npm folder. The Appium folder is usually inside it."
+     },
+     {
+      "t": "Create a Mobile project",
+      "d": "Go to <b>File ▸ New ▸ Project ▸ Mobile</b>. Choose the official sample project if you can, or <b>Blank</b> and add your app file."
+     },
+     {
+      "t": "Check the device",
+      "d": "Open the <b>Run</b> dropdown and confirm that your device is listed."
+     }
+    ]
+   },
+   {
+    "t": "Record a mobile test",
+    "s": "You will let Katalon watch your taps and write the steps.",
+    "steps": [
+     {
+      "t": "Start the recorder",
+      "d": "Click <b>Record Mobile</b> (or Smart Mobile Recorder). Choose <b>Local Device</b> and select your Android Emulator."
+     },
+     {
+      "t": "Add your app",
+      "d": "Choose <b>Application File</b> and browse to <b>APIDemos.apk</b>. Click <b>Start</b>."
+     },
+     {
+      "t": "Wait for the app",
+      "d": "Wait until the app opens and its objects show in <b>Device View</b>. Use <b>Interactive Mode</b> if you see it."
+     },
+     {
+      "t": "Do the planned actions",
+      "d": "Tap and type in Device View, and check that every action shows in <b>Recorded Actions</b>."
+     },
+     {
+      "t": "Add a verification",
+      "d": "Add a check that an element exists or shows the right text. Use a stable captured object.",
+      "warn": "Do not only check that a tap happened. That does not prove the app works."
+     },
+     {
+      "t": "Replay and save",
+      "d": "Replay the steps while the recorder is open. Fix any missed action, then save the test case and the captured objects."
+     }
+    ]
+   },
+   {
+    "t": "Strengthen the check in Script view",
+    "s": "A short script makes your check clear.",
+    "steps": [
+     {
+      "t": "Add a verification script",
+      "d": "Open the <b>Script</b> tab and add this after the navigation step:<pre class=\"code\">import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject\nimport com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile\n\nMobile.verifyElementExist(findTestObject('Object Repository/Mobile/expectedElement'), 10)</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>",
+      "warn": "<b>expectedElement</b> is a placeholder. Replace it with an object you captured with Mobile Recorder.",
+      "note": "For a stronger check, use <b>verifyElementText</b> or another mobile check against the real expected result."
+     }
+    ]
+   },
+   {
+    "t": "Run and read the results",
+    "s": "See the test run on the Android Emulator.",
+    "steps": [
+     {
+      "t": "Run the test case",
+      "d": "Save it. In the <b>Run</b> dropdown choose <b>Android</b> or <b>iOS</b> and pick your device. Click <b>Run</b> and watch Katalon open the app and tap through the steps."
+     },
+     {
+      "t": "Open the Log Viewer",
+      "d": "Check <b>Passed</b> or <b>Failed</b> and find the first failing step. Look at the <b>Console</b> for Appium and driver errors."
+     },
+     {
+      "t": "Run it as a Test Suite",
+      "d": "Add the test case to a Test Suite and run the suite. Open the latest <b>Reports</b> folder to see the HTML report.",
+      "note": "If TestOps integration is on, reports upload automatically for Test Suites and Test Suite Collections, <b>not</b> for a single test case run."
+     }
+    ]
+   }
+  ],
+  "concepts": [
+   [
+    "Appium",
+    "A tool that lets Katalon control a mobile device."
+   ],
+   [
+    "Driver",
+    "The part of Appium for a phone type (UiAutomator2 for Android)."
+   ],
+   [
+    "Android Emulator",
+    "A virtual phone that runs on your computer."
+   ],
+   [
+    "Mobile Recorder",
+    "Records your taps and turns them into test steps."
+   ],
+   [
+    "Device View",
+    "The screen where you see and tap the app."
+   ],
+   [
+    "Test Object",
+    "A saved app element, such as a button."
+   ],
+   [
+    "Assertion",
+    "A check that something is true."
+   ],
+   [
+    "Log Viewer",
+    "Shows the result of every step."
+   ]
+  ],
+  "help": [
+   [
+    "Device is missing",
+    "Make sure the emulator or simulator is fully started. Check <b>adb devices</b>."
+   ],
+   [
+    "The app does not launch",
+    "Check the app type, the phone version, the file type, whether the app is installed, and the device family."
+   ],
+   [
+    "Appium or driver error",
+    "Check Appium 3, the driver version, the Appium Directory and that your Katalon version fits."
+   ],
+   [
+    "Element not found",
+    "Spy the element again, check its locator, wait for the screen to load, and handle any permission pop-ups."
+   ]
+  ],
+  "check": [
+   "My Android Emulator starts and Katalon can see it",
+   "The app installs and opens without errors",
+   "Mobile Recorder captured my planned actions",
+   "My test has at least one meaningful check",
+   "The test passes locally, and I can explain a failure",
+   "I ran a Test Suite and found its report"
+  ],
+  "done": [
+   "I can set up Appium and the right driver",
+   "I can record, check and run a mobile test",
+   "I can read the results and fix common errors"
+  ],
+  "res": [
+   [
+    "Execute mobile tests with Appium",
+    "https://docs.katalon.com/katalon-studio/manage-projects/set-up-projects/mobile-testing/execute-mobile-tests-with-appium"
+   ],
+   [
+    "Quick start guide for mobile testing",
+    "https://docs.katalon.com/katalon-studio/get-started/quick-start-guide-for-mobile-testing"
+   ],
+   [
+    "Configure the Android Emulator",
+    "https://docs.katalon.com/katalon-studio/manage-projects/set-up-projects/mobile-testing/android/mobile-configure-android-emulator"
+   ],
+   [
+    "Create and run an Android test case",
+    "https://docs.katalon.com/katalon-studio/get-started/sample-projects/mobile/mobile-create-and-run-android-test-case/"
+   ]
+  ],
+  "next": "Next, try the iOS lesson. It uses the same steps with a Mac and the iOS Simulator."
+ },
+ "iOS Mobile Testing in Katalon Studio": {
+  "sum": "Set up an iOS Simulator, record a mobile test with Appium, add a check, run it and read the results.",
+  "intro": "Can you test an app on a phone without holding a phone? Yes! A iOS Simulator lets you run a real mobile app on your computer, and Katalon Studio taps through it for you using a tool called Appium. In this lesson you will set up the iOS Simulator, record a mobile test, add a check, run it and read the results. The setup takes the longest, so be patient.",
+  "meta": [
+   "🔴 Advanced",
+   "⏱ 60–90 minutes (setup can take longer)",
+   "📱 Local mobile automation · Hands-on"
+  ],
+  "links": [
+   [
+    "Mobile testing quick start ↗",
+    "https://docs.katalon.com/katalon-studio/get-started/quick-start-guide-for-mobile-testing"
+   ],
+   [
+    "Appium execution guide ↗",
+    "https://docs.katalon.com/katalon-studio/manage-projects/set-up-projects/mobile-testing/execute-mobile-tests-with-appium"
+   ]
+  ],
+  "obj": [
+   "Set up the iOS Simulator",
+   "Connect it to Katalon Studio through Appium",
+   "Record a mobile test and add a check",
+   "Run the test and read the results"
+  ],
+  "need": [
+   "A <b>Mac</b> with a compatible <b>Xcode</b> and the Xcode command-line tools",
+   "Katalon Studio 11.x, Node.js 20.19+ and npm 10+",
+   "An iOS Simulator created in Xcode, plus Appium 3 and the <b>XCUITest</b> driver",
+   "<b>Coffee Timer.app</b> built for the iOS Simulator. Do <b>not</b> use an .ipa made for a real device",
+   "For a real iPhone instead: a compatible .ipa, a trusted device, Apple signing and provisioning, and WebDriverAgent"
+  ],
+  "info": [
+   {
+    "t": "How the pieces fit together",
+    "d": "<div class=\"flow\"><div><span class=\"fn\">1</span><b>Katalon Studio</b>Runs your test</div><div><span class=\"fn\">2</span><b>Appium</b>Talks to the phone</div><div><span class=\"fn\">3</span><b>XCUITest</b>iOS driver</div><div><span class=\"fn\">4</span><b>iOS Simulator</b>Runs the app</div></div>",
+    "tip": "Katalon is the driver, Appium is the translator, and the iOS Simulator is the phone that does what it is told."
+   },
+   {
+    "t": "Version note",
+    "d": "The commands here follow <b>Katalon Studio 11 and Appium 3</b>. Older Studio versions can need a different Appium and driver combination. Katalon Studio can start its own Appium process, so do <b>not</b> run a second server on the same port unless your setup needs one."
+   }
+  ],
+  "scn": {
+   "t": "Practice scenario",
+   "pre": "You will use the sample app <b>Coffee Timer</b>.",
+   "steps": [
+    [
+     "Open the app",
+     "Start Coffee Timer.",
+     "The tea list shows."
+    ],
+    [
+     "Pick Green Tea",
+     "Tap <b>Green Tea</b>.",
+     "The timer screen shows."
+    ],
+    [
+     "Start and stop",
+     "Tap <b>Start</b>, then <b>Stop</b>.",
+     "The timer starts and stops."
+    ],
+    [
+     "Verify",
+     "Check the timer or the Start/Stop state.",
+     "Your check passes."
+    ]
+   ],
+   "note": "Keep your check about what the user can see, such as the timer or the button state."
+  },
+  "parts": [
+   {
+    "t": "Install and check Appium",
+    "s": "You will install Appium and the driver for your phone type.",
+    "steps": [
+     {
+      "t": "Check Node.js and npm",
+      "d": "Open Terminal or Command Prompt and type:<pre class=\"code\">node --version\nnpm --version</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>",
+      "note": "You need Node.js 20.19 or newer and npm 10 or newer."
+     },
+     {
+      "t": "Install Appium 3",
+      "d": "Run this command:<pre class=\"code\">npm i --location=global appium@3.0.0</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>"
+     },
+     {
+      "t": "Check Appium",
+      "d": "Run:<pre class=\"code\">appium --version\nappium driver list --installed</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>"
+     },
+     {
+      "t": "Install the driver",
+      "d": "Run this command:<pre class=\"code\">appium driver install xcuitest@7.21.1</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>Then run <b>appium driver list --installed</b> again and confirm that your driver is listed."
+     }
+    ]
+   },
+   {
+    "t": "Prepare the iOS Simulator",
+    "s": "Get your phone ready before you open Katalon.",
+    "steps": [
+     {
+      "t": "Add a simulator runtime",
+      "d": "Open <b>Xcode ▸ Settings ▸ Platforms</b> and install a matching iOS Simulator runtime if you need one."
+     },
+     {
+      "t": "Pick or create an iPhone",
+      "d": "Open <b>Xcode ▸ Window ▸ Devices and Simulators ▸ Simulators</b> and create or choose an iPhone simulator."
+     },
+     {
+      "t": "Start it and check",
+      "d": "Launch the Simulator and wait for the home screen. Then check the devices:<pre class=\"code\">xcrun simctl list devices available</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>"
+     },
+     {
+      "t": "Get the app",
+      "d": "Get <b>Coffee Timer.app</b> from the Katalon sample project, or build it for the iOS Simulator.",
+      "warn": "A device-only .ipa does <b>not</b> work on the simulator."
+     },
+     {
+      "t": "Using a real iPhone instead?",
+      "d": "Follow the separate Katalon guides for real devices and WebDriverAgent signing."
+     }
+    ]
+   },
+   {
+    "t": "Set up Katalon Studio",
+    "s": "Tell Katalon where Appium lives.",
+    "steps": [
+     {
+      "t": "Open the Mobile settings",
+      "d": "Open <b>Katalon Studio ▸ Preferences (or Settings) ▸ Katalon ▸ Mobile</b>."
+     },
+     {
+      "t": "Set the Appium Directory",
+      "d": "Choose the real Appium folder. Run <b>npm root -g</b> to find your global npm folder. The Appium folder is usually inside it."
+     },
+     {
+      "t": "Create a Mobile project",
+      "d": "Go to <b>File ▸ New ▸ Project ▸ Mobile</b>. Choose the official sample project if you can, or <b>Blank</b> and add your app file."
+     },
+     {
+      "t": "Check the device",
+      "d": "Open the <b>Run</b> dropdown and confirm that your device is listed."
+     }
+    ]
+   },
+   {
+    "t": "Record a mobile test",
+    "s": "You will let Katalon watch your taps and write the steps.",
+    "steps": [
+     {
+      "t": "Start the recorder",
+      "d": "Click <b>Record Mobile</b> (or Smart Mobile Recorder). Choose <b>Local Device</b> and select your iOS Simulator."
+     },
+     {
+      "t": "Add your app",
+      "d": "Choose <b>Application File</b> and browse to <b>Coffee Timer.app</b>. Click <b>Start</b>."
+     },
+     {
+      "t": "Wait for the app",
+      "d": "Wait until the app opens and its objects show in <b>Device View</b>. Use <b>Interactive Mode</b> if you see it."
+     },
+     {
+      "t": "Do the planned actions",
+      "d": "Tap and type in Device View, and check that every action shows in <b>Recorded Actions</b>."
+     },
+     {
+      "t": "Add a verification",
+      "d": "Add a check that an element exists or shows the right text. Use a stable captured object.",
+      "warn": "Do not only check that a tap happened. That does not prove the app works."
+     },
+     {
+      "t": "Replay and save",
+      "d": "Replay the steps while the recorder is open. Fix any missed action, then save the test case and the captured objects."
+     }
+    ]
+   },
+   {
+    "t": "Strengthen the check in Script view",
+    "s": "A short script makes your check clear.",
+    "steps": [
+     {
+      "t": "Add a verification script",
+      "d": "Open the <b>Script</b> tab and add this after the navigation step:<pre class=\"code\">import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject\nimport com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile\n\nMobile.verifyElementExist(findTestObject('Object Repository/Mobile/expectedElement'), 10)</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>",
+      "warn": "<b>expectedElement</b> is a placeholder. Replace it with an object you captured with Mobile Recorder.",
+      "note": "For a stronger check, use <b>verifyElementText</b> or another mobile check against the real expected result."
+     }
+    ]
+   },
+   {
+    "t": "Run and read the results",
+    "s": "See the test run on the iOS Simulator.",
+    "steps": [
+     {
+      "t": "Run the test case",
+      "d": "Save it. In the <b>Run</b> dropdown choose <b>Android</b> or <b>iOS</b> and pick your device. Click <b>Run</b> and watch Katalon open the app and tap through the steps."
+     },
+     {
+      "t": "Open the Log Viewer",
+      "d": "Check <b>Passed</b> or <b>Failed</b> and find the first failing step. Look at the <b>Console</b> for Appium and driver errors."
+     },
+     {
+      "t": "Run it as a Test Suite",
+      "d": "Add the test case to a Test Suite and run the suite. Open the latest <b>Reports</b> folder to see the HTML report.",
+      "note": "If TestOps integration is on, reports upload automatically for Test Suites and Test Suite Collections, <b>not</b> for a single test case run."
+     }
+    ]
+   }
+  ],
+  "concepts": [
+   [
+    "Appium",
+    "A tool that lets Katalon control a mobile device."
+   ],
+   [
+    "Driver",
+    "The part of Appium for a phone type (XCUITest for iOS)."
+   ],
+   [
+    "iOS Simulator",
+    "A virtual phone that runs on your computer."
+   ],
+   [
+    "Mobile Recorder",
+    "Records your taps and turns them into test steps."
+   ],
+   [
+    "Device View",
+    "The screen where you see and tap the app."
+   ],
+   [
+    "Test Object",
+    "A saved app element, such as a button."
+   ],
+   [
+    "Assertion",
+    "A check that something is true."
+   ],
+   [
+    "Log Viewer",
+    "Shows the result of every step."
+   ]
+  ],
+  "help": [
+   [
+    "Device is missing",
+    "Make sure the emulator or simulator is fully started. Check <b>xcrun simctl list devices</b>."
+   ],
+   [
+    "The app does not launch",
+    "Check the app type, the phone version, the file type, whether the app is installed, and the device family."
+   ],
+   [
+    "Appium or driver error",
+    "Check Appium 3, the driver version, the Appium Directory and that your Katalon version fits."
+   ],
+   [
+    "Element not found",
+    "Spy the element again, check its locator, wait for the screen to load, and handle any permission pop-ups."
+   ],
+   [
+    "WebDriverAgent fails",
+    "On a real iPhone, check Apple signing and provisioning, the trust settings, Xcode and the WebDriverAgent setup."
+   ]
+  ],
+  "check": [
+   "My iOS Simulator starts and Katalon can see it",
+   "The app installs and opens without errors",
+   "Mobile Recorder captured my planned actions",
+   "My test has at least one meaningful check",
+   "The test passes locally, and I can explain a failure",
+   "I ran a Test Suite and found its report"
+  ],
+  "done": [
+   "I can set up Appium and the right driver",
+   "I can record, check and run a mobile test",
+   "I can read the results and fix common errors"
+  ],
+  "res": [
+   [
+    "Execute mobile tests with Appium",
+    "https://docs.katalon.com/katalon-studio/manage-projects/set-up-projects/mobile-testing/execute-mobile-tests-with-appium"
+   ],
+   [
+    "Quick start guide for mobile testing",
+    "https://docs.katalon.com/katalon-studio/get-started/quick-start-guide-for-mobile-testing"
+   ],
+   [
+    "Set up iOS simulators",
+    "https://docs.katalon.com/katalon-studio/manage-projects/set-up-projects/mobile-testing/ios/mobile-ios-setup-simulators-in-katalon-studio"
+   ],
+   [
+    "Create an iOS test case",
+    "https://docs.katalon.com/katalon-studio/tutorials/mobile-create-ios-test-case.html"
+   ],
+   [
+    "Install WebDriverAgent for iOS devices",
+    "https://docs.katalon.com/katalon-studio/docs/installing-webdriveragent-for-ios-devices.html"
+   ]
+  ],
+  "next": "iOS testing needs a Mac. If you do not have one, ask your trainer for a shared machine."
+ }
+}

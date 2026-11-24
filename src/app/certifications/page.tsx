@@ -1,5 +1,6 @@
 "use client";
 
+import PageLoading from "@/components/PageLoading";
 import Link from "next/link";
 import AppHeader from "@/components/AppHeader";
 import { CERTS } from "@/lib/certs";
@@ -8,7 +9,7 @@ import { useAppData } from "@/lib/use-app-data";
 
 export default function CertificationsPage() {
   const { data } = useAppData(false);
-  if (!data) return <main className="p-8 text-slate-500">Loading…</main>;
+  if (!data) return <PageLoading />;
   const { me } = data;
 
   return (

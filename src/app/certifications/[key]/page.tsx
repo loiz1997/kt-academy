@@ -1,5 +1,6 @@
 "use client";
 
+import PageLoading from "@/components/PageLoading";
 import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
@@ -29,7 +30,7 @@ function CertDetail() {
     if (data && !filled) { setDate(saved?.date ?? ""); setUrl(saved?.url ?? ""); setCid(saved?.cid ?? ""); setFilled(true); }
   }, [data, saved, filled]);
 
-  if (!data || !cert) return <main className="p-8 text-slate-500">Loading…</main>;
+  if (!data || !cert) return <PageLoading />;
   const { me } = data;
   const earned = !!saved?.earned;
 
@@ -98,7 +99,7 @@ function CertDetail() {
 
 export default function CertDetailPage() {
   return (
-    <Suspense fallback={<main className="p-8 text-slate-500">Loading…</main>}>
+    <Suspense fallback={<PageLoading />}>
       <CertDetail />
     </Suspense>
   );

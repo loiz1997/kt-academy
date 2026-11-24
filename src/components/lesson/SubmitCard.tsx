@@ -8,19 +8,18 @@ import type { Doc, Profile } from "@/lib/types";
 const html = (s: string) => ({ __html: s });
 const DRIVE_FOLDER = process.env.NEXT_PUBLIC_DRIVE_FOLDER_URL;
 
+const SCOLOR: Record<string, [string, string]> = { submitted: ["#92400e", "#fef3c7"], approved: ["#166534", "#dcfce7"], revise: ["#991b1b", "#fee2e2"] };
+
 const fmt = (d?: string | null) => {
   try { return new Date(d ?? "").toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }); } catch { return ""; }
 };
 
 function Step({ n, color, icon, title, children }: { n: number; color: string; icon: string; title: string; children: React.ReactNode }) {
   return (
-    <div className="flex flex-col gap-1.5 border border-slate-200 p-3.5" style={{ borderTop: `3px solid ${color}`, background: `linear-gradient(180deg, ${color}14, #fff)` }}>
-      <div className="flex items-center justify-between">
-        <span className="grid h-7 w-7 place-items-center rounded-full text-sm font-extrabold text-white" style={{ background: color }}>{n}</span>
-        <span className="text-2xl" aria-hidden="true">{icon}</span>
-      </div>
+    <div className="swt" style={{ "--c": color } as React.CSSProperties} data-testid={`submit-step-${n}`}>
+      <div className="swh"><span className="swn">{n}</span><span className="swi" aria-hidden="true">{icon}</span></div>
       <b>{title}</b>
-      <div className="text-sm text-slate-600">{children}</div>
+      {children}
     </div>
   );
 }
@@ -81,69 +80,69 @@ export default function SubmitCard({ doc, docs, me }: { doc: Doc; docs: Doc[]; m
   const st = sub ? STATUS[sub.status] : null;
 
   return (
-    <section id="sb" className="mt-4 scroll-mt-20 border border-slate-200 bg-white p-5 shadow-md" data-testid="submit-card">
-      <h2 className="text-lg font-bold">📤 Submit your work</h2>
-      <p className="text-sm text-slate-500">Done with this lesson? Send it to your instructor in 3 easy steps.</p>
+    <section id="sb" className="card sub sw scroll-mt-20" data-testid="submit-card">
+      <h2 style={{ margin: 0 }}>📤 Submit your work</h2>
+      <div className="mu">Done with this lesson? Send it to your instructor in 3 easy steps.</div>
 
       {sub && st && (
-        <div className={`mt-3 border p-3 text-sm ${sub.status === "approved" ? "border-green-200 bg-green-50" : sub.status === "revise" ? "border-amber-200 bg-amber-50" : "border-indigo-100 bg-indigo-50"}`} data-testid="submit-status-box">
-          <span className={`inline-block px-2.5 py-1 text-xs font-bold ${st.cls}`} data-testid="submit-status">{st.label}</span>{" "}
+        <div className={`tipb ${sub.status === "approved" ? "" : sub.status === "revise" ? "w" : "nt"}`} style={{ margin: "12px 0" }} data-testid="submit-status-box">
+          <span className="sch" data-testid="submit-status" style={{ color: SCOLOR[sub.status][0], background: SCOLOR[sub.status][1] }}>{st.label}</span>{" "}
           {sub.status === "approved" && sub.score != null && <b data-testid="submit-score">⭐ {sub.score}/100</b>}{" "}
-          <span className="text-slate-500">Sent {fmt(sub.updated_at ?? sub.created_at)}</span>
-          {sub.feedback && <div className="mt-2" data-testid="submit-feedback"><b>Instructor feedback:</b><br />{sub.feedback}</div>}
-          <div className="mt-1.5"><a href={sub.url} target="_blank" rel="noopener noreferrer" data-testid="submit-view-link" className="font-semibold text-indigo-600 underline">View what you sent ↗</a></div>
+          <span className="mu">Sent {fmt(sub.updated_at ?? sub.created_at)}</span>
+          {sub.feedback && <div style={{ marginTop: 8 }} data-testid="submit-feedback"><b>Instructor feedback:</b><br />{sub.feedback}</div>}
+          <div style={{ marginTop: 6 }}><a href={sub.url} target="_blank" rel="noopener noreferrer" data-testid="submit-view-link">View what you sent ↗</a></div>
         </div>
       )}
 
       {locked ? (
-        <div className="mt-3 border border-green-200 bg-green-50 p-3 text-green-800" data-testid="submit-locked">🎉 Your work is approved and locked. Great job!</div>
+        <div className="tipb" style={{ marginTop: 14 }} data-testid="submit-locked">🎉 Your work is approved and locked. Great job!</div>
       ) : (
         <>
-          <div className="mt-3 grid gap-3 md:grid-cols-3">
+          <div className="swg">
             <Step n={1} color="#6d5efc" icon="📝" title="Make one file">
-              <span dangerouslySetInnerHTML={html("Take screenshots of your test case (<b>Manual</b> and <b>Script</b> tabs) and your files. Put them all in one document.")} />
-              <div className="mt-2 flex flex-wrap items-center gap-2">
-                <span className="text-slate-500">Save it as</span>
-                <code className="break-all bg-indigo-50 px-2 py-0.5 text-[13px] font-semibold text-indigo-700" data-testid="submit-filename-hint">{name}</code>
-                <button type="button" onClick={copyName} data-testid="submit-copy-name-button" className="bg-indigo-50 px-2.5 py-1 text-xs font-semibold text-indigo-700">{copied ? "✓ Copied" : "📋 Copy"}</button>
+              <p dangerouslySetInnerHTML={html("Take screenshots of your test case (<b>Manual</b> and <b>Script</b> tabs) and your files. Put them all in one document.")} />
+              <div className="swnm">
+                <span className="mu">Save it as</span>
+                <code className="fnm" data-testid="submit-filename-hint">{name}</code>
+                <button type="button" onClick={copyName} data-testid="submit-copy-name-button" className="btn g s">{copied ? "✓ Copied" : "📋 Copy"}</button>
               </div>
-              {!me.info?.team && <div className="mt-1 text-xs text-slate-500">Pick your tribe in your Profile first.</div>}
+              {!me.info?.team && <div className="mu" style={{ fontSize: 12, marginTop: 4 }}>Pick your tribe in your Profile first.</div>}
             </Step>
             <Step n={2} color="#14a37f" icon="📁" title="Upload to Drive">
-              <span dangerouslySetInnerHTML={html("Upload your file to our Drive folder. Then right-click it, choose <b>Share</b> and <b>Copy link</b>.")} />
+              <p dangerouslySetInnerHTML={html("Upload your file to our Drive folder. Then right-click it, choose <b>Share</b> and <b>Copy link</b>.")} />
               {DRIVE_FOLDER && (
-                <div className="mt-2"><a href={DRIVE_FOLDER} target="_blank" rel="noopener noreferrer" data-testid="submit-drive-folder-link" className="inline-block bg-indigo-50 px-3 py-1.5 text-xs font-semibold text-indigo-700">Open Drive folder ↗</a></div>
+                <a href={DRIVE_FOLDER} target="_blank" rel="noopener noreferrer" data-testid="submit-drive-folder-link" className="btn g s" style={{ textDecoration: "none", display: "inline-block" }}>Open Drive folder ↗</a>
               )}
             </Step>
             <Step n={3} color="#f59e0b" icon="🔗" title="Paste the link">
-              <span dangerouslySetInnerHTML={html("Paste your link below and press <b>Submit</b>. Your instructor will review it.")} />
+              <p dangerouslySetInnerHTML={html("Paste your link below and press <b>Submit</b>. Your instructor will review it.")} />
             </Step>
           </div>
 
-          <details className="mt-3 border border-slate-200" data-testid="submit-examples">
-            <summary className="cursor-pointer p-2.5 font-semibold">💡 What should I include? See examples</summary>
-            <div className="px-3.5 pb-3 text-sm text-slate-600">
-              <p><b>For this lesson:</b> <span dangerouslySetInnerHTML={html(subHint(doc))} /></p>
-              <p className="mt-1">You can also add Groovy scripts, a zip file or an Excel sheet to the same Drive folder.</p>
+          <details className="swi2" data-testid="submit-examples">
+            <summary>💡 What should I include? See examples</summary>
+            <div className="swib">
+              <p className="mu" style={{ marginTop: 0 }}><b>For this lesson:</b> <span dangerouslySetInnerHTML={html(subHint(doc))} /></p>
+              <p className="mu">You can also add Groovy scripts, a zip file or an Excel sheet to the same Drive folder.</p>
             </div>
           </details>
 
-          <p className="mt-3 border border-amber-200 bg-amber-50 px-3 py-2 text-xs">🔒 Hide passwords, API keys and tokens before you take screenshots.</p>
+          <div className="swsec">🔒 Hide passwords, API keys and tokens before you take screenshots.</div>
 
-          <div className="mt-3 grid gap-1.5">
-            <label htmlFor="sbu" className="text-sm font-semibold">Your Google Drive link</label>
-            <input id="sbu" type="url" inputMode="url" maxLength={500} value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://drive.google.com/..." disabled={!loaded} data-testid="submit-link-input" className="w-full border border-slate-300 bg-white px-3 py-2.5 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200" />
-            <details className="border border-slate-200" open={!!note}>
-              <summary className="cursor-pointer p-2 text-sm">＋ Add a note for your instructor (optional)</summary>
-              <textarea rows={2} maxLength={500} value={note} onChange={(e) => setNote(e.target.value)} placeholder="Anything your instructor should know?" data-testid="submit-note-input" className="w-full border-t border-slate-200 p-2 outline-none" />
+          <div className="sform">
+            <label htmlFor="sbu">Your Google Drive link</label>
+            <input id="sbu" type="url" inputMode="url" maxLength={500} value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://drive.google.com/..." disabled={!loaded} data-testid="submit-link-input" />
+            <details className="swnt" open={!!note}>
+              <summary>＋ Add a note for your instructor (optional)</summary>
+              <textarea rows={2} maxLength={500} value={note} onChange={(e) => setNote(e.target.value)} placeholder="Anything your instructor should know?" data-testid="submit-note-input" />
             </details>
-            {error && <p role="alert" className="text-sm font-medium text-red-600" data-testid="submit-error">{error}</p>}
-            {ok && <p className="text-sm font-medium text-teal-700" data-testid="submit-success">{ok}</p>}
-            <div className="flex flex-wrap gap-2">
-              <button onClick={submit} disabled={busy || !loaded} data-testid="submit-button" className="bg-gradient-to-r from-indigo-600 to-teal-500 px-4 py-2.5 font-semibold text-white shadow-lg shadow-indigo-300/50 disabled:opacity-60">{sub ? "Resubmit" : "Submit my work"}</button>
-              {sub && <button onClick={cancel} disabled={busy} data-testid="submit-cancel-button" className="border border-red-300 bg-red-50 px-4 py-2.5 font-semibold text-red-700 disabled:opacity-60">🗑️ Cancel submission</button>}
+            {error && <div className="msg" role="alert" data-testid="submit-error">{error}</div>}
+            {ok && <div className="msg" style={{ color: "var(--ok)" }} data-testid="submit-success">{ok}</div>}
+            <div className="row" style={{ gap: 8, marginTop: 6 }}>
+              <button onClick={submit} disabled={busy || !loaded} data-testid="submit-button" className="btn">{busy ? "Sending…" : sub ? "Resubmit" : "Submit my work"}</button>
+              {sub && <button onClick={cancel} disabled={busy} data-testid="submit-cancel-button" className="btn d">🗑️ Cancel submission</button>}
             </div>
-            {sub && <p className="text-xs text-slate-500">Want to change something? Edit the link or note, then press Resubmit. Or cancel to delete your submission.</p>}
+            {sub && <div className="mu" style={{ fontSize: 12.5 }}>Want to change something? Edit the link or note, then press Resubmit. Or cancel to delete your submission.</div>}
           </div>
         </>
       )}

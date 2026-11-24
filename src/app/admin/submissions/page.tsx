@@ -1,8 +1,9 @@
 "use client";
 
+import PageLoading from "@/components/PageLoading";
 import { useEffect, useMemo, useState } from "react";
 import AppHeader from "@/components/AppHeader";
-import Avatar from "@/components/dashboard/Avatar";
+import Av from "@/components/dashboard/Av";
 import Kpi from "@/components/admin/Kpi";
 import { trainees, useAdminData, type AdminSub } from "@/lib/admin-data";
 import { STATUS } from "@/lib/submissions";
@@ -10,7 +11,7 @@ import { ALL_TRIBES, NOTRIBE } from "@/lib/tribes";
 import type { Doc, Profile } from "@/lib/types";
 
 const DRIVE_FOLDER = process.env.NEXT_PUBLIC_DRIVE_FOLDER_URL;
-const field = "mt-1 w-full border border-slate-300 bg-white px-3 py-2 text-slate-900";
+const SC: Record<string, [string, string]> = { submitted: ["#92400e", "#fef3c7"], approved: ["#166534", "#dcfce7"], revise: ["#991b1b", "#fee2e2"] };
 const fmt = (d?: string | null) => {
   try { return new Date(d ?? "").toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }); } catch { return ""; }
 };
@@ -42,35 +43,37 @@ function Row({ s, who, doc, no, open, onToggle, onReview }: {
     setMsg(err);
   }
 
+  const col = SC[s.status] ?? SC.submitted;
   return (
-    <div className="border border-slate-200 bg-white shadow-md" data-testid={`subs-row-${id}`}>
-      <button type="button" onClick={onToggle} aria-expanded={open} data-testid={`subs-row-toggle-${id}`} className="flex w-full flex-wrap items-center gap-x-3 gap-y-1 p-3 text-left">
-        <Avatar name={who?.name ?? "?"} size={38} src={typeof who?.info?.avatar === "string" ? who.info.avatar : null} />
-        <span className="min-w-0 flex-1 basis-40">
-          <b className="block truncate text-slate-900">{who?.name ?? "Unknown trainee"}</b>
-          <span className="text-xs text-slate-500">{String(who?.info?.team ?? NOTRIBE)}</span>
-        </span>
-        <span className="min-w-0 flex-[2] basis-48 truncate text-sm text-slate-700">{no ? `Lesson ${no} · ` : ""}{doc?.t ?? s.lesson_title ?? `Lesson ${s.lesson_id}`}</span>
-        <span className="text-xs text-slate-500">{fmt(s.updated_at || s.created_at)}</span>
-        <span className={`whitespace-nowrap px-2 py-0.5 text-xs font-semibold ${st.cls}`} data-testid={`subs-status-${id}`}>{st.label}{s.status === "approved" && s.score != null ? ` · ⭐ ${s.score}/100` : ""}</span>
-        <span aria-hidden="true" className="text-slate-400">{open ? "▴" : "▾"}</span>
-      </button>
-      {open && (
-        <div className="border-t border-slate-200 p-4">
-          <a href={s.url} target="_blank" rel="noopener noreferrer" data-testid={`subs-open-file-${id}`} className="inline-block bg-indigo-600 px-3 py-1.5 text-sm font-bold text-white shadow-md">📄 Open submitted file ↗</a>
-          {s.note && <p className="mt-3 text-sm text-slate-500"><b className="text-slate-700">Trainee note:</b> {s.note}</p>}
-          <label className="mt-3 block text-sm font-semibold text-slate-700" htmlFor={`sc_${id}`}>Score (0–100) · needed to approve</label>
-          <input id={`sc_${id}`} type="number" min={0} max={100} inputMode="numeric" value={score} onChange={(e) => setScore(e.target.value)} data-testid={`subs-score-input-${id}`} className={`${field} max-w-[140px]`} />
-          <label className="mt-3 block text-sm font-semibold text-slate-700" htmlFor={`fb_${id}`}>Your feedback</label>
-          <textarea id={`fb_${id}`} rows={3} maxLength={800} placeholder="Write what was good, or what needs to change" value={fb} onChange={(e) => setFb(e.target.value)} data-testid={`subs-feedback-input-${id}`} className={field} />
-          {msg && <p className="mt-2 text-sm font-semibold text-red-600" data-testid={`subs-message-${id}`}>{msg}</p>}
-          <div className="mt-3 flex flex-wrap gap-2">
-            <button type="button" disabled={busy} onClick={() => go("approved")} data-testid={`subs-approve-button-${id}`} className="bg-indigo-600 px-4 py-2 text-sm font-bold text-white shadow-md disabled:opacity-60">✅ Approve</button>
-            <button type="button" disabled={busy} onClick={() => go("revise")} data-testid={`subs-revise-button-${id}`} className="border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 disabled:opacity-60">🔁 Needs changes</button>
-          </div>
-          {s.reviewed_at && <p className="mt-3 text-xs text-slate-500">Last reviewed by {s.reviewed_by || "an admin"} on {fmt(s.reviewed_at)}</p>}
+    <div className={`card sbi${open ? " open" : ""}`} data-testid={`subs-row-${id}`}>
+      <div className="sh" role="button" tabIndex={0} onClick={onToggle} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onToggle(); } }} aria-expanded={open} data-testid={`subs-row-toggle-${id}`}>
+        <div className="who">
+          <Av name={who?.name ?? "?"} src={typeof who?.info?.avatar === "string" ? who.info.avatar : null} style={{ width: 38, height: 38, fontSize: 13, flex: "none" }} />
+          <div className="wn"><b>{who?.name ?? "Unknown trainee"}</b><span className="mu">{String(who?.info?.team ?? "") || "No tribe"}</span></div>
         </div>
-      )}
+        <div className="ls">{no ? `Lesson ${no} · ` : ""}{doc?.t ?? s.lesson_title ?? `Lesson ${s.lesson_id}`}</div>
+        <div className="dt mu">{fmt(s.updated_at || s.created_at)}</div>
+        <div className="stc"><span className="sch" style={{ color: col[0], background: col[1] }} data-testid={`subs-status-${id}`}>{st.label}{s.status === "approved" && s.score != null ? ` · ⭐ ${s.score}/100` : ""}</span></div>
+        <span className="chev" aria-hidden="true">▾</span>
+      </div>
+      <div className="sbd">
+        <div className="row"><a className="btn s" href={s.url} target="_blank" rel="noopener noreferrer" data-testid={`subs-open-file-${id}`} style={{ textDecoration: "none" }}>📄 Open submitted file ↗</a></div>
+        {s.note && <p className="mu" style={{ margin: "10px 0 0" }}><b>Trainee note:</b> {s.note}</p>}
+        <label htmlFor={`sc_${id}`}>Score (0–100) · needed to approve</label>
+        <div className="stp">
+          <button type="button" aria-label="Decrease score" data-testid={`subs-score-minus-${id}`} onClick={() => setScore(String(Math.max(0, (parseInt(score, 10) || 0) - 5)))}>−</button>
+          <input id={`sc_${id}`} type="number" min={0} max={100} inputMode="numeric" placeholder="0–100" value={score} onChange={(e) => setScore(e.target.value)} data-testid={`subs-score-input-${id}`} />
+          <button type="button" aria-label="Increase score" data-testid={`subs-score-plus-${id}`} onClick={() => setScore(String(Math.min(100, (parseInt(score, 10) || 0) + 5)))}>+</button>
+        </div>
+        <label htmlFor={`fb_${id}`}>Your feedback</label>
+        <textarea id={`fb_${id}`} rows={3} maxLength={800} placeholder="Write what was good, or what needs to change" value={fb} onChange={(e) => setFb(e.target.value)} data-testid={`subs-feedback-input-${id}`} />
+        <div className="msg" data-testid={`subs-message-${id}`}>{msg}</div>
+        <div className="row">
+          <button type="button" className="btn" disabled={busy} onClick={() => go("approved")} data-testid={`subs-approve-button-${id}`}>✅ Approve</button>
+          <button type="button" className="btn g" disabled={busy} onClick={() => go("revise")} data-testid={`subs-revise-button-${id}`}>🔁 Needs changes</button>
+        </div>
+        {s.reviewed_at && <p className="mu" style={{ margin: "10px 0 0" }}>Last reviewed by {s.reviewed_by || "an admin"} on {fmt(s.reviewed_at)}</p>}
+      </div>
     </div>
   );
 }
@@ -82,6 +85,12 @@ export default function AdminSubmissionsPage() {
   const [tribe, setTribe] = useState("");
   const [q, setQ] = useState("");
   const [openId, setOpenId] = useState<string | null>(null);
+  const [spin, setSpin] = useState(false);
+  async function refresh() {
+    setSpin(true);
+    await reload();
+    setTimeout(() => setSpin(false), 400);
+  }
 
   // Links from the admin dashboard can open this page already filtered (?status=submitted&q=Name).
   useEffect(() => {
@@ -97,7 +106,7 @@ export default function AdminSubmissionsPage() {
     [subs]
   );
 
-  if (!data || !users) return <main className="p-8 text-slate-500">Loading…</main>;
+  if (!data || !users) return <PageLoading />;
   const { docs } = data;
   const uOf = (s: AdminSub) => users.find((u) => String(u.id) === String(s.user_id));
   const cnt = (k: string) => sorted.filter((s) => s.status === k).length;
@@ -117,55 +126,54 @@ export default function AdminSubmissionsPage() {
   return (
     <>
       <AppHeader active="/admin/submissions" />
-      <main className="mx-auto max-w-5xl px-4 py-5">
-        <div className="mb-4 flex flex-wrap items-center gap-3">
-          <div className="min-w-[200px] flex-1">
-            <h1 className="text-2xl font-extrabold text-slate-900" data-testid="subs-title">📤 Submissions</h1>
-            <p className="text-slate-500">Review the finished tasks from your trainees</p>
+      <main>
+        <div className="row" style={{ marginBottom: 14 }}>
+          <div className="grow" style={{ flex: "1 1 220px" }}>
+            <h1 style={{ margin: 0 }} data-testid="subs-title">📤 Submissions</h1>
+            <div className="mu">Review the finished tasks from your trainees</div>
           </div>
-          {DRIVE_FOLDER && <a href={DRIVE_FOLDER} target="_blank" rel="noopener noreferrer" data-testid="subs-drive-folder-link" className="border border-slate-300 px-3 py-1.5 text-sm font-semibold text-slate-700">📁 Drive folder ↗</a>}
-          <button type="button" onClick={reload} data-testid="subs-refresh-button" className="border border-slate-300 px-3 py-1.5 text-sm font-semibold text-slate-700">↻ Refresh</button>
+          {DRIVE_FOLDER && <a className="btn g s" href={DRIVE_FOLDER} target="_blank" rel="noopener noreferrer" data-testid="subs-drive-folder-link" style={{ textDecoration: "none" }}>📁 Drive folder ↗</a>}
+          <button type="button" className="btn g s" onClick={refresh} data-testid="subs-refresh-button" title="Refresh"><span className={`rfb${spin ? " rot" : ""}`}>↻</span> Refresh</button>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-          <Kpi id="subs-kpi-all" icon="📥" tint="bg-indigo-50 text-indigo-700" label="All submissions" value={sorted.length} hint={`From ${who} trainee${who === 1 ? "" : "s"}`} />
-          <Kpi id="subs-kpi-waiting" icon="⏳" tint="bg-amber-100 text-amber-800" label="Waiting for review" value={cnt("submitted")} hint="Needs your attention" />
-          <Kpi id="subs-kpi-approved" icon="✅" tint="bg-green-100 text-green-800" label="Approved" value={cnt("approved")} hint={avgScore != null ? `Average score ${avgScore}` : "Done and dusted"} />
-          <Kpi id="subs-kpi-revise" icon="⚠️" tint="bg-red-100 text-red-800" label="Needs changes" value={cnt("revise")} hint="Sent back to trainees" />
+        <div className="kp">
+          <Kpi id="subs-kpi-all" icon="inbox" color="#6d5efc" bg="var(--pr2)" label="All submissions" value={sorted.length} hint={`From ${who} trainee(s)`} />
+          <Kpi id="subs-kpi-waiting" icon="clock" color="#d97706" bg="#fff4dc" label="Waiting for review" value={cnt("submitted")} hint="Needs your attention" />
+          <Kpi id="subs-kpi-approved" icon="check" color="#14a37f" bg="#e6f7ef" label="Approved" value={cnt("approved")} hint={avgScore != null ? `Average score ${avgScore}` : "Done and dusted"} />
+          <Kpi id="subs-kpi-revise" icon="alert" color="#dc2626" bg="#fee2e2" label="Needs changes" value={cnt("revise")} hint="Sent back to trainees" />
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-2" role="tablist" aria-label="Filter by status">
+        <div className="fchs" role="tablist" aria-label="Filter by status">
           {tabs.map(([k, l, n]) => (
-            <button key={k || "all"} type="button" role="tab" aria-selected={status === k} onClick={() => setStatus(k)} data-testid={`subs-filter-${k || "all"}`}
-              className={`border px-3 py-1.5 text-sm font-semibold ${status === k ? "border-indigo-600 bg-indigo-600 text-white" : "border-slate-300 text-slate-700"}`}>
+            <button key={k || "all"} type="button" role="tab" aria-selected={status === k} onClick={() => setStatus(k)} data-testid={`subs-filter-${k || "all"}`} className={`fch ${status === k ? "on" : ""}`}>
               {l} <b>{n}</b>
             </button>
           ))}
         </div>
 
-        <div className="my-3 flex flex-wrap gap-2">
-          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="🔍 Search trainee, lesson or tribe" data-testid="subs-search-input" aria-label="Search" className={`${field} mt-0 min-w-[200px] max-w-xs flex-1`} />
-          <select value={lesson} onChange={(e) => setLesson(e.target.value)} data-testid="subs-lesson-select" aria-label="Lesson" className={`${field} mt-0 min-w-[150px] max-w-[260px] flex-1`}>
+        <div className="row" style={{ margin: "12px 0" }}>
+          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="🔍 Search trainee, lesson or tribe" data-testid="subs-search-input" aria-label="Search" style={{ maxWidth: 300, flex: "1 1 200px" }} />
+          <select value={lesson} onChange={(e) => setLesson(e.target.value)} data-testid="subs-lesson-select" aria-label="Lesson" style={{ maxWidth: 260, flex: "1 1 160px" }}>
             <option value="">All lessons</option>
             {lessons.map(([id, t]) => <option key={id} value={id}>{t}</option>)}
           </select>
-          <select value={tribe} onChange={(e) => setTribe(e.target.value)} data-testid="subs-tribe-select" aria-label="Tribe" className={`${field} mt-0 min-w-[140px] max-w-[200px] flex-1`}>
+          <select value={tribe} onChange={(e) => setTribe(e.target.value)} data-testid="subs-tribe-select" aria-label="Tribe" style={{ maxWidth: 200, flex: "1 1 140px" }}>
             <option value="">All tribes</option>
             {ALL_TRIBES.map((t) => <option key={t}>{t}</option>)}
           </select>
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div className="sbl">
           {list.map((s) => {
             const idx = docs.findIndex((d) => d.id === Number(s.lesson_id));
             const id = String(s.id);
             return <Row key={id} s={s} who={uOf(s)} doc={docs[idx]} no={idx + 1} open={openId === id} onToggle={() => setOpenId(openId === id ? null : id)} onReview={review} />;
           })}
           {list.length === 0 && (
-            <div className="border border-slate-200 bg-white p-8 text-center shadow-md" data-testid="subs-empty">
-              <div className="text-3xl">📭</div>
-              <b className="text-slate-900">{sorted.length ? "No submissions match" : "No submissions yet"}</b>
-              <p className="text-sm text-slate-500">{sorted.length ? "Try another filter." : "When trainees submit their work, it will show up here."}</p>
+            <div className="card" style={{ textAlign: "center", padding: 30 }} data-testid="subs-empty">
+              <div style={{ fontSize: 34 }}>📭</div>
+              <b>{sorted.length ? "No submissions match" : "No submissions yet"}</b>
+              <div className="mu">{sorted.length ? "Try another filter." : "When trainees submit their work, it will show up here."}</div>
             </div>
           )}
         </div>

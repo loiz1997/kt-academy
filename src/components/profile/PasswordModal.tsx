@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
+import { DEMO } from "@/lib/demo";
 
 // Change password: first confirm the current one, then save the new one (min. 6 characters).
 export default function PasswordModal({ email, onClose }: { email: string; onClose: () => void }) {
@@ -14,6 +15,7 @@ export default function PasswordModal({ email, onClose }: { email: string; onClo
 
   async function save() {
     setError("");
+    if (DEMO) return setError("Changing the password is turned off in the demo.");
     if (!cur) return setError("Please enter your current password.");
     if (pw.length < 6) return setError("The new password needs at least 6 characters.");
     if (pw !== pw2) return setError("The two new passwords do not match.");
@@ -31,24 +33,39 @@ export default function PasswordModal({ email, onClose }: { email: string; onClo
     setTimeout(onClose, 1200);
   }
 
-  const field = "mt-1 mb-3 w-full border border-slate-300 bg-white px-3 py-2 text-slate-900";
+  const [show, setShow] = useState(false);
+  const score = [pw.length >= 6, pw.length >= 10, /[A-Z]/.test(pw) && /[a-z]/.test(pw), /\d/.test(pw), /[^A-Za-z0-9]/.test(pw)].filter(Boolean).length;
+  const bar = !pw ? [0, "transparent"] : score <= 1 ? [25, "#e5484d"] : score <= 3 ? [60, "#f59e0b"] : [100, "#16a36a"];
+  const type = show ? "text" : "password";
+  const Field = ({ id, label, value, set, tid, auto, extra }: { id: string; label: string; value: string; set: (v: string) => void; tid: string; auto: string; extra?: React.ReactNode }) => (
+    <div className="pwm-f">
+      <label htmlFor={id}>{label}</label>
+      <div className="pwm-w">
+        <input id={id} type={type} autoComplete={auto} value={value} onChange={(e) => set(e.target.value)} data-testid={tid} />
+      </div>
+      {extra}
+    </div>
+  );
   return (
-    <div className="fixed inset-0 z-50 grid place-items-center bg-black/50 p-4" data-testid="password-modal" role="dialog" aria-modal="true" aria-label="Change password">
-      <div className="max-h-[90vh] w-full max-w-md overflow-y-auto border border-slate-200 bg-white p-5 shadow-xl">
-        <h2 className="mb-3 text-xl font-extrabold text-slate-900">🔒 Change password</h2>
-        <label className="text-sm font-semibold text-slate-700" htmlFor="pw-cur">Current password</label>
-        <input id="pw-cur" type="password" autoComplete="current-password" value={cur} onChange={(e) => setCur(e.target.value)} data-testid="pw-current-input" className={field} />
-        <label className="text-sm font-semibold text-slate-700" htmlFor="pw-new">New password</label>
-        <input id="pw-new" type="password" autoComplete="new-password" value={pw} onChange={(e) => setPw(e.target.value)} data-testid="pw-new-input" className={field} />
-        <label className="text-sm font-semibold text-slate-700" htmlFor="pw-new2">Confirm new password</label>
-        <input id="pw-new2" type="password" autoComplete="new-password" value={pw2} onChange={(e) => setPw2(e.target.value)} data-testid="pw-confirm-input" className={field} />
-        {error && <p className="mb-2 text-sm font-semibold text-red-600" data-testid="pw-error">{error}</p>}
-        {ok && <p className="mb-2 text-sm font-semibold text-green-700" data-testid="pw-success">{ok}</p>}
-        <div className="mt-2 flex justify-end gap-2">
-          <button type="button" onClick={onClose} data-testid="pw-cancel-button" className="border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700">Cancel</button>
-          <button type="button" onClick={save} disabled={busy || !!ok} data-testid="pw-save-button" className="bg-indigo-600 px-4 py-2 text-sm font-bold text-white shadow-md disabled:opacity-60">
-            {busy ? "Saving…" : "Update password"}
-          </button>
+    <div className="pwm" data-testid="password-modal" role="dialog" aria-modal="true" aria-label="Change password" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+      <div className="pwm-box">
+        <div className="pwm-top">
+          <div className="pwm-ic" aria-hidden="true">🔒</div>
+          <div><h2>Change password</h2><p>Confirm your current password, then choose a new one.</p></div>
+        </div>
+        <div className="pwm-body">
+          {Field({ id: "pw-cur", label: "Current password", value: cur, set: setCur, tid: "pw-current-input", auto: "current-password" })}
+          {Field({ id: "pw-new", label: "New password", value: pw, set: setPw, tid: "pw-new-input", auto: "new-password", extra: (<><div className="pwm-str" aria-hidden="true"><i style={{ width: `${bar[0]}%`, background: String(bar[1]) }} /></div><div className="pwm-hint">At least 6 characters. Longer with numbers and symbols is stronger.</div></>) })}
+          {Field({ id: "pw-new2", label: "Confirm new password", value: pw2, set: setPw2, tid: "pw-confirm-input", auto: "new-password" })}
+          <label style={{ display: "flex", gap: 8, alignItems: "center", fontSize: 13, color: "var(--mu)", cursor: "pointer" }}>
+            <input type="checkbox" checked={show} onChange={(e) => setShow(e.target.checked)} data-testid="pw-show-toggle" /> Show passwords
+          </label>
+          {error && <p className="pwm-err" role="alert" data-testid="pw-error">{error}</p>}
+          {ok && <p className="pwm-ok" data-testid="pw-success">{ok}</p>}
+          <div className="pwm-act">
+            <button type="button" className="c" onClick={onClose} data-testid="pw-cancel-button">Cancel</button>
+            <button type="button" className="s" onClick={save} disabled={busy || !!ok} data-testid="pw-save-button">{busy ? "Saving…" : "Update password"}</button>
+          </div>
         </div>
       </div>
     </div>

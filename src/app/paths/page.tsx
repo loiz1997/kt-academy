@@ -1,5 +1,6 @@
 "use client";
 
+import PageLoading from "@/components/PageLoading";
 import Link from "next/link";
 import { useState } from "react";
 import AppHeader from "@/components/AppHeader";
@@ -10,7 +11,7 @@ import { useAppData } from "@/lib/use-app-data";
 export default function PathsPage() {
   const { data } = useAppData(false);
   const [q, setQ] = useState("");
-  if (!data) return <main className="p-8 text-slate-500">Loading…</main>;
+  if (!data) return <PageLoading />;
   const list = CERTS.filter((c) => `${c.t} ${c.s}`.toLowerCase().includes(q.toLowerCase()));
 
   return (

@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { CERTS } from "@/lib/certs";
 import { activeDocs } from "@/lib/lessons";
+import Icon from "./icons";
 import type { Doc, Profile } from "@/lib/types";
 
 type U = Profile & { created_at?: string };
@@ -51,38 +52,30 @@ function Tile({ x, labels }: { x: Series; labels: string[] }) {
   };
   const p = hover != null ? P[hover] : null;
   return (
-    <div className="border border-slate-200 bg-white p-3 shadow-sm" data-testid={`growth-tile-${x.k}`}>
-      <div className="flex items-center gap-2 text-sm">
-        <span className="grid h-7 w-7 place-items-center text-base" style={{ background: x.c + "22" }} aria-hidden="true">{x.icon}</span>
-        <span className="min-w-0 flex-1 truncate font-semibold text-slate-700">{x.l}</span>
-        <span className={`text-xs font-bold ${diff > 0 ? "text-green-700" : diff < 0 ? "text-red-600" : "text-slate-500"}`}>
-          {diff > 0 ? `▲ +${diff}${x.unit ?? ""}` : diff < 0 ? `▼ ${diff}${x.unit ?? ""}` : "– steady"}
-        </span>
+    <div className="gm" style={{ "--c": x.c } as React.CSSProperties} data-testid={`growth-tile-${x.k}`}>
+      <div className="gmh">
+        <span className="gti"><Icon name={x.icon} /></span>
+        <span className="gtl">{x.l}</span>
+        {diff > 0 ? <span className="gtd up">▲ +{diff}{x.unit ?? ""}</span> : diff < 0 ? <span className="gtd dn">▼ {diff}{x.unit ?? ""}</span> : <span className="gtd">– steady</span>}
       </div>
-      <div className="mt-1 flex items-baseline gap-2">
-        <b className="text-2xl text-slate-900" data-testid={`growth-value-${x.k}`}>{x.f(last)}</b>
-        <span className="truncate text-xs text-slate-500">{x.sub}</span>
-      </div>
-      <div className="relative mt-2 h-20 touch-pan-y" onPointerMove={pos} onPointerDown={pos} onPointerLeave={() => setHover(null)}>
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="h-full w-full" aria-hidden="true">
+      <div className="gmv"><b data-testid={`growth-value-${x.k}`}>{x.f(last)}</b><span className="mu">{x.sub}</span></div>
+      <div className="gsp" style={{ touchAction: "pan-y" }} onPointerMove={pos} onPointerDown={pos} onPointerLeave={() => setHover(null)}>
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
           <defs>
-            <linearGradient id={`gg_${x.k}`} x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id={`gcg_${x.k}`} x1="0" y1="0" x2="0" y2="1">
               <stop offset="0" stopColor={x.c} stopOpacity=".3" />
               <stop offset="1" stopColor={x.c} stopOpacity="0" />
             </linearGradient>
           </defs>
-          <path d={`${d} L100,100 L0,100Z`} fill={`url(#gg_${x.k})`} />
+          <path d={`${d} L100,100 L0,100Z`} fill={`url(#gcg_${x.k})`} />
           <path d={d} fill="none" stroke={x.c} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
         </svg>
+        <i className="gse" style={{ left: `${P[n - 1][0]}%`, top: `${P[n - 1][1]}%`, "--c": x.c } as React.CSSProperties} />
         {p && (
           <>
-            <i className="pointer-events-none absolute top-0 bottom-0 w-px bg-slate-300" style={{ left: `${p[0]}%` }} />
-            <i className="pointer-events-none absolute h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white" style={{ left: `${p[0]}%`, top: `${p[1]}%`, background: x.c }} />
-            <div
-              data-testid={`growth-tooltip-${x.k}`}
-              className="pointer-events-none absolute top-0 whitespace-nowrap border border-slate-200 bg-white px-2 py-1 text-xs text-slate-700 shadow-md"
-              style={{ left: `${p[0]}%`, transform: p[0] > 60 ? "translateX(calc(-100% - 6px))" : "translateX(6px)" }}
-            >
+            <i className="gsx" style={{ display: "block", left: `${p[0]}%` }} />
+            <i className="gsd" style={{ display: "block", left: `${p[0]}%`, top: `${p[1]}%`, background: x.c }} />
+            <div className="gst" data-testid={`growth-tooltip-${x.k}`} style={{ display: "block", left: `${p[0]}%`, transform: p[0] > 60 ? "translateX(calc(-100% - 6px))" : "translateX(6px)" }}>
               {hover === n - 1 ? "Today" : labels[hover!]} · <b>{x.f(x.v[hover!])}</b>
             </div>
           </>
@@ -117,33 +110,31 @@ export default function GrowthCard({ trainees, docs }: { trainees: U[]; docs: Do
     const holders = trainees.filter((u) => CERTS.some((k) => u.certs?.[k.k]?.earned)).length;
     const s = (n: number) => (n === 1 ? "" : "s");
     const series: Series[] = [
-      { k: "trainees", l: "Trainees", c: "#6d5efc", v: cnt, icon: "👥", sub: `${started} started learning`, f: (v) => String(v) },
-      { k: "progress", l: "Average progress", c: "#14a37f", v: prog, icon: "📈", sub: "Lessons and certificates", f: (v) => v + "%", unit: " pts" },
-      { k: "lessons", l: "Lessons completed", c: "#f59e0b", v: les, icon: "📚", sub: `across ${A.length} lesson${s(A.length)}`, f: (v) => String(v) },
-      { k: "certs", l: "Certificates", c: "#ec4899", v: cer, icon: "🏅", sub: `${holders} trainee${s(holders)} certified`, f: (v) => String(v) },
+      { k: "trainees", l: "Trainees", c: "#6d5efc", v: cnt, icon: "users", sub: `${started} started learning`, f: (v) => String(v) },
+      { k: "progress", l: "Average progress", c: "#14a37f", v: prog, icon: "trend", sub: "Lessons and certificates", f: (v) => v + "%", unit: " pts" },
+      { k: "lessons", l: "Lessons completed", c: "#f59e0b", v: les, icon: "book", sub: `across ${A.length} lesson${s(A.length)}`, f: (v) => String(v) },
+      { k: "certs", l: "Certificates", c: "#ec4899", v: cer, icon: "award", sub: `${holders} trainee${s(holders)} certified`, f: (v) => String(v) },
     ];
     return { labels: T.map((t) => new Date(t).toLocaleDateString(undefined, { month: "short", day: "numeric" })), series };
   }, [trainees, docs, weeks]);
 
   return (
-    <section className="border border-slate-200 bg-white p-5 shadow-md" data-testid="growth-card">
-      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+    <section className="card cc gcard" data-testid="growth-card">
+      <div className="ch">
         <div>
-          <h2 className="text-lg font-bold text-slate-900">📈 Academy growth</h2>
-          <p className="text-sm text-slate-500">Weekly snapshots · hover or tap a line</p>
+          <h3>📈 Academy growth</h3>
+          <div className="mu">Weekly snapshots · hover or tap a line</div>
         </div>
-        <div className="flex gap-1.5">
+        <div className="gcr">
           {[8, 12, 26].map((n) => (
-            <button key={n} type="button" onClick={() => setWeeks(n)} aria-pressed={weeks === n} data-testid={`growth-range-${n}`}
-              className={`border px-2.5 py-1 text-sm font-semibold ${weeks === n ? "border-indigo-600 bg-indigo-600 text-white" : "border-slate-300 text-slate-700"}`}>
-              {n}w
-            </button>
+            <button key={n} type="button" onClick={() => setWeeks(n)} aria-pressed={weeks === n} data-testid={`growth-range-${n}`} className={`fch ${weeks === n ? "on" : ""}`}>{n}w</button>
           ))}
         </div>
       </div>
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="gct">
         {series.map((x) => <Tile key={x.k + weeks} x={x} labels={labels} />)}
       </div>
+      <div className="mu gcn">Each line has its own scale. History before dates were tracked starts flat.</div>
     </section>
   );
 }

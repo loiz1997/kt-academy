@@ -1,27 +1,26 @@
 "use client";
 
+import PageLoading from "@/components/PageLoading";
 import Link from "next/link";
 import { useState } from "react";
 import AppHeader from "@/components/AppHeader";
-import Avatar from "@/components/dashboard/Avatar";
+import Av from "@/components/dashboard/Av";
 import { trainees as onlyTrainees, useAdminData } from "@/lib/admin-data";
 import { CERTS } from "@/lib/certs";
 import { certsEarned, overallProgress } from "@/lib/progress";
 import { ALL_TRIBES } from "@/lib/tribes";
 import type { Profile } from "@/lib/types";
 
-const field = "border border-slate-300 bg-white px-3 py-2 text-slate-900";
 const C = 2 * Math.PI * 29;
+const av = (u: Profile) => (typeof u.info?.avatar === "string" ? u.info.avatar : null);
 
 function Menu({ u, onRole, onRemove }: { u: Profile; onRole: () => void; onRemove: () => void }) {
   return (
-    <details className="relative" data-testid={`trainee-menu-${u.id}`}>
-      <summary aria-label="More actions" title="More actions" className="grid h-8 w-8 cursor-pointer list-none place-items-center border border-slate-200 text-lg text-slate-600">⋯</summary>
-      <div className="absolute right-0 z-20 mt-1 flex w-40 flex-col border border-slate-200 bg-white shadow-lg">
-        <button type="button" onClick={onRole} data-testid={`trainee-${u.role === "admin" ? "make-user" : "make-admin"}-${u.id}`} className="px-3 py-2 text-left text-sm font-semibold text-slate-700 hover:bg-slate-100">
-          Make {u.role === "admin" ? "user" : "admin"}
-        </button>
-        <button type="button" onClick={onRemove} data-testid={`trainee-remove-${u.id}`} className="px-3 py-2 text-left text-sm font-semibold text-red-600 hover:bg-slate-100">Remove</button>
+    <details className="tmn" data-testid={`trainee-menu-${u.id}`}>
+      <summary aria-label="More actions" title="More actions">⋯</summary>
+      <div className="tmb">
+        <button type="button" onClick={onRole} data-testid={`trainee-${u.role === "admin" ? "make-user" : "make-admin"}-${u.id}`}>Make {u.role === "admin" ? "user" : "admin"}</button>
+        <button type="button" className="dg" onClick={onRemove} data-testid={`trainee-remove-${u.id}`}>Remove</button>
       </div>
     </details>
   );
@@ -32,8 +31,9 @@ export default function TraineesPage() {
   const [q, setQ] = useState("");
   const [tf, setTf] = useState("");
   const [msg, setMsg] = useState("");
+  const [spin, setSpin] = useState(false);
 
-  if (!data) return <main className="p-8 text-slate-500">Loading…</main>;
+  if (!data) return <PageLoading />;
   const { me, docs, users } = data;
   const tribe = (u: Profile) => (u.role === "admin" ? "Admin" : String(u.info?.team ?? ""));
   const ql = q.trim().toLowerCase();
@@ -56,73 +56,84 @@ export default function TraineesPage() {
     setMsg(await removeUser(u.id));
   }
 
+  async function refresh() {
+    setSpin(true);
+    await reload();
+    setTimeout(() => setSpin(false), 400);
+  }
+
   return (
     <>
       <AppHeader active="/admin/trainees" />
-      <main className="mx-auto max-w-5xl px-4 py-5">
-        <div className="mb-4 flex flex-wrap items-center gap-3">
-          <div className="min-w-[200px] flex-1">
-            <h1 className="text-2xl font-extrabold text-slate-900" data-testid="trainees-title">🎓 Trainees &amp; Certificates</h1>
-            <p className="text-slate-500" data-testid="trainees-summary">{tr.length} trainee{s(tr.length)} · {holders} certified · {total} certificate{s(total)} earned</p>
+      <main>
+        <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true"><defs><linearGradient id="tg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#6d5efc" /><stop offset="1" stopColor="#14c8b4" /></linearGradient></defs></svg>
+        <section className="phd">
+          <div className="grow">
+            <h1 data-testid="trainees-title">🎓 Trainees &amp; Certificates</h1>
+            <p className="mu" data-testid="trainees-summary">{tr.length} trainee{s(tr.length)} · {holders} certified · {total} certificate{s(total)} earned</p>
           </div>
-          <button type="button" onClick={reload} data-testid="trainees-refresh-button" className="border border-slate-300 px-3 py-1.5 text-sm font-semibold text-slate-700">↻ Refresh</button>
-        </div>
+          <button type="button" className="btn g s" onClick={refresh} data-testid="trainees-refresh-button" aria-label="Refresh" title="Refresh trainees and progress"><span className={`rfb${spin ? " rot" : ""}`}>↻</span> Refresh</button>
+        </section>
 
-        <div className="mb-4 flex flex-wrap gap-2">
-          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="🔍 Search name, email or tribe" aria-label="Search" data-testid="trainees-search-input" className={`${field} min-w-[200px] max-w-sm flex-1`} />
-          <select value={tf} onChange={(e) => setTf(e.target.value)} aria-label="Filter by tribe" data-testid="trainees-tribe-select" className={`${field} min-w-[150px] max-w-[220px] flex-1`}>
+        <div className="row pfl">
+          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="🔍 Search name, email or tribe" aria-label="Search" data-testid="trainees-search-input" />
+          <select value={tf} onChange={(e) => setTf(e.target.value)} aria-label="Filter by tribe" data-testid="trainees-tribe-select">
             <option value="">All tribes</option>
             {["Admin", ...ALL_TRIBES].map((t) => <option key={t}>{t}</option>)}
             <option value="__none">Not selected yet</option>
           </select>
         </div>
-        {msg && <p className="mb-3 text-sm font-semibold text-red-600" data-testid="trainees-error">{msg}</p>}
+        {msg && <p className="msg" style={{ color: "var(--dn)", fontWeight: 600 }} data-testid="trainees-error">{msg}</p>}
 
         {list.length ? (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="tgd">
             {list.map((u) => {
               const p = overallProgress(u, docs);
               const n = certsEarned(u);
               return (
-                <article key={u.id} data-testid={`trainee-card-${u.id}`} className="border border-slate-200 bg-white p-4 shadow-md" style={n === CERTS.length ? { borderTop: "4px solid #f5b301" } : undefined}>
-                  <div className="flex items-center gap-3">
-                    <div className="relative h-14 w-14 shrink-0">
-                      <svg viewBox="0 0 64 64" className="absolute inset-0" aria-hidden="true">
-                        <circle cx="32" cy="32" r="29" fill="none" stroke="rgba(80,90,150,.2)" strokeWidth="4" />
-                        <circle cx="32" cy="32" r="29" fill="none" stroke="#6d5efc" strokeWidth="4" strokeLinecap="round" strokeDasharray={`${((C * p) / 100).toFixed(1)} ${C.toFixed(1)}`} transform="rotate(-90 32 32)" />
+                <article key={u.id} data-testid={`trainee-card-${u.id}`} className={`tcd${n === CERTS.length ? " full" : ""}`}>
+                  <div className="tct">
+                    <div className="trg">
+                      <svg viewBox="0 0 64 64" aria-hidden="true">
+                        <circle cx="32" cy="32" r="29" fill="none" stroke="var(--br)" strokeWidth="4" />
+                        <circle cx="32" cy="32" r="29" fill="none" stroke="url(#tg)" strokeWidth="4" strokeLinecap="round" strokeDasharray={`${((C * p) / 100).toFixed(1)} ${C.toFixed(1)}`} transform="rotate(-90 32 32)" />
                       </svg>
-                      <span className="absolute inset-0 grid place-items-center"><Avatar name={u.name} size={44} src={typeof u.info?.avatar === "string" ? u.info.avatar : null} /></span>
+                      <Av name={u.name} src={av(u)} style={{ width: 48, height: 48, fontSize: 16 }} />
                     </div>
-                    <div className="min-w-0 flex-1">
-                      <b className="block truncate text-slate-900" data-testid={`trainee-name-${u.id}`}>{u.name}</b>
-                      <span className="text-sm text-slate-500">{tribe(u) || "No tribe yet"} · {p}%</span>
+                    <div className="grow tnm">
+                      <b data-testid={`trainee-name-${u.id}`}>{u.name}</b>
+                      <div className="mu">{tribe(u) || "No tribe yet"} · {p}%</div>
                     </div>
                     <Menu u={u} onRole={() => changeRole(u)} onRemove={() => remove(u)} />
                   </div>
-                  <div className="mt-3 flex items-center gap-1.5" aria-label={`${n} of ${CERTS.length} certificates earned`}>
+                  <div className="tmd" aria-label={`${n} of ${CERTS.length} certificates earned`}>
                     {CERTS.map((c) => {
                       const e = !!u.certs?.[c.k]?.earned;
-                      return <span key={c.k} title={`${c.t} — ${e ? "earned" : "not yet"}`} className="grid h-7 w-7 place-items-center text-sm" style={e ? { background: c.c, color: "#fff" } : { background: "rgba(148,163,184,.25)", filter: "grayscale(1)", opacity: 0.6 }}>🏅</span>;
+                      return (
+                        <span key={c.k} className={`md${e ? " on" : ""}`} style={{ "--c": c.c } as React.CSSProperties} title={`${c.t} — ${e ? "earned" : "not yet"}`}>
+                          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5.5" /><path d="m8.7 13.4-1.7 7 5-2.6 5 2.6-1.7-7" /></svg>
+                        </span>
+                      );
                     })}
-                    <span className="ml-auto text-sm text-slate-500"><b className="text-slate-900">{n}</b>/{CERTS.length}</span>
+                    <span className="mc"><b>{n}</b>/{CERTS.length}</span>
                   </div>
-                  <Link href={`/admin/trainees/${u.id}`} data-testid={`trainee-view-${u.id}`} className="mt-3 block border border-slate-300 py-1.5 text-center text-sm font-semibold text-slate-700">View certificates →</Link>
+                  <Link href={`/admin/trainees/${u.id}`} data-testid={`trainee-view-${u.id}`} className="tvw">View certificates <span aria-hidden="true">→</span></Link>
                 </article>
               );
             })}
           </div>
         ) : (
-          <div className="border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-md" data-testid="trainees-empty">Nobody matches your search.</div>
+          <div className="card mu" style={{ textAlign: "center", padding: 30 }} data-testid="trainees-empty">Nobody matches your search.</div>
         )}
 
         {admins.length > 0 && (
           <>
-            <h2 className="mt-6 mb-2 text-lg font-bold text-slate-900">🛠 Admins <span className="text-sm font-normal text-slate-500">{admins.length}</span></h2>
-            <div className="grid gap-3 sm:grid-cols-2">
+            <h2 className="tah">🛠 Admins <span className="mu">{admins.length}</span></h2>
+            <div className="tags">
               {admins.map((u) => (
-                <div key={u.id} data-testid={`admin-row-${u.id}`} className="flex items-center gap-3 border border-slate-200 bg-white p-3 shadow-md">
-                  <Avatar name={u.name} size={36} src={typeof u.info?.avatar === "string" ? u.info.avatar : null} />
-                  <div className="min-w-0 flex-1"><b className="block truncate text-slate-900">{u.name}</b><span className="text-sm text-slate-500">{u.id === me.id ? "You" : "Admin"}</span></div>
+                <div key={u.id} data-testid={`admin-row-${u.id}`} className="tad">
+                  <Av name={u.name} src={av(u)} style={{ width: 34, height: 34, fontSize: 12 }} />
+                  <div className="grow tnm"><b>{u.name}</b><div className="mu">{u.id === me.id ? "You" : "Admin"}</div></div>
                   {u.id !== me.id && <Menu u={u} onRole={() => changeRole(u)} onRemove={() => remove(u)} />}
                 </div>
               ))}

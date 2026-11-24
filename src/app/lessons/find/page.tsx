@@ -1,5 +1,6 @@
 "use client";
 
+import PageLoading from "@/components/PageLoading";
 import { Suspense, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useAppData } from "@/lib/use-app-data";
@@ -22,7 +23,7 @@ function Finder() {
 
 export default function FindLesson() {
   return (
-    <Suspense fallback={<main className="p-8 text-slate-500">Loading…</main>}>
+    <Suspense fallback={<PageLoading />}>
       <Finder />
     </Suspense>
   );

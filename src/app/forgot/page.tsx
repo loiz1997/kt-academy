@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import AuthCard, { authButton, authInput } from "@/components/AuthCard";
+import { hideLoading, showLoading } from "@/lib/overlay";
 import { createClient } from "@/lib/supabase/client";
 
 export default function ForgotPage() {
@@ -18,14 +19,16 @@ export default function ForgotPage() {
     const mail = email.trim().toLowerCase();
     if (!/\S+@\S+\.\S+/.test(mail)) return setError("Enter a valid email address.");
     setBusy(true);
+    showLoading("Sending your reset link…", "", 300);
     const { error } = await createClient().auth.resetPasswordForEmail(mail, { redirectTo: `${window.location.origin}/reset` });
     setBusy(false);
+    hideLoading();
     if (error && /rate|limit|seconds/i.test(error.message)) return setError("Too many requests. Please wait a while and try again.");
     setOk("If that email has an account, a reset link is on its way. Check your inbox and spam folder.");
   }
 
   return (
-    <AuthCard title="Forgot your password?" subtitle="Enter your email and we will send you a link to choose a new one." onSubmit={submit}>
+    <AuthCard variant="forgot" title="Forgot your password?" subtitle="Enter your email and we will send you a link to choose a new one." onSubmit={submit}>
       <label className="block text-sm font-medium text-slate-700">
         Email
         <input className={authInput} type="email" value={email} onChange={(e) => setEmail(e.target.value)} data-testid="forgot-email-input" autoComplete="email" />

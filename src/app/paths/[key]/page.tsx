@@ -1,5 +1,6 @@
 "use client";
 
+import PageLoading from "@/components/PageLoading";
 import { Suspense, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import AppHeader from "@/components/AppHeader";
@@ -16,7 +17,7 @@ function PathPage() {
   const path = getPath(key);
 
   useEffect(() => { if (data && (!cert || !path)) router.replace("/paths"); }, [data, cert, path, router]);
-  if (!data || !cert || !path) return <main className="p-8 text-slate-500">Loading…</main>;
+  if (!data || !cert || !path) return <PageLoading />;
 
   return (
     <>
@@ -30,7 +31,7 @@ function PathPage() {
 
 export default function PathDetailPage() {
   return (
-    <Suspense fallback={<main className="p-8 text-slate-500">Loading…</main>}>
+    <Suspense fallback={<PageLoading />}>
       <PathPage />
     </Suspense>
   );

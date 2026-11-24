@@ -50,7 +50,7 @@ export default function Top5({ learners, docs, meId, myScore }: { learners: Lear
               </span>
               <div className="min-w-0 text-sm leading-tight">
                 <b className={`block truncate ${mine ? "text-indigo-600" : "text-slate-900"}`}>{mine ? "You" : x.u.name.split(" ")[0]}</b>
-                <span className="text-slate-500">{scoreOf(x.u)} pts</span>
+                <span className="whitespace-nowrap text-slate-500">{scoreOf(x.u)} pts</span>
               </div>
             </div>
           );

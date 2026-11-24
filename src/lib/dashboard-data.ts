@@ -5,7 +5,7 @@ import type { Doc, Learner, Profile } from "./types";
 export type DashboardData = { me: Profile; docs: Doc[]; learners: Learner[] };
 
 // Loads everything the trainee dashboard needs. Returns null when nobody is logged in.
-export async function loadDashboard(supabase: SupabaseClient): Promise<DashboardData | null> {
+export async function loadDashboard(supabase: SupabaseClient, withLearners = true): Promise<DashboardData | null> {
   const { data: s } = await supabase.auth.getSession();
   if (!s.session) return null;
   const uid = s.session.user.id;
@@ -13,7 +13,7 @@ export async function loadDashboard(supabase: SupabaseClient): Promise<Dashboard
   const [p, d, l] = await Promise.all([
     supabase.from("profiles").select("*").eq("id", uid).single(),
     supabase.from("docs").select("*").order("id"),
-    supabase.rpc("top_learners"), // names, progress and scores only, no emails
+    withLearners ? supabase.rpc("top_learners") : Promise.resolve({ data: [] }), // names, progress and scores only, no emails
   ]);
   if (!p.data) return null;
 

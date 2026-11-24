@@ -17,7 +17,7 @@ export type Profile = {
   track: "Both" | "Local" | "TestOps";
   done: number[];
   certs: Record<string, { earned?: boolean } | undefined>;
-  info: { avatar?: string; team?: string };
+  info: { avatar?: string; team?: string; doneAt?: Record<string, string> } & Record<string, unknown>;
 };
 
 // One row from the top_learners() database function.

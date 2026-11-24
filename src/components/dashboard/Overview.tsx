@@ -72,7 +72,7 @@ export default function Overview({ me, docs }: { me: Profile; docs: Doc[] }) {
               <div key={x.c} data-testid={`category-${x.c.toLowerCase()}`}>
                 <div className="flex justify-between text-sm">
                   <span>
-                    <b className="text-slate-900">{x.c}</b> <span className="text-slate-500">{x.done} of {x.total} lessons</span>
+                    <b className="text-slate-900">{x.c}</b> <span className="text-slate-500">{x.done} of {x.total} {x.total === 1 ? "lesson" : "lessons"}</span>
                   </span>
                   <b>{pct}%</b>
                 </div>

@@ -133,13 +133,13 @@ export default function LessonView({
           </div>
         )}
         <div className="mt-4 flex flex-wrap gap-2">
-          {L.links.map(([label, href]) => (
-            <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="border border-indigo-200 bg-white px-3 py-1.5 text-sm font-semibold text-indigo-700">{label}</a>
+          {L.links.map(([label, href], i) => (
+            <a key={href} href={href} target="_blank" rel="noopener noreferrer" data-testid={`lesson-link-${i + 1}`} className="border border-indigo-200 bg-white px-3 py-1.5 text-sm font-semibold text-indigo-700">{label}</a>
           ))}
         </div>
       </section>
 
-      <select className="mt-4 block w-full border border-slate-300 bg-white p-2 lg:hidden" aria-label="Jump to section" defaultValue="" onChange={(e) => { go(e.target.value); e.target.value = ""; }}>
+      <select data-testid="lesson-jump-select" className="mt-4 block w-full border border-slate-300 bg-white p-2 lg:hidden" aria-label="Jump to section" defaultValue="" onChange={(e) => { go(e.target.value); e.target.value = ""; }}>
         <option value="">📑 Jump to…</option>
         {sections.map(([id, label]) => <option key={id} value={id}>{label}</option>)}
       </select>
@@ -148,7 +148,7 @@ export default function LessonView({
         <aside className="sticky top-20 hidden self-start border border-slate-200 bg-white p-3 text-sm shadow-md lg:flex lg:flex-col lg:gap-0.5">
           <b className="mb-1 text-xs tracking-wider text-slate-500">ON THIS PAGE</b>
           {sections.map(([id, label]) => (
-            <button key={id} onClick={() => go(id)} className="px-2 py-1 text-left text-slate-700 hover:bg-indigo-50 hover:text-indigo-700">{label}</button>
+            <button key={id} onClick={() => go(id)} data-testid={`lesson-nav-${id}`} className="px-2 py-1 text-left text-slate-700 hover:bg-indigo-50 hover:text-indigo-700">{label}</button>
           ))}
         </aside>
 
@@ -212,7 +212,7 @@ export default function LessonView({
                       {s.tip && <div className="tipb" dangerouslySetInnerHTML={html(`💡 ${s.tip}`)} />}
                       {s.warn && <div className="tipb warn" dangerouslySetInnerHTML={html(`⚠️ ${s.warn}`)} />}
                       {s.note && <div className="tipb nt" dangerouslySetInnerHTML={html(`📝 ${s.note}`)} />}
-                      {s.link && <p className="mt-3"><a href={s.link[1]} target="_blank" rel="noopener noreferrer" className="inline-block border border-indigo-200 bg-indigo-50 px-3 py-1.5 text-sm font-semibold text-indigo-700">{s.link[0]}</a></p>}
+                      {s.link && <p className="mt-3"><a href={s.link[1]} target="_blank" rel="noopener noreferrer" data-testid={`lesson-step-link-${n}`} className="inline-block border border-indigo-200 bg-indigo-50 px-3 py-1.5 text-sm font-semibold text-indigo-700">{s.link[0]}</a></p>}
                       <Shots shots={[sh(s.img, s.cap), sh(s.img2, s.cap2)]} onOpen={setShot} />
                     </div>
                   </div>
@@ -241,8 +241,8 @@ export default function LessonView({
 
           <section id="lc" className={`${box} scroll-mt-20`}>
             <h2 className="mb-2 text-lg font-bold">✅ Lesson checklist</h2>
-            {L.check.map((c) => (
-              <label key={c} className="flex items-center gap-2.5 py-1"><input type="checkbox" /> <span dangerouslySetInnerHTML={html(c)} /></label>
+            {L.check.map((c, i) => (
+              <label key={c} className="flex items-center gap-2.5 py-1"><input type="checkbox" data-testid={`lesson-check-${i + 1}`} /> <span dangerouslySetInnerHTML={html(c)} /></label>
             ))}
           </section>
 
@@ -256,7 +256,7 @@ export default function LessonView({
           {L.res && (
             <section id="lr" className={`${box} scroll-mt-20`}>
               <h2 className="mb-2 text-lg font-bold">🔗 Resources</h2>
-              {L.res.map((r) => <div key={r[1]} className="py-1"><a href={r[1]} target="_blank" rel="noopener noreferrer" className="font-semibold text-indigo-600 underline">{r[0]} ↗</a></div>)}
+              {L.res.map((r, i) => <div key={r[1]} className="py-1"><a href={r[1]} target="_blank" rel="noopener noreferrer" data-testid={`lesson-resource-${i + 1}`} className="font-semibold text-indigo-600 underline">{r[0]} ↗</a></div>)}
               {L.next && <div className="tipb nt mt-3" dangerouslySetInnerHTML={html(`📝 ${L.next}`)} />}
             </section>
           )}

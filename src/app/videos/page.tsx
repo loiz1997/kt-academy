@@ -68,7 +68,7 @@ export default function VideosPage() {
                       <button type="button" onClick={() => del(x)} data-testid={`video-delete-${x.id}`} aria-label="Delete" className="border border-red-200 px-2.5 py-1 text-sm text-red-600">🗑</button>
                     </>
                   ) : (
-                    <button type="button" onClick={() => setPlay(x)} className="bg-indigo-600 px-3 py-1 text-sm font-bold text-white">Watch ›</button>
+                    <button type="button" onClick={() => setPlay(x)} data-testid={`video-watch-${x.id}`} className="bg-indigo-600 px-3 py-1 text-sm font-bold text-white">Watch ›</button>
                   )}
                 </div>
               </div>

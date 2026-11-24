@@ -24,7 +24,7 @@ function Table({ rows }: { rows: PathRow[] }) {
             <tr key={a[0]} className="border-b border-slate-100">
               <td className="py-2 pr-3">{a[0]}</td>
               <td className="py-2 pr-3 font-bold">{a[1]}</td>
-              <td className="py-2"><button onClick={() => go(`m${a[2]}`)} className="whitespace-nowrap font-semibold text-indigo-600 underline">Lesson {a[2] + 1} ›</button></td>
+              <td className="py-2"><button onClick={() => go(`m${a[2]}`)} data-testid={`path-howto-lesson-${a[2] + 1}`} className="whitespace-nowrap font-semibold text-indigo-600 underline">Lesson {a[2] + 1} ›</button></td>
             </tr>
           ))}
         </tbody>
@@ -54,13 +54,13 @@ export default function PathView({ cert, path, earned }: { cert: (typeof CERTS)[
         <h1 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl" data-testid="path-title">{cert.t}</h1>
         <p className="mt-2 max-w-2xl text-slate-700" dangerouslySetInnerHTML={html(path.intro)} />
         <div className="mt-4 flex flex-wrap gap-2">
-          {path.links.map(([label, href]) => (
-            <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="border border-indigo-200 bg-white px-3 py-1.5 text-sm font-semibold text-indigo-700">{label}</a>
+          {path.links.map(([label, href], i) => (
+            <a key={href} href={href} target="_blank" rel="noopener noreferrer" data-testid={`path-link-${i + 1}`} className="border border-indigo-200 bg-white px-3 py-1.5 text-sm font-semibold text-indigo-700">{label}</a>
           ))}
         </div>
       </section>
 
-      <select className="mt-4 block w-full border border-slate-300 bg-white p-2 lg:hidden" aria-label="Jump to section" defaultValue="" onChange={(e) => { go(e.target.value); e.target.value = ""; }}>
+      <select data-testid="path-jump-select" className="mt-4 block w-full border border-slate-300 bg-white p-2 lg:hidden" aria-label="Jump to section" defaultValue="" onChange={(e) => { go(e.target.value); e.target.value = ""; }}>
         <option value="">📑 Jump to…</option>
         {sections.map(([id, label]) => <option key={id} value={id}>{label}</option>)}
       </select>
@@ -69,7 +69,7 @@ export default function PathView({ cert, path, earned }: { cert: (typeof CERTS)[
         <aside className="sticky top-20 hidden self-start border border-slate-200 bg-white p-3 text-sm shadow-md lg:flex lg:flex-col lg:gap-0.5">
           <b className="mb-1 text-xs tracking-wider text-slate-500">ON THIS PAGE</b>
           {sections.map(([id, label]) => (
-            <button key={id} onClick={() => go(id)} className="px-2 py-1 text-left text-slate-700 hover:bg-indigo-50 hover:text-indigo-700">{label}</button>
+            <button key={id} onClick={() => go(id)} data-testid={`path-nav-${id}`} className="px-2 py-1 text-left text-slate-700 hover:bg-indigo-50 hover:text-indigo-700">{label}</button>
           ))}
         </aside>
 
@@ -103,7 +103,7 @@ export default function PathView({ cert, path, earned }: { cert: (typeof CERTS)[
                 {m.tip && <div className="tipb" dangerouslySetInnerHTML={html(`💡 ${m.tip}`)} />}
                 {m.warn && <div className="tipb warn" dangerouslySetInnerHTML={html(`⚠️ ${m.warn}`)} />}
                 {m.note && <div className="tipb nt" dangerouslySetInnerHTML={html(`📝 ${m.note}`)} />}
-                {ref && <p className="mt-3"><Link href={`/paths/${ref.k}`} className="inline-block bg-indigo-50 px-3 py-1.5 text-sm font-semibold text-indigo-700">Open the {ref.t.replace(" Certification", "")} path ›</Link></p>}
+                {ref && <p className="mt-3"><Link href={`/paths/${ref.k}`} data-testid={`path-open-${ref.k}`} className="inline-block bg-indigo-50 px-3 py-1.5 text-sm font-semibold text-indigo-700">Open the {ref.t.replace(" Certification", "")} path ›</Link></p>}
               </section>
             );
           })}
@@ -111,7 +111,7 @@ export default function PathView({ cert, path, earned }: { cert: (typeof CERTS)[
           <section id="fin" className={`${box} scroll-mt-20`} data-testid="path-finish">
             <h2 className="text-lg font-bold">🏁 Finish line</h2>
             <p className="mb-2 text-sm text-slate-500">Tick each activity as you complete it.</p>
-            {items.map((t) => <label key={t} className="flex items-center gap-2.5 py-1"><input type="checkbox" /> {t}</label>)}
+            {items.map((t, i) => <label key={t} className="flex items-center gap-2.5 py-1"><input type="checkbox" data-testid={`path-check-${i + 1}`} /> {t}</label>)}
             <div className="mt-4 flex flex-wrap gap-2">
               <a href={ACADEMY} target="_blank" rel="noopener noreferrer" data-testid="path-academy-link" className="bg-gradient-to-r from-indigo-600 to-teal-500 px-4 py-2 font-semibold text-white shadow-lg shadow-indigo-300/50">🎓 Check my Academy progress ↗</a>
               <Link href={`/certifications/${cert.k}`} data-testid="path-save-cert-link" className="bg-indigo-50 px-4 py-2 font-semibold text-indigo-700">🏅 Save my certificate</Link>

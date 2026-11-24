@@ -195,7 +195,7 @@ export default function ProfilePage() {
                             <span className="text-xs text-slate-500">{fmt(s.updated_at || s.created_at)}</span>
                           </div>
                           <span className={`whitespace-nowrap px-2 py-0.5 text-xs font-semibold ${st.cls}`}>{st.label}{s.status === "approved" && s.score != null ? ` · ${s.score}` : ""}</span>
-                          <Link href={`/lessons/${s.lesson_id}`} className="text-sm font-semibold text-indigo-600 underline">Open</Link>
+                          <Link href={`/lessons/${s.lesson_id}`} data-testid={`profile-submission-open-${s.lesson_id}`} className="text-sm font-semibold text-indigo-600 underline">Open</Link>
                         </li>
                       );
                     })}

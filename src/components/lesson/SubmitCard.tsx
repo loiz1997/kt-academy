@@ -91,7 +91,7 @@ export default function SubmitCard({ doc, docs, me }: { doc: Doc; docs: Doc[]; m
           {sub.status === "approved" && sub.score != null && <b data-testid="submit-score">⭐ {sub.score}/100</b>}{" "}
           <span className="text-slate-500">Sent {fmt(sub.updated_at ?? sub.created_at)}</span>
           {sub.feedback && <div className="mt-2" data-testid="submit-feedback"><b>Instructor feedback:</b><br />{sub.feedback}</div>}
-          <div className="mt-1.5"><a href={sub.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-indigo-600 underline">View what you sent ↗</a></div>
+          <div className="mt-1.5"><a href={sub.url} target="_blank" rel="noopener noreferrer" data-testid="submit-view-link" className="font-semibold text-indigo-600 underline">View what you sent ↗</a></div>
         </div>
       )}
 

@@ -68,8 +68,8 @@ function CertDetail() {
             {earned && <span className="bg-green-100 px-2 py-0.5 text-xs font-semibold text-green-800" data-testid="cert-earned-badge">🏅 Earned</span>}
           </div>
           <p className="mt-3 text-sm text-slate-600" data-testid="cert-summary">
-            {earned ? <>Earned on <b>{saved?.date}</b>{saved?.url && <> · <a className="font-semibold text-indigo-600 underline" href={saved.url} target="_blank" rel="noopener noreferrer">View certificate ↗</a></>}{saved?.cid && <> · ID: {saved.cid}</>}</> : "Not earned yet"}
-            {" · "}<a className="font-semibold text-indigo-600 underline" href={cert.u} target="_blank" rel="noopener noreferrer">About this certification ↗</a>
+            {earned ? <>Earned on <b>{saved?.date}</b>{saved?.url && <> · <a className="font-semibold text-indigo-600 underline" data-testid="cert-view-link" href={saved.url} target="_blank" rel="noopener noreferrer">View certificate ↗</a></>}{saved?.cid && <> · ID: {saved.cid}</>}</> : "Not earned yet"}
+            {" · "}<a className="font-semibold text-indigo-600 underline" data-testid="cert-about-link" href={cert.u} target="_blank" rel="noopener noreferrer">About this certification ↗</a>
           </p>
           {getPath(key) && <p className="mt-2"><Link href={`/paths/${key}`} data-testid="cert-path-link" className="font-semibold text-indigo-600 underline">See the learning path for this certification ›</Link></p>}
 

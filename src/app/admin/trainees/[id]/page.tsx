@@ -28,7 +28,7 @@ function TraineeDetail() {
         <AppHeader active="/admin/trainees" />
         <main className="mx-auto max-w-5xl px-4 py-5">
           <p className="text-slate-500" data-testid="trainee-not-found">That person was not found.</p>
-          <Link href="/admin/trainees" className="font-semibold text-indigo-600 underline">← Trainees</Link>
+          <Link href="/admin/trainees" data-testid="trainee-notfound-back-link" className="font-semibold text-indigo-600 underline">← Trainees</Link>
         </main>
       </>
     );
@@ -71,7 +71,7 @@ function TraineeDetail() {
                       <span className="text-xs text-slate-500">{fmt(s.updated_at || s.created_at)}</span>
                     </div>
                     <span className={`whitespace-nowrap px-2 py-0.5 text-xs font-semibold ${st.cls}`}>{st.label}{s.status === "approved" && s.score != null ? ` · ⭐ ${s.score}/100` : ""}</span>
-                    <Link href={`/admin/submissions?q=${encodeURIComponent(u.name)}`} className="text-sm font-semibold text-indigo-600 underline">Review</Link>
+                    <Link href={`/admin/submissions?q=${encodeURIComponent(u.name)}`} data-testid={`trainee-submission-review-${s.id}`} className="text-sm font-semibold text-indigo-600 underline">Review</Link>
                   </li>
                 );
               })}
@@ -92,7 +92,7 @@ function TraineeDetail() {
                 {d?.earned && (
                   <p className="mt-2 text-sm text-slate-700">
                     Earned on <b>{d.date ?? "—"}</b>
-                    {d.url && <> · <a href={d.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-indigo-600 underline">Certificate link ↗</a></>}
+                    {d.url && <> · <a href={d.url} target="_blank" rel="noopener noreferrer" data-testid={`trainee-cert-link-${c.k}`} className="font-semibold text-indigo-600 underline">Certificate link ↗</a></>}
                     {d.cid && <> · ID: {d.cid}</>}
                   </p>
                 )}

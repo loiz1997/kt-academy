@@ -19,6 +19,13 @@ export default function LearnPage() {
       <main className="mx-auto max-w-5xl px-4 py-5">
         <h1 className="text-2xl font-extrabold text-slate-900" data-testid="learn-title">KT lessons</h1>
         <p className="mb-4 text-slate-500">Short, step-by-step lessons. Open one and follow along.</p>
+        <Link href="/paths" data-testid="learn-paths-link" className="mb-4 flex flex-wrap items-center justify-between gap-3 border border-indigo-200 bg-gradient-to-r from-indigo-50 to-teal-50 p-4 shadow-sm">
+          <span>
+            <b className="block text-slate-900">🏅 Certification paths</b>
+            <span className="text-sm text-slate-600">See what you need to do for each Katalon certification, step by step.</span>
+          </span>
+          <span className="bg-gradient-to-r from-indigo-600 to-teal-500 px-4 py-2 text-sm font-semibold text-white">View paths ›</span>
+        </Link>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {docs.map((d, i) => {
             const soon = isSoon(d);

@@ -9,6 +9,8 @@ export type Doc = {
   b: string; // short description
 };
 
+export type Cert = { earned?: boolean; date?: string; url?: string; cid?: string };
+
 export type Profile = {
   id: string;
   name: string;
@@ -16,7 +18,7 @@ export type Profile = {
   role: "user" | "admin";
   track: "Both" | "Local" | "TestOps";
   done: number[];
-  certs: Record<string, { earned?: boolean } | undefined>;
+  certs: Record<string, Cert | undefined>;
   info: { avatar?: string; team?: string; doneAt?: Record<string, string> } & Record<string, unknown>;
 };
 

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "./supabase/client";
 import { loadDashboard, type DashboardData } from "./dashboard-data";
+import type { Profile } from "./types";
 
 // Loads the logged-in user's profile and the lessons. Sends people to /login if nobody is logged in.
 export function useAppData(withLearners = false) {
@@ -37,5 +38,17 @@ export function useAppData(withLearners = false) {
     [data]
   );
 
-  return { data, toggleDone };
+  // Saves the certificates (for example after adding or removing one).
+  const saveCerts = useCallback(
+    async (certs: Profile["certs"]) => {
+      if (!data) return false;
+      const { error } = await createClient().from("profiles").update({ certs }).eq("id", data.me.id);
+      if (error) return false;
+      setData({ ...data, me: { ...data.me, certs } });
+      return true;
+    },
+    [data]
+  );
+
+  return { data, toggleDone, saveCerts };
 }

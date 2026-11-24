@@ -50,5 +50,21 @@ export function useAppData(withLearners = false) {
     [data]
   );
 
-  return { data, toggleDone, saveCerts };
+  // Saves the profile form: name, track and the extra details (title, tribe, level, goal, about).
+  const saveProfile = useCallback(
+    async (patch: { name: string; track?: Profile["track"]; info: Record<string, unknown> }) => {
+      if (!data) return false;
+      const { me } = data;
+      const info = { ...(me.info ?? {}), ...patch.info };
+      const update: Partial<Profile> = { name: patch.name, info };
+      if (patch.track) update.track = patch.track;
+      const { error } = await createClient().from("profiles").update(update).eq("id", me.id);
+      if (error) return false;
+      setData({ ...data, me: { ...me, ...update } as Profile });
+      return true;
+    },
+    [data]
+  );
+
+  return { data, toggleDone, saveCerts, saveProfile };
 }

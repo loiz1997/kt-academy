@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { VIDEO_CATS, type LibItem, type LibRecord } from "@/lib/library";
+import { isWebUrl } from "@/lib/safe-url";
 
 const field = "mt-1 mb-3 w-full border border-slate-300 bg-white px-3 py-2 text-slate-900";
 const lbl = "text-sm font-semibold text-slate-700";
@@ -28,7 +29,7 @@ export default function ItemForm({ kind, item, onSave, onClose }: {
     setError("");
     if (!title.trim()) return setError("Please add a title.");
     if (!link.trim()) return setError("Please paste the link.");
-    if (!/^https?:\/\//i.test(link.trim())) return setError("The link must start with https://");
+    if (!isWebUrl(link.trim())) return setError("The link must be a valid web address that starts with https://");
     setBusy(true);
     const err = await onSave({ title: title.trim(), descr: descr.trim(), link: link.trim(), ...(v ? { cat } : {}) });
     setBusy(false);

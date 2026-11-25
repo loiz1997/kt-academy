@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { embedUrl, fileUrl, type LibItem } from "@/lib/library";
+import { safeHref } from "@/lib/safe-url";
 
 // Plays a video inside the page: YouTube/Vimeo links, or an old uploaded file.
 export default function VideoModal({ item, onClose }: { item: LibItem; onClose: () => void }) {
@@ -23,7 +24,7 @@ export default function VideoModal({ item, onClose }: { item: LibItem; onClose: 
       <div className="max-h-[92vh] w-full max-w-3xl overflow-y-auto border border-slate-200 bg-white p-4 shadow-xl">
         <div className="mb-3 flex items-center gap-2">
           <h2 className="min-w-0 flex-1 truncate text-lg font-extrabold text-slate-900" data-testid="video-modal-title">{item.title}</h2>
-          {item.link && <a href={item.link} target="_blank" rel="noopener noreferrer" data-testid="video-modal-open-link" className="shrink-0 border border-slate-300 px-3 py-1.5 text-sm font-semibold text-slate-700">Open on its site ↗</a>}
+          {item.link && <a href={safeHref(item.link)} target="_blank" rel="noopener noreferrer" data-testid="video-modal-open-link" className="shrink-0 border border-slate-300 px-3 py-1.5 text-sm font-semibold text-slate-700">Open on its site ↗</a>}
           <button type="button" onClick={onClose} data-testid="video-modal-close" aria-label="Close" className="shrink-0 border border-slate-300 px-3 py-1.5 text-sm font-semibold text-slate-700">✕</button>
         </div>
         {item.path ? (

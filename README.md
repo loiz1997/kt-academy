@@ -8,23 +8,11 @@ A learning and certification portal that helps manual testers move into test aut
 [![Supabase](https://img.shields.io/badge/Supabase-Postgres%20%2B%20Auth-3ecf8e?logo=supabase&logoColor=white)](https://supabase.com)
 [![Netlify](https://img.shields.io/badge/Deploy-Netlify-00c7b7?logo=netlify&logoColor=white)](docs/DEPLOY_NETLIFY.md)
 
-**Live demo:** https://YOUR-DEMO-SITE.netlify.app (click **As a trainee** or **As an admin**, no sign-up needed)
-**Run your own copy:** [docs/DEPLOY_NETLIFY.md](docs/DEPLOY_NETLIFY.md)
+**Live demo:** https://kt-academy-demo.netlify.app
+Click **As a trainee** or **As an admin** on the login page (no sign-up needed). The demo runs on sample data only. To run your own copy, see [docs/DEPLOY_NETLIFY.md](docs/DEPLOY_NETLIFY.md).
 
 ![Dashboard, light theme](docs/images/dashboard-light.png)
 ![Dashboard, dark theme](docs/images/dashboard-dark.png)
-
-## Why I built this
-
-I lead test automation and train manual testers to move into automation with Katalon. KT Academy is the portal I wished they had: short lessons, reviewed practice work, certificates and progress in one place. It is also a realistic **system under test** for web test automation (Katalon, Playwright and others), with stable locators, role-based access and real data flows.
-
-## Skills this project shows
-
-- **Test automation:** `data-testid` locators on every interactive element, a test case library ([XLSX](docs/KT_Academy_Test_Cases.xlsx)), predictable demo data you can reset in one script
-- **Full stack:** Next.js (App Router), TypeScript, Tailwind CSS, Supabase (Postgres, auth, row-level security)
-- **Security basics:** role-based access enforced in the database, no secret keys in the front end, shared demo accounts kept in a separate project
-- **Product and UX:** light and dark themes, responsive layout, accessible forms, loading and sign-in states
-- **Delivery:** zero-cost hosting on Netlify, environment-based demo mode, written deploy guide
 
 ## Features
 
@@ -64,6 +52,10 @@ Browser  ->  Next.js app on Netlify  ->  Supabase (Auth + Postgres + RLS)
 - Roles live in `profiles.role`. After sign-in the app reads the role and goes to `/admin` or `/dashboard`.
 - Never put a `service_role` key in the front end or in Netlify variables that start with `NEXT_PUBLIC_`.
 
+## Security
+
+RLS on every table, a trigger that blocks self-promotion to admin, no secrets in the repo, web-only links (checked in the form, in the page and in the database), private size-limited file storage, security headers, and a separate demo project with fake data. Details: [SECURITY.md](SECURITY.md).
+
 ## Getting started
 
 You need Node.js 22 and a free Supabase project.
@@ -95,18 +87,10 @@ Open Supabase > SQL Editor and run the files in `supabase/` in this order:
 4. `supabase-add-profile-info.sql`, `supabase-add-certifications.sql`
 5. `supabase-oauth.sql`, `supabase-rename-lesson.sql`
 6. `supabase-certificate-images.sql`, `supabase-allow-pdf.sql`, `supabase-save-space.sql`
+7. `supabase-security.sql` (hardening, run last)
 
 To make yourself an admin, sign up once, then run:
 `update public.profiles set role = 'admin' where email = 'you@example.com';`
-
-## Test automation
-
-The app is built to be tested. Locators use `data-testid`, so tests do not break when styling changes.
-
-- Demo logins: one click for a trainee or an admin, or sign in with the accounts below
-- Reset the data any time with `supabase/demo-seed.sql`
-- Suggested flows: login (trainee and admin), mark a lesson done, submit work, review and score a submission, earn a certificate, switch theme, log out
-- Planned: Playwright end-to-end tests and a Katalon sample project, run in GitHub Actions
 
 ## Test locators
 
@@ -117,7 +101,7 @@ Every important element has a `data-testid`, for example `admin-greeting`, `admi
 ```
 src/app/            pages (login, dashboard, lessons, certifications, profile, admin/*)
 src/components/     shared UI (header, overlays, charts, admin widgets, demo banner)
-src/lib/            Supabase clients, lesson, tribe and certificate data, demo settings
+src/lib/            Supabase clients, lesson, tribe and certificate data, demo and link-safety helpers
 src/styles/         legacy look (light and dark)
 supabase/           database scripts, plus demo-seed.sql for the demo project
 docs/               deploy guide, project summary (PDF), test cases (XLSX), images
@@ -141,7 +125,8 @@ The demo runs on its own Supabase project with sample data only.
 
 - [x] Convert to Next.js + TypeScript + Tailwind
 - [x] `data-testid` locators on every page element
-- [x] Public demo mode with sample data
+- [x] Public demo mode with sample data, live on Netlify
+- [x] Security hardening (RLS, link checks, headers, DB limits)
 - [ ] Lesson detail and certification pages restyled
 - [ ] Playwright end-to-end tests
 - [ ] Dockerfile and GitHub Actions: lint, test, deploy
@@ -149,6 +134,9 @@ The demo runs on its own Supabase project with sample data only.
 
 ## Documentation
 
+- [Prototype documentation](docs/KT_Academy_Prototype_Documentation.pdf): every screen and its functions
+- [Project story and glossary](docs/KT_Academy_Project_Guide.pdf): purpose, tools, why, terms
 - [Deploy on Netlify](docs/DEPLOY_NETLIFY.md)
+- [Security](SECURITY.md)
 - [Project summary (PDF)](docs/KT_Academy_Project_Summary.pdf)
 - [Automation test cases (XLSX)](docs/KT_Academy_Test_Cases.xlsx)

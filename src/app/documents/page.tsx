@@ -7,6 +7,7 @@ import AppHeader from "@/components/AppHeader";
 import ItemForm from "@/components/library/ItemForm";
 import { fileIcon, fileUrl, fmtDate, fmtSize, hostOf, useLibrary, type LibItem } from "@/lib/library";
 import { useAppData } from "@/lib/use-app-data";
+import { safeHref } from "@/lib/safe-url";
 
 
 // Label + two colours for each kind of document.
@@ -98,7 +99,7 @@ export default function DocumentsPage() {
                     {stored ? (
                       <button type="button" onClick={() => download(x)} data-testid={`doc-download-${x.id}`} className="btn s">⬇ Download</button>
                     ) : (
-                      <a href={x.link} target="_blank" rel="noopener noreferrer" data-testid={`doc-open-${x.id}`} className="btn s">Open ↗</a>
+                      <a href={safeHref(x.link)} target="_blank" rel="noopener noreferrer" data-testid={`doc-open-${x.id}`} className="btn s">Open ↗</a>
                     )}
                     {admin && (
                       <>

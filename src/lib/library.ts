@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { createClient } from "./supabase/client";
+import { DEMO } from "./demo";
 
 export type LibItem = {
   id: number;
@@ -78,6 +79,7 @@ export function useLibrary() {
 
   const remove = useCallback(
     async (it: LibItem) => {
+      if (DEMO) return "Deleting items is turned off in the demo.";
       const sb = createClient();
       const r = await sb.from("library").delete().eq("id", it.id);
       if (r.error) return "Could not delete: " + r.error.message;

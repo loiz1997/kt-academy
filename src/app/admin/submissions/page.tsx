@@ -8,6 +8,7 @@ import Av from "@/components/dashboard/Av";
 import Kpi from "@/components/admin/Kpi";
 import { trainees, useAdminData, type AdminSub } from "@/lib/admin-data";
 import { STATUS } from "@/lib/submissions";
+import { safeHref } from "@/lib/safe-url";
 import { ALL_TRIBES, NOTRIBE } from "@/lib/tribes";
 import type { Doc, Profile } from "@/lib/types";
 
@@ -58,7 +59,7 @@ function Row({ s, who, doc, no, open, onToggle, onReview }: {
         <span className="chev" aria-hidden="true">▾</span>
       </div>
       <div className="sbd">
-        <div className="row"><a className="btn s" href={s.url} target="_blank" rel="noopener noreferrer" data-testid={`subs-open-file-${id}`} style={{ textDecoration: "none" }}>📄 Open submitted file ↗</a></div>
+        <div className="row"><a className="btn s" href={safeHref(s.url)} target="_blank" rel="noopener noreferrer" data-testid={`subs-open-file-${id}`} style={{ textDecoration: "none" }}>📄 Open submitted file ↗</a></div>
         {s.note && <p className="mu" style={{ margin: "10px 0 0" }}><b>Trainee note:</b> {s.note}</p>}
         <label data-testid="admin-submissions-label-1" htmlFor={`sc_${id}`}>Score (0–100) · needed to approve</label>
         <div className="stp">

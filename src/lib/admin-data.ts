@@ -7,6 +7,7 @@ import { loadDashboard } from "./dashboard-data";
 import type { Submission } from "./submissions";
 import type { Doc, Profile } from "./types";
 import { store } from "./session-cache";
+import { DEMO } from "./demo";
 
 export type AdminSub = Submission & { lesson_title?: string | null; reviewed_at?: string | null; reviewed_by?: string | null };
 export type AdminData = { me: Profile; docs: Doc[]; users: Profile[]; subs: AdminSub[] };
@@ -57,6 +58,7 @@ export function useAdminData() {
   const setRole = useCallback(
     async (id: string, role: "user" | "admin") => {
       if (!data) return "Not loaded yet.";
+      if (DEMO) return "Changing roles is turned off in the demo.";
       const { error } = await createClient().from("profiles").update({ role }).eq("id", id);
       if (error) return "Could not change the role: " + error.message;
       setData({ ...data, users: data.users.map((u) => (u.id === id ? { ...u, role } : u)) });
@@ -69,6 +71,7 @@ export function useAdminData() {
   const removeUser = useCallback(
     async (id: string) => {
       if (!data) return "Not loaded yet.";
+      if (DEMO) return "Removing people is turned off in the demo.";
       const { error } = await createClient().from("profiles").delete().eq("id", id);
       if (error) return "Could not remove: " + error.message;
       setData({ ...data, users: data.users.filter((u) => u.id !== id), subs: data.subs.filter((x) => String(x.user_id) !== id) });

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { STATUS, fileName, isDriveLink, subHint, type Submission } from "@/lib/submissions";
 import type { Doc, Profile } from "@/lib/types";
+import { safeHref } from "@/lib/safe-url";
 
 const html = (s: string) => ({ __html: s });
 const DRIVE_FOLDER = process.env.NEXT_PUBLIC_DRIVE_FOLDER_URL;
@@ -90,7 +91,7 @@ export default function SubmitCard({ doc, docs, me }: { doc: Doc; docs: Doc[]; m
           {sub.status === "approved" && sub.score != null && <b data-testid="submit-score">⭐ {sub.score}/100</b>}{" "}
           <span className="mu">Sent {fmt(sub.updated_at ?? sub.created_at)}</span>
           {sub.feedback && <div style={{ marginTop: 8 }} data-testid="submit-feedback"><b>Instructor feedback:</b><br />{sub.feedback}</div>}
-          <div style={{ marginTop: 6 }}><a href={sub.url} target="_blank" rel="noopener noreferrer" data-testid="submit-view-link">View what you sent ↗</a></div>
+          <div style={{ marginTop: 6 }}><a href={safeHref(sub.url)} target="_blank" rel="noopener noreferrer" data-testid="submit-view-link">View what you sent ↗</a></div>
         </div>
       )}
 

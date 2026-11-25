@@ -307,6 +307,8 @@ html[data-theme="dark"] .kt-tag.a { background: #3a2e10; color: #fcd34d; }
 /* Demo bar on phones: a slim strip at the top, so it never covers the bottom menu.
    The menu is lifted a little so the "Powered by Netlify" badge (free plan) does not cover it either. */
 .demo-bar.qa { background: linear-gradient(90deg, #b45309, #f59e0b); color: #1f1300; }
+/* The test-site bar is only for the login pages. Once someone is logged in (the menu exists) it is hidden. */
+body:has(.kt-nav) .demo-bar.qa { display: none; }
 .demo-short { display: none; }
 @media (max-width: 760px) {
   .demo-bar { position: static; padding: 6px 12px; font-size: 11.5px; box-shadow: none; }

@@ -13,3 +13,7 @@ export const DEMO_ADMIN = {
 // Optional label for a shared test site, for example NEXT_PUBLIC_ENV_LABEL=QA.
 // It shows a colored bar so nobody mistakes the test site for the real one. Empty means no bar.
 export const ENV_LABEL = process.env.NEXT_PUBLIC_ENV_LABEL ?? "";
+
+// On a labelled test site the Google and GitHub buttons are hidden, because those providers are set up
+// per Supabase project and a fresh test project has none. Set NEXT_PUBLIC_OAUTH=on once they are configured.
+export const HIDE_OAUTH = !DEMO && ENV_LABEL !== "" && process.env.NEXT_PUBLIC_OAUTH !== "on";

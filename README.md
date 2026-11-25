@@ -76,7 +76,8 @@ npm run dev                    # http://localhost:3000
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | yes | The public `anon` key from the same page |
 | `NEXT_PUBLIC_DEMO_MODE` | demo only | `true` shows the one-click demo buttons and a demo banner |
 | `NEXT_PUBLIC_DEMO_PASSWORD` | demo only | Password of the demo accounts (default `DemoKT2026!`) |
-| `NEXT_PUBLIC_ENV_LABEL` | test site only | For example `QA`: shows an amber bar so nobody mixes the test site with the real one |
+| `NEXT_PUBLIC_ENV_LABEL` | test site only | For example `QA`: shows an amber bar on the login pages (hidden after login) so nobody mixes the test site with the real one |
+| `NEXT_PUBLIC_OAUTH` | test site only | On a labelled test site the Google and GitHub buttons are hidden. Set `on` once those providers are set up for that Supabase project |
 
 ### Database setup
 
@@ -89,7 +90,7 @@ Open Supabase > SQL Editor and run the files in `supabase/` in this order:
 5. `supabase-oauth.sql`, `supabase-rename-lesson.sql`
 6. `supabase-certificate-images.sql`, `supabase-allow-pdf.sql`, `supabase-save-space.sql`
 7. `supabase-security.sql` (hardening, run last)
-8. `demo-seed.sql` (demo project only) or `qa-seed.sql` (QA project or local test run only). Both can be run again to reset.
+8. `demo-seed.sql` (demo project only) or `qa-seed.sql` (QA project or local test run only; it also creates `tester.admin1..3@ktacademy.qa` for manual testers, and `qa-admins.sql` adds just those). Both can be run again to reset.
 
 To make yourself an admin, sign up once, then run:
 `update public.profiles set role = 'admin' where email = 'you@example.com';`

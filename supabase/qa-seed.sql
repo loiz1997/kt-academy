@@ -78,8 +78,21 @@ begin
   end loop;
 end $$;
 
+-- 3. admin accounts for manual testers (password TesterKT2026!). The same accounts are in qa-admins.sql.
+do $$
+declare u uuid; i int;
+begin
+  for i in 1..3 loop
+    u := pg_temp.mk('tester.admin' || i || '@ktacademy.qa', 'Tester Admin ' || i, 'TesterKT2026!');
+    update public.profiles set role = 'admin', track = 'Both',
+      info = jsonb_build_object('title','Tester Admin','team','Enterprise Services','goal','Test the admin screens','bio','Admin account for manual testers.')
+    where id = u;
+  end loop;
+end $$;
+
 insert into public.library (kind, title, descr, cat, link) values
  ('video', '[QA] Sample video', 'Video link for tests.', 'General', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'),
  ('doc',   '[QA] Sample document', 'Document link for tests.', 'General', 'https://example.com/qa-document');
 
 -- QA logins: qa.admin@ktacademy.qa, qa.trainee@ktacademy.qa and the others above, password QaKT2026!
+-- Manual testers: tester.admin1..3@ktacademy.qa, password TesterKT2026!

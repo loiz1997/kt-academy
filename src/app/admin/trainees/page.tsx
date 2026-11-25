@@ -65,9 +65,9 @@ export default function TraineesPage() {
   return (
     <>
       <AppHeader active="/admin/trainees" />
-      <main>
+      <main data-testid="admin-trainees-main-1">
         <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true"><defs><linearGradient id="tg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#6d5efc" /><stop offset="1" stopColor="#14c8b4" /></linearGradient></defs></svg>
-        <section className="phd">
+        <section data-testid="admin-trainees-section-1" className="phd">
           <div className="grow">
             <h1 data-testid="trainees-title">🎓 Trainees &amp; Certificates</h1>
             <p className="mu" data-testid="trainees-summary">{tr.length} trainee{s(tr.length)} · {holders} certified · {total} certificate{s(total)} earned</p>
@@ -128,7 +128,7 @@ export default function TraineesPage() {
 
         {admins.length > 0 && (
           <>
-            <h2 className="tah">🛠 Admins <span className="mu">{admins.length}</span></h2>
+            <h2 data-testid="admin-trainees-h2-1" className="tah">🛠 Admins <span className="mu">{admins.length}</span></h2>
             <div className="tags">
               {admins.map((u) => (
                 <div key={u.id} data-testid={`admin-row-${u.id}`} className="tad">

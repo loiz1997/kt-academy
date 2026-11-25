@@ -18,7 +18,7 @@ function Finder() {
     router.replace(hit ? `/lessons/${hit.id}` : "/learn");
   }, [data, t, router]);
 
-  return <main className="p-8 text-slate-500">Opening lesson…</main>;
+  return <main data-testid="lessons-find-main-1" className="p-8 text-slate-500">Opening lesson…</main>;
 }
 
 export default function FindLesson() {

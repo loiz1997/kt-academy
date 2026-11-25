@@ -1,5 +1,6 @@
 "use client";
 
+import { showLoading } from "@/lib/overlay";
 import PageLoading from "@/components/PageLoading";
 import { useEffect, useMemo, useState } from "react";
 import AppHeader from "@/components/AppHeader";
@@ -59,13 +60,13 @@ function Row({ s, who, doc, no, open, onToggle, onReview }: {
       <div className="sbd">
         <div className="row"><a className="btn s" href={s.url} target="_blank" rel="noopener noreferrer" data-testid={`subs-open-file-${id}`} style={{ textDecoration: "none" }}>📄 Open submitted file ↗</a></div>
         {s.note && <p className="mu" style={{ margin: "10px 0 0" }}><b>Trainee note:</b> {s.note}</p>}
-        <label htmlFor={`sc_${id}`}>Score (0–100) · needed to approve</label>
+        <label data-testid="admin-submissions-label-1" htmlFor={`sc_${id}`}>Score (0–100) · needed to approve</label>
         <div className="stp">
           <button type="button" aria-label="Decrease score" data-testid={`subs-score-minus-${id}`} onClick={() => setScore(String(Math.max(0, (parseInt(score, 10) || 0) - 5)))}>−</button>
           <input id={`sc_${id}`} type="number" min={0} max={100} inputMode="numeric" placeholder="0–100" value={score} onChange={(e) => setScore(e.target.value)} data-testid={`subs-score-input-${id}`} />
           <button type="button" aria-label="Increase score" data-testid={`subs-score-plus-${id}`} onClick={() => setScore(String(Math.min(100, (parseInt(score, 10) || 0) + 5)))}>+</button>
         </div>
-        <label htmlFor={`fb_${id}`}>Your feedback</label>
+        <label data-testid="admin-submissions-label-2" htmlFor={`fb_${id}`}>Your feedback</label>
         <textarea id={`fb_${id}`} rows={3} maxLength={800} placeholder="Write what was good, or what needs to change" value={fb} onChange={(e) => setFb(e.target.value)} data-testid={`subs-feedback-input-${id}`} />
         <div className="msg" data-testid={`subs-message-${id}`}>{msg}</div>
         <div className="row">
@@ -79,17 +80,18 @@ function Row({ s, who, doc, no, open, onToggle, onReview }: {
 }
 
 export default function AdminSubmissionsPage() {
-  const { data, review, reload } = useAdminData();
+  const { data, review } = useAdminData();
   const [status, setStatus] = useState("");
   const [lesson, setLesson] = useState("");
   const [tribe, setTribe] = useState("");
   const [q, setQ] = useState("");
   const [openId, setOpenId] = useState<string | null>(null);
   const [spin, setSpin] = useState(false);
-  async function refresh() {
+  // A real page refresh: the whole page reloads and fetches the newest submissions.
+  function refresh() {
     setSpin(true);
-    await reload();
-    setTimeout(() => setSpin(false), 400);
+    showLoading("Refreshing…", "Getting the latest submissions");
+    setTimeout(() => window.location.reload(), 250);
   }
 
   // Links from the admin dashboard can open this page already filtered (?status=submitted&q=Name).
@@ -126,7 +128,7 @@ export default function AdminSubmissionsPage() {
   return (
     <>
       <AppHeader active="/admin/submissions" />
-      <main>
+      <main data-testid="admin-submissions-main-1">
         <div className="row" style={{ marginBottom: 14 }}>
           <div className="grow" style={{ flex: "1 1 220px" }}>
             <h1 style={{ margin: 0 }} data-testid="subs-title">📤 Submissions</h1>

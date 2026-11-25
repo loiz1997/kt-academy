@@ -23,7 +23,7 @@ export default function Journey({ me, docs }: { me: Profile; docs: Doc[] }) {
       <div>
         <div className="card upn" data-testid="up-next">
           <div className="row">
-            <h2 className="grow" style={{ margin: 0 }}>🚀 Up next</h2>
+            <h2 data-testid="dashboard-journey-h2-1" className="grow" style={{ margin: 0 }}>🚀 Up next</h2>
             <span className="mu" data-testid="up-next-count">{next.length} lesson{next.length === 1 ? "" : "s"} to go</span>
           </div>
           {nx ? (
@@ -53,7 +53,7 @@ export default function Journey({ me, docs }: { me: Profile; docs: Doc[] }) {
 
         <div className="card jr" style={{ marginTop: 16 }} data-testid="journey">
           <div className="row">
-            <h2 className="grow" style={{ margin: 0 }}>🗺 Your journey</h2>
+            <h2 data-testid="dashboard-journey-h2-2" className="grow" style={{ margin: 0 }}>🗺 Your journey</h2>
             <span className="jct" data-testid="journey-count"><b>{doneN}</b> / {A.length} lessons</span>
           </div>
           <div className="jbar"><i style={{ width: `${A.length ? Math.round((doneN / A.length) * 100) : 0}%` }} /></div>

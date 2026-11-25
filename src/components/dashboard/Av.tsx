@@ -4,7 +4,7 @@ const initials = (n?: string | null) => (n || "").trim().split(/\s+/).slice(0, 2
 export default function Av({ name, src, className = "av", style }: { name?: string | null; src?: string | null; className?: string; style?: React.CSSProperties }) {
   return (
     <div className={className} style={style}>
-      {src ? /* eslint-disable-next-line @next/next/no-img-element */ <img src={src} alt="" /> : initials(name)}
+      {src ? /* eslint-disable-next-line @next/next/no-img-element */ <img data-testid="avatar-image" src={src} alt="" /> : initials(name)}
     </div>
   );
 }

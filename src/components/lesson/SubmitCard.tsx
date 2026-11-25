@@ -81,7 +81,7 @@ export default function SubmitCard({ doc, docs, me }: { doc: Doc; docs: Doc[]; m
 
   return (
     <section id="sb" className="card sub sw scroll-mt-20" data-testid="submit-card">
-      <h2 style={{ margin: 0 }}>📤 Submit your work</h2>
+      <h2 data-testid="lesson-submitcard-h2-1" style={{ margin: 0 }}>📤 Submit your work</h2>
       <div className="mu">Done with this lesson? Send it to your instructor in 3 easy steps.</div>
 
       {sub && st && (
@@ -130,7 +130,7 @@ export default function SubmitCard({ doc, docs, me }: { doc: Doc; docs: Doc[]; m
           <div className="swsec">🔒 Hide passwords, API keys and tokens before you take screenshots.</div>
 
           <div className="sform">
-            <label htmlFor="sbu">Your Google Drive link</label>
+            <label data-testid="label-sbu" htmlFor="sbu">Your Google Drive link</label>
             <input id="sbu" type="url" inputMode="url" maxLength={500} value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://drive.google.com/..." disabled={!loaded} data-testid="submit-link-input" />
             <details className="swnt" open={!!note}>
               <summary>＋ Add a note for your instructor (optional)</summary>

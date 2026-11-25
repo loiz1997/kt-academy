@@ -22,7 +22,7 @@ function PathPage() {
   return (
     <>
       <AppHeader active="/learn" />
-      <main className="mx-auto max-w-5xl px-4 py-5">
+      <main data-testid="paths-key-main-1" className="mx-auto max-w-5xl px-4 py-5">
         <PathView cert={cert} path={path} earned={!!data.me.certs?.[key]?.earned} />
       </main>
     </>

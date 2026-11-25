@@ -6,6 +6,7 @@ import { createClient } from "./supabase/client";
 import { loadDashboard } from "./dashboard-data";
 import type { Submission } from "./submissions";
 import type { Doc, Profile } from "./types";
+import { store } from "./session-cache";
 
 export type AdminSub = Submission & { lesson_title?: string | null; reviewed_at?: string | null; reviewed_by?: string | null };
 export type AdminData = { me: Profile; docs: Doc[]; users: Profile[]; subs: AdminSub[] };
@@ -19,19 +20,21 @@ export const trainees = (users: Profile[]) => users.filter((u) => u.role === "us
 // Loads everything the admin pages need. Non-admins are sent back to their own dashboard.
 export function useAdminData() {
   const router = useRouter();
-  const [data, setData] = useState<AdminData | null>(null);
+  const [data, setDataRaw] = useState<AdminData | null>(() => store.admin as AdminData | null);
+  const setData = useCallback((d: AdminData) => { store.admin = d; setDataRaw(d); }, []);
 
   const load = useCallback(async () => {
     const sb = createClient();
-    const d = await loadDashboard(sb, false);
-    if (!d) return router.replace("/login");
-    if (d.me.role !== "admin") return router.replace("/dashboard");
-    const [p, s] = await Promise.all([
+    // everything is asked at the same time, so the page waits for one round trip, not three
+    const [d, p, s] = await Promise.all([
+      loadDashboard(sb, false),
       sb.from("profiles").select("*").order("name"),
       sb.from("submissions").select("*").order("created_at", { ascending: false }),
     ]);
+    if (!d) return router.replace("/login");
+    if (d.me.role !== "admin") { store.admin = null; return router.replace("/dashboard"); }
     setData({ me: d.me, docs: d.docs, users: (p.data ?? []) as Profile[], subs: (s.data ?? []) as AdminSub[] });
-  }, [router]);
+  }, [router, setData]);
 
   useEffect(() => {
     load();
@@ -47,7 +50,7 @@ export function useAdminData() {
       setData({ ...data, subs: data.subs.map((s) => (String(s.id) === String(id) ? { ...s, ...rec } : s)) });
       return "";
     },
-    [data]
+    [data, setData]
   );
 
   // Makes a trainee an admin (or an admin a trainee). Returns an error text, or "" when it worked.
@@ -59,7 +62,7 @@ export function useAdminData() {
       setData({ ...data, users: data.users.map((u) => (u.id === id ? { ...u, role } : u)) });
       return "";
     },
-    [data]
+    [data, setData]
   );
 
   // Removes a person's profile (their sign-in account stays in Supabase Authentication).
@@ -71,7 +74,7 @@ export function useAdminData() {
       setData({ ...data, users: data.users.filter((u) => u.id !== id), subs: data.subs.filter((x) => String(x.user_id) !== id) });
       return "";
     },
-    [data]
+    [data, setData]
   );
 
   return { data, review, reload: load, setRole, removeUser };

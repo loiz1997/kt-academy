@@ -33,7 +33,7 @@ export default function VideosPage() {
   return (
     <>
       <AppHeader active="/learn" />
-      <main className="mx-auto max-w-5xl px-4 py-5">
+      <main data-testid="videos-main-1" className="mx-auto max-w-5xl px-4 py-5">
         <Link href="/learn" data-testid="videos-back-link" className="btn g s">← Learning &amp; Tools</Link>
         <div className="row" style={{ margin: "14px 0 4px" }}>
           <h1 className="grow text-2xl font-extrabold" style={{ margin: 0 }} data-testid="videos-title">🎬 Video tutorials</h1>
@@ -60,7 +60,7 @@ export default function VideosPage() {
                   <span className="vplay">▶</span>
                   <span className="tag" style={{ position: "absolute", left: 10, top: 10, background: "rgba(255,255,255,.2)", color: "#fff" }}>{x.cat}</span>
                 </button>
-                <h2>{x.title}</h2>
+                <h2 data-testid={`video-title-${x.id}`}>{x.title}</h2>
                 <p className="mu">{x.descr ?? ""}</p>
                 <div className="row" style={{ marginTop: "auto", paddingTop: 8 }}>
                   <span className="grow mu" style={{ fontSize: 12 }}>{x.path ? "⬆ Uploaded" : "🔗 Link"} · {fmtDate(x.created_at)}</span>

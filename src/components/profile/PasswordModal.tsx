@@ -39,7 +39,7 @@ export default function PasswordModal({ email, onClose }: { email: string; onClo
   const type = show ? "text" : "password";
   const Field = ({ id, label, value, set, tid, auto, extra }: { id: string; label: string; value: string; set: (v: string) => void; tid: string; auto: string; extra?: React.ReactNode }) => (
     <div className="pwm-f">
-      <label htmlFor={id}>{label}</label>
+      <label data-testid="profile-passwordmodal-label-1" htmlFor={id}>{label}</label>
       <div className="pwm-w">
         <input id={id} type={type} autoComplete={auto} value={value} onChange={(e) => set(e.target.value)} data-testid={tid} />
       </div>
@@ -51,13 +51,13 @@ export default function PasswordModal({ email, onClose }: { email: string; onClo
       <div className="pwm-box">
         <div className="pwm-top">
           <div className="pwm-ic" aria-hidden="true">🔒</div>
-          <div><h2>Change password</h2><p>Confirm your current password, then choose a new one.</p></div>
+          <div><h2 data-testid="profile-passwordmodal-h2-1">Change password</h2><p>Confirm your current password, then choose a new one.</p></div>
         </div>
         <div className="pwm-body">
           {Field({ id: "pw-cur", label: "Current password", value: cur, set: setCur, tid: "pw-current-input", auto: "current-password" })}
           {Field({ id: "pw-new", label: "New password", value: pw, set: setPw, tid: "pw-new-input", auto: "new-password", extra: (<><div className="pwm-str" aria-hidden="true"><i style={{ width: `${bar[0]}%`, background: String(bar[1]) }} /></div><div className="pwm-hint">At least 6 characters. Longer with numbers and symbols is stronger.</div></>) })}
           {Field({ id: "pw-new2", label: "Confirm new password", value: pw2, set: setPw2, tid: "pw-confirm-input", auto: "new-password" })}
-          <label style={{ display: "flex", gap: 8, alignItems: "center", fontSize: 13, color: "var(--mu)", cursor: "pointer" }}>
+          <label data-testid="profile-passwordmodal-label-2" style={{ display: "flex", gap: 8, alignItems: "center", fontSize: 13, color: "var(--mu)", cursor: "pointer" }}>
             <input type="checkbox" checked={show} onChange={(e) => setShow(e.target.checked)} data-testid="pw-show-toggle" /> Show passwords
           </label>
           {error && <p className="pwm-err" role="alert" data-testid="pw-error">{error}</p>}

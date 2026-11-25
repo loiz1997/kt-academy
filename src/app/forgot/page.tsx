@@ -29,7 +29,7 @@ export default function ForgotPage() {
 
   return (
     <AuthCard variant="forgot" title="Forgot your password?" subtitle="Enter your email and we will send you a link to choose a new one." onSubmit={submit}>
-      <label className="block text-sm font-medium text-slate-700">
+      <label data-testid="forgot-label-1" className="block text-sm font-medium text-slate-700">
         Email
         <input className={authInput} type="email" value={email} onChange={(e) => setEmail(e.target.value)} data-testid="forgot-email-input" autoComplete="email" />
       </label>

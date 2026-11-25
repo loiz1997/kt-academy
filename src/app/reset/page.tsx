@@ -48,11 +48,11 @@ export default function ResetPage() {
 
   return (
     <AuthCard variant="forgot" title="Set a new password" subtitle="Choose a password you have not used here before." onSubmit={submit}>
-      <label className="block text-sm font-medium text-slate-700">
+      <label data-testid="reset-label-1" className="block text-sm font-medium text-slate-700">
         New password (min 6)
         <input className={authInput} type="password" value={p1} onChange={(e) => setP1(e.target.value)} data-testid="reset-password-input" autoComplete="new-password" />
       </label>
-      <label className="block text-sm font-medium text-slate-700">
+      <label data-testid="reset-label-2" className="block text-sm font-medium text-slate-700">
         Confirm new password
         <input className={authInput} type="password" value={p2} onChange={(e) => setP2(e.target.value)} data-testid="reset-confirm-input" autoComplete="new-password" />
       </label>

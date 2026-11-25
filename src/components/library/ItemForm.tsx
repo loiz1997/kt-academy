@@ -38,20 +38,20 @@ export default function ItemForm({ kind, item, onSave, onClose }: {
   return (
     <div className="fixed inset-0 z-50 grid place-items-center bg-black/50 p-4" role="dialog" aria-modal="true" data-testid="library-form" onClick={(e) => e.target === e.currentTarget && onClose()}>
       <div className="max-h-[90vh] w-full max-w-md overflow-y-auto border border-slate-200 bg-white p-5 shadow-xl">
-        <h2 className="mb-3 text-xl font-extrabold text-slate-900">{item ? (v ? "Edit video link" : "Edit document link") : v ? "Add video tutorial" : "Add KT document"}</h2>
-        <label className={lbl} htmlFor="lib-title">Title</label>
+        <h2 data-testid="library-itemform-h2-1" className="mb-3 text-xl font-extrabold text-slate-900">{item ? (v ? "Edit video link" : "Edit document link") : v ? "Add video tutorial" : "Add KT document"}</h2>
+        <label data-testid="label-lib-title" className={lbl} htmlFor="lib-title">Title</label>
         <input id="lib-title" maxLength={120} value={title} onChange={(e) => setTitle(e.target.value)} data-testid="library-title-input" className={field} />
-        <label className={lbl} htmlFor="lib-descr">Description</label>
+        <label data-testid="label-lib-descr" className={lbl} htmlFor="lib-descr">Description</label>
         <textarea id="lib-descr" rows={2} maxLength={300} value={descr} onChange={(e) => setDescr(e.target.value)} data-testid="library-descr-input" className={field} />
         {v && (
           <>
-            <label className={lbl} htmlFor="lib-cat">Category</label>
+            <label data-testid="label-lib-cat" className={lbl} htmlFor="lib-cat">Category</label>
             <select id="lib-cat" value={cat} onChange={(e) => setCat(e.target.value)} data-testid="library-cat-select" className={field}>
               {VIDEO_CATS.map((c) => <option key={c}>{c}</option>)}
             </select>
           </>
         )}
-        <label className={lbl} htmlFor="lib-link">{v ? "Video link (YouTube, Vimeo, Google Drive…)" : "Document link (Google Drive, SharePoint, Confluence…)"}</label>
+        <label data-testid="label-lib-link" className={lbl} htmlFor="lib-link">{v ? "Video link (YouTube, Vimeo, Google Drive…)" : "Document link (Google Drive, SharePoint, Confluence…)"}</label>
         <input id="lib-link" placeholder="https://" value={link} onChange={(e) => setLink(e.target.value)} data-testid="library-link-input" className={field} />
         <p className="mb-2 text-sm text-slate-500">
           {v ? "Tip: if the video is private, set sharing so that trainees can open it." : "Tip: set sharing to “anyone with the link” (or your company) so trainees can open it."} Only the link is saved here, so it uses no storage.

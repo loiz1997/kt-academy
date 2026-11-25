@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Logo from "./Logo";
+import { clearAppCache } from "@/lib/session-cache";
 import "@/styles/dark.css";
 
 type Variant = "login" | "signup" | "forgot";
@@ -37,6 +38,7 @@ export default function AuthCard({ title, subtitle, children, onSubmit, variant 
     root.dataset.theme = "light";
     root.dataset.nav = "";
     window.dispatchEvent(new Event("kt-theme"));
+    clearAppCache(); // nobody is signed in here, so nothing from an earlier visit may be reused
   }, []);
   const h = HERO[variant];
   const alt = variant === "signup";
@@ -45,7 +47,7 @@ export default function AuthCard({ title, subtitle, children, onSubmit, variant 
       <section className={`hero${alt ? " v2" : ""}`} data-testid="auth-hero">
         <div><Logo size={46} light /></div>
         <div>
-          <h2>{h.head}</h2>
+          <h2 data-testid="authcard-h2-1">{h.head}</h2>
           <p style={{ marginTop: 14, opacity: 0.85, maxWidth: 460 }}>{h.text}</p>
         </div>
         {h.steps ? (
@@ -73,10 +75,10 @@ export default function AuthCard({ title, subtitle, children, onSubmit, variant 
         <div className="glass fl" style={{ right: "6%", top: "11%", fontSize: 13, fontWeight: 600 }} data-testid="auth-hero-badge">{h.float}</div>
       </section>
 
-      <section className="fm">
+      <section data-testid="authcard-section-1" className="fm">
         <form onSubmit={onSubmit} className="fc card" data-testid="auth-form" style={{ display: "grid", gap: 16 }}>
           <div>
-            <h1 style={{ margin: 0, fontSize: 24 }}>{title ?? <>Welcome back <span aria-hidden="true">👋</span></>}</h1>
+            <h1 data-testid="authcard-h1-1" style={{ margin: 0, fontSize: 24 }}>{title ?? <>Welcome back <span aria-hidden="true">👋</span></>}</h1>
             <p className="mu" style={{ margin: "4px 0 0" }}>{subtitle}</p>
           </div>
           {children}

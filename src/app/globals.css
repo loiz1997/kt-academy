@@ -271,3 +271,35 @@ html[data-nav-out] .kt-nav { display: none; }
 .demo-pick button.t { background: linear-gradient(90deg, #0f9d8f, #14c8b4); box-shadow: 0 12px 22px -10px #0f9d8f; }
 .demo-pick button:hover:not(:disabled) { transform: translateY(-2px); filter: brightness(1.08); }
 .demo-pick button:disabled { opacity: .6; cursor: wait; }
+
+/* ---------- Certification path header (own class, so dark mode can restyle it) ---------- */
+.pth-hero { background: radial-gradient(500px 260px at 0 0, color-mix(in srgb, var(--cc, #4f46e5) 22%, transparent), transparent 62%), linear-gradient(135deg, #eef0ff, #fff 55%, #e6f6f3); }
+html[data-theme="dark"] .pth-hero { background: radial-gradient(500px 260px at 0 0, color-mix(in srgb, var(--cc, #6b9bff) 32%, transparent), transparent 62%), linear-gradient(135deg, #1b2745, #171e2e 55%, #12302f); border-color: #2a3d6b; }
+html[data-theme="dark"] .pth-hero a { background: #1d2a47; border-color: #34508f; color: #9db9ff; }
+html[data-theme="dark"] .kt-tag.a { background: #3a2e10; color: #fcd34d; }
+
+/* ---------- Login: HD gradient panel with a frosted card ---------- */
+.lgn .fm {
+  position: relative; overflow: hidden; isolation: isolate;
+  background:
+    radial-gradient(rgba(79,70,229,.13) 1.1px, transparent 1.4px) 0 0 / 22px 22px,
+    radial-gradient(62% 52% at 88% 6%, rgba(109,94,252,.34), transparent 70%),
+    radial-gradient(58% 48% at 4% 96%, rgba(20,200,180,.34), transparent 70%),
+    radial-gradient(42% 36% at 98% 88%, rgba(255,140,190,.26), transparent 70%),
+    linear-gradient(160deg, #f4f2ff 0%, #eaf3ff 48%, #e3f8f3 100%);
+}
+.lgn .fm::before, .lgn .fm::after { content: ""; position: absolute; z-index: -1; border-radius: 50%; pointer-events: none; will-change: transform; }
+.lgn .fm::before { width: 340px; height: 340px; right: -110px; top: -90px; background: radial-gradient(circle at 35% 35%, rgba(139,123,255,.55), rgba(109,94,252,0) 70%); animation: fmOrbA 14s ease-in-out infinite alternate; }
+.lgn .fm::after { width: 300px; height: 300px; left: -100px; bottom: -80px; background: radial-gradient(circle at 60% 40%, rgba(20,200,180,.5), rgba(20,200,180,0) 70%); animation: fmOrbB 17s ease-in-out infinite alternate; }
+@keyframes fmOrbA { to { transform: translate(-46px, 38px) scale(1.12); } }
+@keyframes fmOrbB { to { transform: translate(52px, -34px) scale(1.15); } }
+.lgn .fc {
+  position: relative; overflow: hidden;
+  background: rgba(255,255,255,.76); -webkit-backdrop-filter: blur(18px) saturate(1.5); backdrop-filter: blur(18px) saturate(1.5);
+  border: 1px solid rgba(255,255,255,.95);
+  box-shadow: 0 34px 80px -30px rgba(79,70,229,.5), 0 12px 28px -18px rgba(20,200,180,.45), inset 0 1px 0 #fff;
+}
+.lgn .fc::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: linear-gradient(90deg, #6d5efc, #2f6fed 55%, #14c8b4); }
+.lgn .fc h1 { font-family: var(--font-sora), Sora, sans-serif; letter-spacing: -.2px; }
+@media (max-width: 900px) { .lgn { background: radial-gradient(rgba(79,70,229,.1) 1px, transparent 1.3px) 0 0 / 20px 20px, linear-gradient(180deg, #f4f2ff, #e3f6f3); } .lgn .fm { background: none; overflow: visible; } .lgn .fm::before, .lgn .fm::after { display: none; } }
+@media (prefers-reduced-motion: reduce) { .lgn .fm::before, .lgn .fm::after { animation: none; } }

@@ -1,7 +1,9 @@
 import type { Doc } from "./types";
 
-// Lessons that are not ready yet. They are shown as "coming soon".
-const SOON = ["TestOps: Test Plans", "Tools Cheat Sheet"];
+// Lessons that are not ready yet are listed here and shown as "coming soon". None right now.
+const SOON: string[] = [];
+// Lessons taken out of the list. They are hidden everywhere, so the numbers close up (the Cheat Sheet is now Lesson 17).
+const REMOVED = ["TestOps: Test Plans"];
 export const isSoon = (d: Doc) => SOON.some((k) => d.t.startsWith(k));
 export const activeDocs = (docs: Doc[]) => docs.filter((d) => !isSoon(d));
 
@@ -33,5 +35,5 @@ export function fixDocs(rows: Doc[]): Doc[] {
     if (!a.some((x) => x.t === n.t)) a.splice(at, 0, { ...n });
     at = a.findIndex((x) => x.t === n.t) + 1;
   }
-  return a;
+  return a.filter((x) => !REMOVED.some((k) => x.t.startsWith(k)));
 }

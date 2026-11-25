@@ -125,7 +125,7 @@ export default function ProfilePage() {
   return (
     <>
       <AppHeader active="/profile" />
-      <main>
+      <main data-testid="profile-main-1">
         <section className="pf-hero" data-testid="profile-header">
           <div className="pf-ban">
             {!admin && <div className="pf-ring" aria-label={`Overall progress ${prog}%`}>
@@ -139,7 +139,7 @@ export default function ProfilePage() {
           <div className="pf-id">
             <div className="pf-av">
               <div><Avatar name={me.name} size={100} src={str(info.avatar) || null} /></div>
-              <label title="Change photo" className="pf-cam">
+              <label data-testid="profile-label-1" title="Change photo" className="pf-cam">
                 📷
                 <input type="file" accept="image/*" className="hidden" data-testid="profile-avatar-input" aria-label="Change photo" onChange={(e) => { setPhoto(e.target.files?.[0]); e.target.value = ""; }} />
               </label>
@@ -172,18 +172,18 @@ export default function ProfilePage() {
 
         <div className="pf-grid">
           <div style={{ display: "grid", gap: 18, minWidth: 0 }}>
-          <section className="pf-card">
-            <h2>{admin ? "Admin details" : "Personal details"}</h2>
+          <section data-testid="profile-section-1" className="pf-card">
+            <h2 data-testid="profile-h2-1">{admin ? "Admin details" : "Personal details"}</h2>
             <p className="pf-sub">{admin ? "Your name and intro, as your trainees see them." : "Keep this up to date so your team and instructor know who you are."}</p>
             <div className="pf-f">
               <div className="pf-sec full">Basics</div>
-              <div><label htmlFor="p-name">Full name</label><input id="p-name" value={form.name} onChange={(e) => up("name", e.target.value)} data-testid="profile-name-input" /></div>
-              <div><label htmlFor="p-email">Email</label><input id="p-email" value={me.email} disabled data-testid="profile-email-input" /></div>
-              <div><label htmlFor="p-title">Job title</label><input id="p-title" maxLength={60} placeholder={admin ? "e.g. Automation Senior Lead" : "e.g. Manual Tester"} value={form.title} onChange={(e) => up("title", e.target.value)} data-testid="profile-title-input" /></div>
-              {admin && <div><label htmlFor="p-account">Account</label><input id="p-account" value="Admin" disabled data-testid="profile-account-input" /></div>}
+              <div><label data-testid="label-p-name" htmlFor="p-name">Full name</label><input id="p-name" value={form.name} onChange={(e) => up("name", e.target.value)} data-testid="profile-name-input" /></div>
+              <div><label data-testid="label-p-email" htmlFor="p-email">Email</label><input id="p-email" value={me.email} disabled data-testid="profile-email-input" /></div>
+              <div><label data-testid="label-p-title" htmlFor="p-title">Job title</label><input id="p-title" maxLength={60} placeholder={admin ? "e.g. Automation Senior Lead" : "e.g. Manual Tester"} value={form.title} onChange={(e) => up("title", e.target.value)} data-testid="profile-title-input" /></div>
+              {admin && <div><label data-testid="label-p-account" htmlFor="p-account">Account</label><input id="p-account" value="Admin" disabled data-testid="profile-account-input" /></div>}
               {!admin && (
                 <div>
-                  <label htmlFor="p-tribe">Tribe</label>
+                  <label data-testid="label-p-tribe" htmlFor="p-tribe">Tribe</label>
                   <select id="p-tribe" value={form.team} onChange={(e) => up("team", e.target.value)} data-testid="profile-tribe-select">
                     <option value="">Select your tribe</option>
                     {ALL_TRIBES.map((t) => <option key={t}>{t}</option>)}
@@ -195,26 +195,26 @@ export default function ProfilePage() {
                 <>
                   <div className="pf-sec full">Learning</div>
                   <div>
-                    <label htmlFor="p-level">Katalon experience</label>
+                    <label data-testid="label-p-level" htmlFor="p-level">Katalon experience</label>
                     <select id="p-level" value={form.level} onChange={(e) => up("level", e.target.value)} data-testid="profile-level-select">
                       {LEVELS.map((t) => <option key={t}>{t}</option>)}
                     </select>
                   </div>
                   <div>
-                    <label htmlFor="p-track">Learning track</label>
+                    <label data-testid="label-p-track" htmlFor="p-track">Learning track</label>
                     <select id="p-track" value={form.track} onChange={(e) => up("track", e.target.value)} data-testid="profile-track-select">
                       {TRACKS.map((t) => <option key={t}>{t}</option>)}
                     </select>
                   </div>
                   <div className="full">
-                    <label htmlFor="p-goal">My learning goal <Count v={form.goal} max={200} /></label>
+                    <label data-testid="label-p-goal" htmlFor="p-goal">My learning goal <Count v={form.goal} max={200} /></label>
                     <textarea id="p-goal" rows={2} maxLength={200} placeholder="What do you want to achieve with Katalon?" value={form.goal} onChange={(e) => up("goal", e.target.value)} data-testid="profile-goal-input" />
                   </div>
                 </>
               )}
               <div className="pf-sec full">About</div>
               <div className="full">
-                <label htmlFor="p-about">About me <Count v={form.about} max={300} /></label>
+                <label data-testid="label-p-about" htmlFor="p-about">About me <Count v={form.about} max={300} /></label>
                 <textarea id="p-about" rows={3} maxLength={300} placeholder={admin ? "A short intro for your trainees" : "A short intro for your team"} value={form.about} onChange={(e) => up("about", e.target.value)} data-testid="profile-about-input" />
               </div>
             </div>
@@ -227,7 +227,7 @@ export default function ProfilePage() {
 
           {admin && (
             <section className="pf-card" data-testid="profile-certificates">
-              <h2>🏅 My certificates</h2>
+              <h2 data-testid="profile-h2-2">🏅 My certificates</h2>
               {CERTS.map((c) => {
                 const d = me.certs?.[c.k];
                 return (
@@ -237,7 +237,7 @@ export default function ProfilePage() {
                       <b>{c.t.replace(" Certification", "")}</b>
                       <div className="mu">{d?.earned ? `Earned ${d.date ?? ""}` : "Not added yet"}</div>
                     </div>
-                    {d?.earned && d.url && <a className="btn g s" href={d.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>View</a>}
+                    {d?.earned && d.url && <a data-testid={`profile-cert-view-${c.k}`} className="btn g s" href={d.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>View</a>}
                     <Link className="btn g s" href={`/certifications/${c.k}`} data-testid={`profile-cert-edit-${c.k}`} style={{ textDecoration: "none" }}>{d?.earned ? "Edit" : "Add"}</Link>
                   </div>
                 );
@@ -246,10 +246,10 @@ export default function ProfilePage() {
           )}
           </div>
 
-          <aside style={{ display: "grid", gap: 18 }}>
+          <aside data-testid="profile-aside-1" style={{ display: "grid", gap: 18 }}>
             {!admin && (
               <section className="pf-card" data-testid="profile-submissions">
-                <h2>📤 My submissions</h2>
+                <h2 data-testid="profile-h2-3">📤 My submissions</h2>
                 <p className="pf-sub">Your work, and what your instructor said.</p>
                 {subs.length === 0 ? (
                   <div className="pf-empty" data-testid="profile-submissions-empty">
@@ -278,23 +278,23 @@ export default function ProfilePage() {
                 )}
               </section>
             )}
-            <section className="pf-card">
-              <h2>Security</h2>
+            <section data-testid="profile-section-2" className="pf-card">
+              <h2 data-testid="profile-h2-4">Security</h2>
               <p className="pf-sub">Your password is locked. Confirm your current password to change it.</p>
               <button type="button" onClick={() => setPw(true)} data-testid="profile-change-password-button" className="btn g">🔒 Change password</button>
             </section>
             {admin && (
               <section className="pf-card" data-testid="profile-admin-shortcuts">
-                <h2>Admin shortcuts</h2>
+                <h2 data-testid="profile-h2-5">Admin shortcuts</h2>
                 <div className="row">
                   <Link href="/admin" className="btn g s" data-testid="profile-shortcut-dashboard" style={{ textDecoration: "none" }}>📊 Dashboard</Link>
                   <Link href="/learn" className="btn g s" data-testid="profile-shortcut-learning" style={{ textDecoration: "none" }}>📚 Manage learning</Link>
                 </div>
               </section>
             )}
-            <section className="pf-card">
+            <section data-testid="profile-section-3" className="pf-card">
               <div className="pf-ap">
-                <h2 style={{ margin: 0 }}>Appearance</h2>
+                <h2 data-testid="profile-h2-6" style={{ margin: 0 }}>Appearance</h2>
                 <div className="pf-ic" role="group" aria-label="Theme">
                   {(["light", "dark"] as Theme[]).map((t) => (
                     <button key={t} type="button" onClick={() => setTheme(t)} data-testid={`theme-${t}-button`} aria-pressed={theme === t} aria-label={t === "light" ? "Light mode" : "Dark mode"} title={t === "light" ? "Light mode" : "Dark mode"} className={`pf-ib ${theme === t ? "on" : ""}`}>

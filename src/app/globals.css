@@ -303,3 +303,15 @@ html[data-theme="dark"] .kt-tag.a { background: #3a2e10; color: #fcd34d; }
 .lgn .fc h1 { font-family: var(--font-sora), Sora, sans-serif; letter-spacing: -.2px; }
 @media (max-width: 900px) { .lgn { background: radial-gradient(rgba(79,70,229,.1) 1px, transparent 1.3px) 0 0 / 20px 20px, linear-gradient(180deg, #f4f2ff, #e3f6f3); } .lgn .fm { background: none; overflow: visible; } .lgn .fm::before, .lgn .fm::after { display: none; } }
 @media (prefers-reduced-motion: reduce) { .lgn .fm::before, .lgn .fm::after { animation: none; } }
+
+/* Demo bar on phones: a slim strip at the top, so it never covers the bottom menu.
+   The menu is lifted a little so the "Powered by Netlify" badge (free plan) does not cover it either. */
+.demo-bar.qa { background: linear-gradient(90deg, #b45309, #f59e0b); color: #1f1300; }
+.demo-short { display: none; }
+@media (max-width: 760px) {
+  .demo-bar { position: static; padding: 6px 12px; font-size: 11.5px; box-shadow: none; }
+  .demo-long { display: none; }
+  .demo-short { display: inline; }
+  html[data-demo] .kt-nav, html[data-demo] .kt-nav[data-min="1"] { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+  html[data-demo] body:has(.kt-nav) main { padding-bottom: calc(176px + env(safe-area-inset-bottom, 0px)); }
+}

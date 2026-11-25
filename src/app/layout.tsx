@@ -5,6 +5,7 @@ import Overlays from "@/components/Overlays";
 import { Suspense } from "react";
 import RouteProgress from "@/components/RouteProgress";
 import DemoBanner from "@/components/DemoBanner";
+import { DEMO, ENV_LABEL } from "@/lib/demo";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const sora = Sora({ variable: "--font-sora", subsets: ["latin"], weight: ["600", "700", "800"] });
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${sora.variable} h-full antialiased`}>
+    <html lang="en" data-demo={DEMO || ENV_LABEL ? "1" : undefined} className={`${inter.variable} ${sora.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col" suppressHydrationWarning><Suspense fallback={null}><RouteProgress /></Suspense><DemoBanner />{children}<Overlays /></body>
     </html>
   );

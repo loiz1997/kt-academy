@@ -3,19 +3,21 @@
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "./supabase/client";
-import { loadDashboard, type DashboardData } from "./dashboard-data";
+import { loadDashboard, peekDashboard, putDashboard, type DashboardData } from "./dashboard-data";
+import { store } from "./session-cache";
 import type { Profile } from "./types";
 
 // Loads the logged-in user's profile and the lessons. Sends people to /login if nobody is logged in.
 export function useAppData(withLearners = false) {
   const router = useRouter();
-  const [data, setData] = useState<DashboardData | null>(null);
+  const [data, setDataRaw] = useState<DashboardData | null>(() => peekDashboard(withLearners));
+  const setData = useCallback((d: DashboardData) => { putDashboard(d); setDataRaw(d); }, []);
 
   useEffect(() => {
     (async () => {
       const d = await loadDashboard(createClient(), withLearners);
       if (!d) return router.replace("/login");
-      setData(d);
+      setDataRaw(d);
     })();
   }, [router, withLearners]);
 
@@ -35,7 +37,7 @@ export function useAppData(withLearners = false) {
       setData({ ...data, me: { ...me, done, info } });
       return true;
     },
-    [data]
+    [data, setData]
   );
 
   // Saves the certificates (for example after adding or removing one).
@@ -47,7 +49,7 @@ export function useAppData(withLearners = false) {
       setData({ ...data, me: { ...data.me, certs } });
       return true;
     },
-    [data]
+    [data, setData]
   );
 
   // Saves the profile form: name, track and the extra details (title, tribe, level, goal, about).
@@ -61,9 +63,10 @@ export function useAppData(withLearners = false) {
       const { error } = await createClient().from("profiles").update(update).eq("id", me.id);
       if (error) return false;
       setData({ ...data, me: { ...me, ...update } as Profile });
+      if (store.mini) store.mini = { ...store.mini, name: patch.name, info }; // the menu shows the new name and picture
       return true;
     },
-    [data]
+    [data, setData]
   );
 
   return { data, toggleDone, saveCerts, saveProfile };

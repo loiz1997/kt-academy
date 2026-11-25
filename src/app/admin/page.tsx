@@ -57,8 +57,8 @@ export default function AdminDashboard() {
   return (
     <>
       <AppHeader active="/admin" />
-      <main>
-        <section className="spot">
+      <main data-testid="admin-main-1">
+        <section data-testid="admin-section-1" className="spot">
           <div className="spt">
             <div>
               <div className="mu">{today}</div>

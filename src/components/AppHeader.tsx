@@ -9,6 +9,7 @@ import { currentTheme, savedTheme, setTheme, type Theme } from "@/lib/theme";
 import OnboardingModal from "./OnboardingModal";
 import Logo from "./Logo";
 import { hideLoading, showLoading } from "@/lib/overlay";
+import { clearAppCache, store } from "@/lib/session-cache";
 import "@/styles/dark.css";
 
 const traineeLinks = [
@@ -47,8 +48,8 @@ export default function AppHeader({ active }: { active: string }) {
   const router = useRouter();
   const path = usePathname();
   const [theme, setT] = useState<Theme>("light");
-  const [role, setRole] = useState<string | null>(null);
-  const [who, setWho] = useState<{ name: string; avatar: string } | null>(null);
+  const [role, setRole] = useState<string | null>(() => store.mini?.role ?? null);
+  const [who, setWho] = useState<{ name: string; avatar: string } | null>(() => store.mini ? { name: store.mini.name ?? "", avatar: typeof store.mini.info?.avatar === "string" ? (store.mini.info.avatar as string) : "" } : null);
   const [min, setMin] = useState(false);
   const [pending, setPending] = useState(0);
   const [onb, setOnb] = useState<Mini | null>(null);
@@ -87,8 +88,13 @@ export default function AppHeader({ active }: { active: string }) {
       const sb = createClient();
       const { data: s } = await sb.auth.getSession();
       if (!s.session) { hideLoading(); return; }
-      const { data } = await sb.from("profiles").select("id,name,role,track,info").eq("id", s.session.user.id).single();
-      const m = data as Mini | null;
+      // the last answer is reused for 30 seconds, so clicking around does not ask the database again
+      let m: Mini | null = store.mini && store.mini.id === s.session.user.id && Date.now() - store.miniAt < 30000 ? store.mini : null;
+      if (!m) {
+        const { data } = await sb.from("profiles").select("id,name,role,track,info").eq("id", s.session.user.id).single();
+        m = data as Mini | null;
+        if (m) { store.mini = m; store.miniAt = Date.now(); }
+      }
       if (!m) { hideLoading(); return; }
       setRole(m.role);
       hideLoading(); // the signing-in screen ends when the app is ready
@@ -118,6 +124,7 @@ export default function AppHeader({ active }: { active: string }) {
     document.documentElement.dataset.navOut = "1";
     document.documentElement.dataset.nav = "";
     showLoading("Signing you out…", "See you soon");
+    clearAppCache();
     router.prefetch("/login");
     await createClient().auth.signOut({ scope: "local" }); // clears this browser at once, no waiting for the server
     router.replace("/login");
@@ -128,7 +135,7 @@ export default function AppHeader({ active }: { active: string }) {
   const name = who?.name || "";
   const av = (size: number, cls = "") => (
     <span className={`kt-av ${cls}`} style={{ width: size, height: size, fontSize: Math.round(size * 0.32) }}>
-      {who?.avatar ? /* eslint-disable-next-line @next/next/no-img-element */ <img src={who.avatar} alt="" /> : initials(name || "?")}
+      {who?.avatar ? /* eslint-disable-next-line @next/next/no-img-element */ <img data-testid="appheader-img-1" src={who.avatar} alt="" /> : initials(name || "?")}
     </span>
   );
   const themeBtn = (
@@ -148,7 +155,7 @@ export default function AppHeader({ active }: { active: string }) {
   return (
     <>
       <div className="kt-mtop" data-testid="app-topbar">
-        <Link href={role === "admin" ? "/admin" : "/dashboard"} aria-label="KT Academy home" className="shrink-0"><Logo size={30} tagline={false} /></Link>
+        <Link data-testid="appheader-link-1" href={role === "admin" ? "/admin" : "/dashboard"} aria-label="KT Academy home" className="shrink-0"><Logo size={30} tagline={false} /></Link>
         <span className="grow" />
         {who && av(34)}
         <button onClick={logout} data-testid="logout-button-mobile" className="kt-btn-g">Log out</button>
@@ -163,7 +170,7 @@ export default function AppHeader({ active }: { active: string }) {
           {role && <span className={`kt-tag kt-nt ${role === "admin" ? "a" : ""}`} data-testid="nav-user-role">{role === "admin" ? "Admin" : "Trainee"}</span>}
         </div>
         <div className="kt-nsec kt-nt">MENU</div>
-        <nav className="kt-links" aria-label="Main">
+        <nav data-testid="appheader-nav-1" className="kt-links" aria-label="Main">
           {links.map((l) => (
             <Link key={l.href} href={l.href} data-testid={l.id} title={l.label} aria-label={l.label} className={`kt-nl ${active === l.href ? "on" : ""}`}>
               <span className="kt-ni"><Icon n={l.icon} /></span>

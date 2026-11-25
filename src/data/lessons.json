@@ -3172,5 +3172,236 @@
    ]
   ],
   "next": "iOS testing needs a Mac. If you do not have one, ask your trainer for a shared machine."
+ },
+ "Tools Cheat Sheet: Shortcuts & Keywords": {
+  "sum": "A quick guide to the shortcuts, keywords and naming habits you will use every day in Katalon Studio.",
+  "intro": "Katalon Studio has many small tricks that save time. This cheat sheet puts the most useful ones in one place: keyboard shortcuts, the built-in keywords you will use all the time, and simple naming habits that keep your project tidy. You do not have to remember everything. Keep this page open while you work and come back whenever you forget something.",
+  "meta": [
+   "🟢 Beginner",
+   "⏱ 15–20 minutes",
+   "📘 Reference page · No setup needed"
+  ],
+  "links": [
+   [
+    "Official shortcuts list ↗",
+    "https://docs.katalon.com/katalon-studio/get-started/workspace-settings/keyboard-shortcuts-in-katalon-studio"
+   ],
+   [
+    "Built-in keywords (API) ↗",
+    "https://api-docs.katalon.com/com/kms/katalon/core/webui/keyword/WebUiBuiltInKeywords.html"
+   ]
+  ],
+  "obj": [
+   "Use the keyboard shortcuts for saving, running and debugging",
+   "Edit and move around in the Script editor faster",
+   "Pick the right built-in Web UI keyword for common jobs",
+   "Name test cases, suites and test objects in a clear way"
+  ],
+  "need": [
+   "Katalon Studio open with any project (the shortcuts work in every project)",
+   "A test case open in an editor window, so you can try the shortcuts as you read",
+   "Basic knowledge of test cases. <a href=\"/lessons/find?t=Recording%20a%20Manual%20Test\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">Need a refresher? See Lesson 2</a>"
+  ],
+  "info": [
+   {
+    "t": "How to use this cheat sheet",
+    "d": "Each part is a short list. Try the shortcut or keyword in Katalon Studio right after you read it. Doing it once helps you remember it much longer than reading it.<div class=\"flow\"><div><span class=\"fn\">1</span><b>Shortcuts</b>Work faster</div><div><span class=\"fn\">2</span><b>Keywords</b>Build test steps</div><div><span class=\"fn\">3</span><b>Habits</b>Keep it tidy</div></div>",
+    "tip": "Start with only three shortcuts: save, run and find. Add more when those feel natural."
+   },
+   {
+    "t": "Mac or Windows?",
+    "d": "This page shows the Windows keys. On a Mac, use the <b>Cmd (⌘)</b> key where this page says Ctrl. The exact list is in <b>Katalon Studio Preferences ▸ General ▸ Keys</b>, where you can also change any shortcut."
+   },
+   {
+    "t": "What is a keyword?",
+    "d": "A keyword is a ready-made action for your test, such as <b>Open Browser</b>, <b>Click</b> or <b>Set Text</b>. Katalon gives you hundreds of <b>built-in keywords</b>. You choose them from a list in the Manual view, or type them in the Script view. When you need something new, you can also make your own <b>custom keyword</b>."
+   }
+  ],
+  "parts": [
+   {
+    "t": "Keyboard shortcuts",
+    "s": "These come from the official Katalon list. They are the ones you will use most.",
+    "steps": [
+     {
+      "t": "Save, open and refresh",
+      "d": "Use these all the time:<div class=\"stl\"><div><b>Ctrl+S</b> Save the current file.</div><div><b>Ctrl+Shift+S</b> Save all files.</div><div><b>Ctrl+Shift+R</b> Open a resource, such as a test case or a folder, by typing its name.</div><div><b>Ctrl+W</b> Close the current file.</div><div><b>Ctrl+F5</b> Refresh the project, for example after you change files outside Katalon.</div></div>",
+      "tip": "Get used to pressing Ctrl+S after every change. A lost change is the most common beginner mistake."
+     },
+     {
+      "t": "Run and debug",
+      "d": "Your test case or test suite must be open in its editor window.<div class=\"stl\"><div><b>Ctrl+Shift+A</b> Save everything and run the open test case or test suite.</div><div><b>Ctrl+Shift+D</b> Save everything and debug it.</div><div><b>F5</b> Step into a function while debugging.</div><div><b>F6</b> Step over the current line.</div><div><b>F7</b> Step out of the current function.</div><div><b>F8</b> Resume the run until the next stopping point.</div></div>",
+      "note": "Debugging means running your test slowly, one line at a time, so you can see what went wrong."
+     },
+     {
+      "t": "Edit text quickly",
+      "d": "These work in the Script editor:<div class=\"stl\"><div><b>Ctrl+Z / Ctrl+Y</b> Undo and redo.</div><div><b>Ctrl+D</b> Delete the current line.</div><div><b>Shift+Enter</b> Add a new line below, without moving the cursor.</div><div><b>Ctrl+Shift+Enter</b> Add a new line above.</div><div><b>Ctrl+Backspace</b> Delete the word before the cursor.</div><div><b>Shift+Ctrl+X / Shift+Ctrl+Y</b> Change the selected text to UPPERCASE or lowercase.</div><div><b>Ctrl+A</b> Select all text.</div></div>"
+     },
+     {
+      "t": "Find and move around",
+      "d": "Save time when a file is long:<div class=\"stl\"><div><b>Ctrl+F</b> Find and replace in the open file.</div><div><b>Ctrl+K / Ctrl+Shift+K</b> Jump to the next or the previous match.</div><div><b>Ctrl+H</b> Search across the whole project.</div><div><b>Ctrl+L</b> Go to a line number.</div><div><b>Ctrl+Home / Ctrl+End</b> Jump to the start or the end of the file.</div><div><b>Ctrl+Shift+Up / Ctrl+Shift+Down</b> Jump to the previous or next method.</div><div><b>Ctrl+M</b> Make the editor full size, or bring it back.</div></div>"
+     },
+     {
+      "t": "Manual view and keyword help",
+      "d": "These help you while you build steps:<div class=\"stl\"><div><b>Ctrl+Up / Ctrl+Down</b> Move the selected test step up or down in the Manual view.</div><div><b>Ctrl+F2</b> Show the description of the keyword you selected.</div><div><b>Shift+F2</b> Open the keyword documentation in your browser.</div><div><b>Ctrl+F7</b> Switch between the Manual, Script and other views.</div><div><b>Ctrl+Shift+O</b> Import the default packages of the built-in keywords. Use it if keywords turn red in the Script view.</div></div>",
+      "tip": "Ctrl+F2 is a great learning tool. Click any keyword and read what it does in seconds."
+     }
+    ]
+   },
+   {
+    "t": "Built-in Web UI keywords",
+    "s": "Use these to build most web tests. In the Script view they start with WebUI. For example WebUI.click.",
+    "steps": [
+     {
+      "t": "Open and close the browser",
+      "d": "Every web test starts and ends with these:<div class=\"stl\"><div><b>Open Browser</b> Starts the browser. Leave the address empty, or type a web address.</div><div><b>Navigate To Url</b> Goes to a web address.</div><div><b>Close Browser</b> Closes the browser at the end.</div><div><b>Refresh / Back / Forward</b> Works like the browser buttons.</div><div><b>Maximize Window</b> Makes the browser window big, so nothing is hidden.</div></div>"
+     },
+     {
+      "t": "Act on the page",
+      "d": "These do things on a page. Each one needs a <b>Test Object</b>, which is a saved page element:<div class=\"stl\"><div><b>Click</b> Clicks a button or a link.</div><div><b>Set Text</b> Types text into a text box.</div><div><b>Set Encrypted Text</b> Types a password that is hidden in your script.</div><div><b>Clear Text</b> Empties a text box.</div><div><b>Select Option By Label</b> Picks an item in a drop-down by its visible name.</div><div><b>Check / Uncheck</b> Ticks or unticks a check box.</div></div>",
+      "warn": "Never type a real password with <b>Set Text</b>. Use <b>Set Encrypted Text</b> so the password is not readable in your script."
+     },
+     {
+      "t": "Wait for the page",
+      "d": "Pages need time to load. These keywords wait instead of failing too early:<div class=\"stl\"><div><b>Wait For Page Load</b> Waits until the whole page has loaded.</div><div><b>Wait For Element Visible</b> Waits until an element can be seen.</div><div><b>Wait For Element Present</b> Waits until an element exists on the page.</div><div><b>Wait For Element Clickable</b> Waits until a button is ready to click.</div><div><b>Delay</b> Waits a fixed number of seconds. Use it only as a last choice.</div></div>",
+      "tip": "Before a Click, use <b>Wait For Element Visible</b>. It makes tests much more stable than a fixed Delay."
+     },
+     {
+      "t": "Check the result",
+      "d": "A test without a check is only a click-through. Add at least one of these:<div class=\"stl\"><div><b>Verify Element Present</b> Checks that an element exists on the page.</div><div><b>Verify Element Visible</b> Checks that an element can be seen.</div><div><b>Verify Element Text</b> Checks that an element shows the text you expect.</div><div><b>Verify Text Present</b> Checks that some text is on the page.</div><div><b>Take Screenshot</b> Saves a picture of the page, useful as proof.</div></div>",
+      "note": "<b>Verify</b> keywords mark the step as failed and the test goes on or stops, depending on the Failure Handling setting. Learn about it in the next step."
+     },
+     {
+      "t": "Failure Handling",
+      "d": "Most keywords let you choose what happens when a step fails:<div class=\"stl\"><div><b>Stop On Failure</b> The test stops at once. This is the default.</div><div><b>Continue On Failure</b> The step is marked failed, but the test goes on.</div><div><b>Optional</b> The step only gives a warning, and the test is still marked passed.</div></div>",
+      "tip": "Keep the default for important checks. Use Optional only for things that may or may not appear, such as a cookie pop-up."
+     }
+    ]
+   },
+   {
+    "t": "Handy script snippets",
+    "s": "Copy and paste these into the Script view, then change the names to match your project.",
+    "steps": [
+     {
+      "t": "A basic web test",
+      "d": "The shape of most web tests. Replace the address and the Test Object path with yours.<pre class=\"code\">WebUI.openBrowser('')\nWebUI.maximizeWindow()\nWebUI.navigateToUrl('https://katalon-demo-cura.herokuapp.com/')\nWebUI.waitForElementVisible(findTestObject('Page_Home/btn_MakeAppointment'), 10)\nWebUI.click(findTestObject('Page_Home/btn_MakeAppointment'))\nWebUI.verifyElementPresent(findTestObject('Page_Login/txt_Username'), 10)\nWebUI.closeBrowser()</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>",
+      "note": "The number 10 is the timeout in seconds. The test waits up to 10 seconds, and goes on as soon as the element is ready."
+     },
+     {
+      "t": "Write a message in the log",
+      "d": "Use this to leave a note in the Log Viewer while the test runs.<pre class=\"code\">import com.kms.katalon.core.util.KeywordUtil\n\nKeywordUtil.logInfo('Login page opened')\nKeywordUtil.markWarning('The pop-up did not show up, going on')</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>"
+     },
+     {
+      "t": "Use a Global Variable",
+      "d": "Keep values like web addresses in one place, in a Profile, and call them by name. <a href=\"/lessons/find?t=Profiles%20and%20Global\" style=\"color:var(--pr);cursor:pointer;font-weight:600\">See the Profiles lesson</a><pre class=\"code\">WebUI.navigateToUrl(GlobalVariable.baseUrl)</pre><button class=\"btn g s\" data-copy=\"1\">📋 Copy code</button>"
+     }
+    ]
+   },
+   {
+    "t": "Naming habits",
+    "s": "Clear names help you and your team find things quickly. These are common habits. Always follow your own team's rules first.",
+    "steps": [
+     {
+      "t": "Name your files",
+      "d": "A short prefix tells you what a file is, even in a long list:<div class=\"stl\"><div><b>TC_Login_ValidUser</b> A Test Case. TC, then the feature, then what it checks.</div><div><b>TS_Smoke_Regression</b> A Test Suite.</div><div><b>TSC_Nightly</b> A Test Suite Collection.</div><div><b>Page_Login</b> A folder in the Object Repository, one for each page.</div></div>"
+     },
+     {
+      "t": "Name your Test Objects",
+      "d": "Start with the kind of element, then say what it is:<div class=\"stl\"><div><b>btn_Login</b> A button.</div><div><b>txt_Username</b> A text box.</div><div><b>lnk_ForgotPassword</b> A link.</div><div><b>chk_RememberMe</b> A check box.</div><div><b>ddl_Country</b> A drop-down list.</div><div><b>lbl_ErrorMessage</b> A label or message text.</div></div>",
+      "tip": "Good names let anyone read your test and understand it, without opening the object."
+     },
+     {
+      "t": "Good habits",
+      "d": "Small habits that keep your project healthy:<div class=\"stl\"><div><b>One idea</b> Let each test case check one thing.</div><div><b>Add comments</b> Write a short note above a step when it is not obvious.</div><div><b>No copy and paste</b> If you repeat the same steps, put them in a custom keyword or a Test Listener.</div><div><b>Save often</b> Press Ctrl+S after each change.</div><div><b>Check, not just click</b> End every test with at least one Verify keyword.</div></div>"
+     }
+    ]
+   }
+  ],
+  "concepts": [
+   [
+    "Shortcut",
+    "A key combination that does an action quickly."
+   ],
+   [
+    "Keyword",
+    "A ready-made action for your test, such as Click."
+   ],
+   [
+    "Built-in keyword",
+    "A keyword that comes with Katalon Studio."
+   ],
+   [
+    "Custom keyword",
+    "A keyword you write yourself for repeated work."
+   ],
+   [
+    "Test Object",
+    "A saved page element, such as a button or text box."
+   ],
+   [
+    "Timeout",
+    "How many seconds a keyword waits before it gives up."
+   ],
+   [
+    "Failure Handling",
+    "The setting that decides what happens when a step fails."
+   ],
+   [
+    "Debug",
+    "Running a test slowly, line by line, to find a problem."
+   ]
+  ],
+  "help": [
+   [
+    "A shortcut does nothing",
+    "Click inside the editor window first, because some shortcuts only work there. Run shortcuts need an open test case or test suite. On a Mac, use Cmd instead of Ctrl. Another app on your computer may also use the same keys."
+   ],
+   [
+    "A keyword is red in the Script view",
+    "Press <b>Ctrl+Shift+O</b> to import the default packages. Then check the spelling, because keyword names are case sensitive."
+   ],
+   [
+    "The test cannot find an element",
+    "Add <b>Wait For Element Visible</b> before the step, and check that the Test Object points to the right element."
+   ],
+   [
+    "I forgot what a keyword does",
+    "Click the keyword and press <b>Ctrl+F2</b> to read its description, or <b>Shift+F2</b> to open the full documentation."
+   ],
+   [
+    "I want to change a shortcut",
+    "Open <b>Katalon Studio Preferences ▸ General ▸ Keys</b>, find the command and set your own keys."
+   ]
+  ],
+  "check": [
+   "I ran a test case with Ctrl+Shift+A",
+   "I tried Ctrl+F2 on a keyword to read what it does",
+   "I used Wait For Element Visible before a Click",
+   "I added a Verify keyword to a test case",
+   "I named a Test Object with a prefix such as btn_ or txt_"
+  ],
+  "done": [
+   "I can run, save and debug with the keyboard",
+   "I can choose the right keyword to open, act, wait and check",
+   "I can name my test cases and objects in a clear way"
+  ],
+  "res": [
+   [
+    "Keyboard shortcuts in Katalon Studio",
+    "https://docs.katalon.com/katalon-studio/get-started/workspace-settings/keyboard-shortcuts-in-katalon-studio"
+   ],
+   [
+    "Configure key bindings",
+    "https://docs.katalon.com/katalon-studio/get-started/workspace-settings/configure-key-bindings-in-katalon-studio"
+   ],
+   [
+    "Wait keywords in Katalon Studio",
+    "https://docs.katalon.com/katalon-studio/keywords/using-keywords-in-katalon-studio/web-testing/wait-and-enhanced-waiting-&-checking-keyword-logic"
+   ],
+   [
+    "Web UI built-in keywords (API list)",
+    "https://api-docs.katalon.com/com/kms/katalon/core/webui/keyword/WebUiBuiltInKeywords.html"
+   ]
+  ],
+  "next": "This is a reference lesson, so there is nothing to submit. Come back to it any time, and tick it as done when you are comfortable with the shortcuts and keywords."
  }
 }

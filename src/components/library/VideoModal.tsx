@@ -27,10 +27,10 @@ export default function VideoModal({ item, onClose }: { item: LibItem; onClose: 
           <button type="button" onClick={onClose} data-testid="video-modal-close" aria-label="Close" className="shrink-0 border border-slate-300 px-3 py-1.5 text-sm font-semibold text-slate-700">✕</button>
         </div>
         {item.path ? (
-          src ? <video src={src} controls autoPlay playsInline className="max-h-[70vh] w-full bg-black" /> : <p className="text-slate-500">Loading video…</p>
+          src ? <video data-testid="library-videomodal-video-1" src={src} controls autoPlay playsInline className="max-h-[70vh] w-full bg-black" /> : <p className="text-slate-500">Loading video…</p>
         ) : embed ? (
           <div className="relative aspect-video w-full bg-black">
-            <iframe src={embed} title={item.title} allowFullScreen allow="autoplay; encrypted-media; picture-in-picture" className="absolute inset-0 h-full w-full" />
+            <iframe data-testid="library-videomodal-iframe-1" src={embed} title={item.title} allowFullScreen allow="autoplay; encrypted-media; picture-in-picture" className="absolute inset-0 h-full w-full" />
           </div>
         ) : (
           <p className="text-slate-500">This video is hosted on another site. Use “Open on its site”.</p>

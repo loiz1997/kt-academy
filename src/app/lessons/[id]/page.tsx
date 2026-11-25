@@ -1,15 +1,15 @@
 "use client";
 
 import PageLoading from "@/components/PageLoading";
-import { use, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { Suspense, useEffect } from "react";
+import { useParams, useRouter } from "next/navigation";
 import AppHeader from "@/components/AppHeader";
 import LessonView from "@/components/lesson/LessonView";
 import { isSoon } from "@/lib/lessons";
 import { useAppData } from "@/lib/use-app-data";
 
-export default function LessonPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params);
+function LessonPage() {
+  const { id } = useParams<{ id: string }>();
   const router = useRouter();
   const { data, toggleDone } = useAppData(false);
   const doc = data?.docs.find((d) => String(d.id) === id);
@@ -23,9 +23,18 @@ export default function LessonPage({ params }: { params: Promise<{ id: string }>
   return (
     <>
       <AppHeader active="/learn" />
-      <main className="mx-auto max-w-5xl px-4 py-5">
+      <main data-testid="lessons-id-main-1" className="mx-auto max-w-5xl px-4 py-5">
         <LessonView doc={doc} docs={data.docs} me={data.me} onToggle={toggleDone} />
       </main>
     </>
+  );
+}
+
+// Reading the lesson number from the address must sit inside Suspense (needed for the production build).
+export default function LessonDetailPage() {
+  return (
+    <Suspense fallback={<PageLoading />}>
+      <LessonPage />
+    </Suspense>
   );
 }

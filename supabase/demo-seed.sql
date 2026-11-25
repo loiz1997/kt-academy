@@ -30,7 +30,7 @@ declare
   roles text[]  := array['QA Engineer','Manual Tester','Test Analyst','QA Engineer','Junior Tester','Test Analyst','QA Engineer','Manual Tester'];
   tracks text[] := array['Both','Local','TestOps','Both','Local','TestOps','Both','Local'];
   done_pool bigint[] := array[1,2,3,4,9005,9006,9007,9008,9009,9010,9011,9012,9013,9014,9015,9016];
-  n int; mine bigint[]; certs jsonb;
+  n int; mine bigint[]; v_certs jsonb;
 begin
   -- admin
   adm := pg_temp.mk('demo.admin@ktacademy.demo', 'Demo Admin', pw);
@@ -54,10 +54,10 @@ begin
     u := pg_temp.mk('trainee' || i || '@ktacademy.demo', names[i], pw);
     n := 2 + ((i * 5) % 14);                       -- 2..15 lessons done
     mine := done_pool[1:n];
-    certs := '{}'::jsonb;
-    if n >= 6  then certs := certs || jsonb_build_object('prac', jsonb_build_object('earned', true, 'date', to_char(now() - (i||' days')::interval,'YYYY-MM-DD'), 'url','', 'cid','DEMO-PRAC-0' || i)); end if;
-    if n >= 10 then certs := certs || jsonb_build_object('tt',   jsonb_build_object('earned', true, 'date', to_char(now() - (i||' days')::interval,'YYYY-MM-DD'), 'url','', 'cid','DEMO-TT-0'   || i)); end if;
-    update public.profiles set track = tracks[i], done = mine, certs = certs,
+    v_certs := '{}'::jsonb;
+    if n >= 6  then v_certs := v_certs || jsonb_build_object('prac', jsonb_build_object('earned', true, 'date', to_char(now() - (i||' days')::interval,'YYYY-MM-DD'), 'url','', 'cid','DEMO-PRAC-0' || i)); end if;
+    if n >= 10 then v_certs := v_certs || jsonb_build_object('tt',   jsonb_build_object('earned', true, 'date', to_char(now() - (i||' days')::interval,'YYYY-MM-DD'), 'url','', 'cid','DEMO-TT-0'   || i)); end if;
+    update public.profiles set track = tracks[i], done = mine, certs = v_certs,
       info = jsonb_build_object('title', roles[i], 'team', tribes[i], 'goal', 'Get certified in Katalon', 'bio', 'Demo trainee.'),
       created_at = now() - ((40 - i * 3) || ' days')::interval
     where id = u;

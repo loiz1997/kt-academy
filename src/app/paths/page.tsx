@@ -17,7 +17,7 @@ export default function PathsPage() {
   return (
     <>
       <AppHeader active="/learn" />
-      <main className="mx-auto max-w-5xl px-4 py-5">
+      <main data-testid="paths-main-1" className="mx-auto max-w-5xl px-4 py-5">
         <Link href="/learn" className="inline-block bg-indigo-50 px-3 py-1.5 text-sm font-semibold text-indigo-700" data-testid="paths-back-link">← Learning</Link>
         <h1 className="mt-3 text-2xl font-extrabold text-slate-900" data-testid="paths-title">🏅 Certification paths</h1>
         <p className="mb-4 text-slate-500">Pick a certification to see what you need to do and how to do it.</p>
@@ -33,7 +33,7 @@ export default function PathsPage() {
                   <div className="min-w-0 flex-1"><div className="text-xs font-bold uppercase tracking-wide text-slate-400">Certification path</div><span className="text-sm text-slate-500">{c.s}</span></div>
                   {earned && <span className="bg-green-100 px-2 py-0.5 text-xs font-semibold text-green-800">🏅 Earned</span>}
                 </div>
-                <h2 className="mt-2 text-base font-bold text-slate-900">{c.t}</h2>
+                <h2 data-testid={`path-title-${c.k}`} className="mt-2 text-base font-bold text-slate-900">{c.t}</h2>
                 <p className="mt-1 text-sm text-slate-500">{p?.sum ?? "The requirements for this certification are still being confirmed."}</p>
                 <div className="mt-auto flex items-center justify-between pt-3 text-sm">
                   <span className="text-slate-500">{p ? `${p.mods.length} lessons · ${activityCount(p)} activities` : ""}</span>

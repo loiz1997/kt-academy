@@ -22,7 +22,7 @@ export default function LineChart({ g }: { g: TribeGroup[] }) {
     return lines;
   };
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} width="100%" style={{ minWidth: 560, display: "block" }} role="img" aria-label="Line graph of average training progress per tribe">
+    <svg data-testid="admin-tribe-line-chart" viewBox={`0 0 ${W} ${H}`} width="100%" style={{ minWidth: 560, display: "block" }} role="img" aria-label="Line graph of average training progress per tribe">
       <defs>
         <linearGradient id="lcg" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#6d5efc" stopOpacity=".25" />

@@ -10,7 +10,7 @@ export function Donut({ parts, mid, sub, z = 150 }: { parts: { v: number; c: str
   const tot = parts.reduce((s, x) => s + x.v, 0);
   let off = 0;
   return (
-    <svg className="dn" width={z} height={z} viewBox={`0 0 ${z} ${z}`} role="img" aria-label={`${mid} ${sub}`}>
+    <svg data-testid="dashboard-donut-chart" className="dn" width={z} height={z} viewBox={`0 0 ${z} ${z}`} role="img" aria-label={`${mid} ${sub}`}>
       <circle cx={z / 2} cy={z / 2} r={r} fill="none" stroke="var(--br)" strokeWidth={14} />
       {tot > 0 && parts.filter((x) => x.v > 0).map((x, i) => {
         const len = (x.v / tot) * c;

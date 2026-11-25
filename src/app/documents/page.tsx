@@ -56,7 +56,7 @@ export default function DocumentsPage() {
   return (
     <>
       <AppHeader active="/learn" />
-      <main>
+      <main data-testid="documents-main-1">
         <Link href="/learn" data-testid="documents-back-link" className="btn g s">← Learning &amp; Tools</Link>
         <div className="row" style={{ margin: "14px 0 0" }}>
           <h1 className="grow text-2xl font-extrabold" style={{ margin: 0 }} data-testid="documents-title">📎 KT documents</h1>
@@ -65,7 +65,7 @@ export default function DocumentsPage() {
         <div className="dc-hero">
           <div className="big" aria-hidden="true">📚</div>
           <div style={{ position: "relative", zIndex: 1 }}>
-            <h2>Everything your KT lead shared</h2>
+            <h2 data-testid="documents-h2-1">Everything your KT lead shared</h2>
             <p>Guides, templates and files in one place. Open a link or download a file, and keep learning at your own pace.</p>
           </div>
           <div className="dc-pill" data-testid="documents-count"><b>{all.length}</b><span>{all.length === 1 ? "Document" : "Documents"}</span></div>

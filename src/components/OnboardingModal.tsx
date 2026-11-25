@@ -29,14 +29,14 @@ export default function OnboardingModal({ me, onClose }: { me: Mini; onClose: ()
   return (
     <div className="fixed inset-0 z-50 grid place-items-center bg-black/50 p-4" data-testid="onboarding-modal" role="dialog" aria-modal="true" aria-label="One last step">
       <div className="max-h-[90vh] w-full max-w-md overflow-y-auto border border-slate-200 bg-white p-5 shadow-xl">
-        <h2 className="text-xl font-extrabold text-slate-900">One last step 👋</h2>
+        <h2 data-testid="onboardingmodal-h2-1" className="text-xl font-extrabold text-slate-900">One last step 👋</h2>
         <p className="mb-3 text-sm text-slate-500">Pick your tribe and learning track so we can set up your dashboard.</p>
-        <label className="text-sm font-semibold text-slate-700" htmlFor="onb-tribe">Your tribe</label>
+        <label data-testid="label-onb-tribe" className="text-sm font-semibold text-slate-700" htmlFor="onb-tribe">Your tribe</label>
         <select id="onb-tribe" value={tribe} onChange={(e) => setTribe(e.target.value)} data-testid="onboarding-tribe-select" className={field}>
           <option value="">Select your tribe</option>
           {ALL_TRIBES.map((t) => <option key={t}>{t}</option>)}
         </select>
-        <label className="text-sm font-semibold text-slate-700" htmlFor="onb-track">Learning track</label>
+        <label data-testid="label-onb-track" className="text-sm font-semibold text-slate-700" htmlFor="onb-track">Learning track</label>
         <select id="onb-track" value={track} onChange={(e) => setTrack(e.target.value)} data-testid="onboarding-track-select" className={field}>
           {TRACKS.map((t) => <option key={t}>{t}</option>)}
         </select>

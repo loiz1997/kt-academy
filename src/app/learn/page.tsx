@@ -16,7 +16,7 @@ function HubCard({ cl, href, id, icon, title, text, pills, cta }: CardProps) {
   return (
     <Link href={href} className={`hcard ${cl}`} data-testid={id}>
       <div className="big" aria-hidden="true">{icon}</div>
-      <h2>{title}</h2>
+      <h2 data-testid="learn-h2-1">{title}</h2>
       <p>{text}</p>
       <div className="pills">{pills.map((p) => <span key={p}>{p}</span>)}</div>
       <div className="hcta"><span className="btn lt">{cta}</span></div>
@@ -40,7 +40,7 @@ export default function LearnPage() {
   return (
     <>
       <AppHeader active="/learn" />
-      <main>
+      <main data-testid="learn-main-1">
         <h1 className="text-2xl font-extrabold" data-testid="learn-title">Learning &amp; Tools</h1>
         <p className="mu" style={{ margin: "4px 0 18px" }} data-testid="learn-subtitle">
           {admin ? "Manage what your trainees learn, or browse it as they see it." : "What would you like to do today? Pick one to get started."}

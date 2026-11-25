@@ -4,7 +4,7 @@ import PageLoading from "@/components/PageLoading";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
-import { loadDashboard, type DashboardData } from "@/lib/dashboard-data";
+import { loadDashboard, peekDashboard, type DashboardData } from "@/lib/dashboard-data";
 import AppHeader from "@/components/AppHeader";
 import Hero from "@/components/dashboard/Hero";
 import Top5 from "@/components/dashboard/Top5";
@@ -13,7 +13,7 @@ import Journey from "@/components/dashboard/Journey";
 
 export default function DashboardPage() {
   const router = useRouter();
-  const [data, setData] = useState<DashboardData | null>(null);
+  const [data, setData] = useState<DashboardData | null>(() => peekDashboard(true));
 
   useEffect(() => {
     (async () => {
@@ -31,7 +31,7 @@ export default function DashboardPage() {
   return (
     <>
       <AppHeader active="/dashboard" />
-      <main className="mx-auto max-w-5xl px-4 py-5">
+      <main data-testid="dashboard-main-1" className="mx-auto max-w-5xl px-4 py-5">
         <Hero me={me} docs={docs} score={myScore} />
         <Top5 learners={learners} docs={docs} meId={me.id} myScore={myScore} />
         <Overview me={me} docs={docs} />

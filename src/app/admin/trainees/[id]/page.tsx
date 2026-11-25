@@ -27,7 +27,7 @@ function TraineeDetail() {
     return (
       <>
         <AppHeader active="/admin/trainees" />
-        <main>
+        <main data-testid="admin-trainees-id-main-1">
           <p className="mu" data-testid="trainee-not-found">That person was not found.</p>
           <Link href="/admin/trainees" data-testid="trainee-notfound-back-link" className="btn g s" style={{ textDecoration: "none", display: "inline-block" }}>← Trainees</Link>
         </main>
@@ -41,7 +41,7 @@ function TraineeDetail() {
   return (
     <>
       <AppHeader active="/admin/trainees" />
-      <main>
+      <main data-testid="admin-trainees-id-main-2">
         <Link href="/admin/trainees" data-testid="trainee-back-link" className="btn g s" style={link}>← Trainees</Link>
 
         <div className="card" style={{ marginTop: 14, display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }} data-testid="trainee-header">
@@ -57,7 +57,7 @@ function TraineeDetail() {
           <div style={{ textAlign: "right" }}><div className="stat" data-testid="trainee-detail-certs">{certsEarned(u)}/{CERTS.length}</div><div className="mu">certificates earned</div></div>
         </div>
 
-        <h2 style={{ margin: "20px 0 10px" }}>📤 Submissions</h2>
+        <h2 data-testid="admin-trainees-id-h2-1" style={{ margin: "20px 0 10px" }}>📤 Submissions</h2>
         <div className="card" data-testid="trainee-submissions">
           {mine.length === 0 ? (
             <p className="mu" style={{ margin: 0 }} data-testid="trainee-submissions-empty">This trainee has not submitted any work yet.</p>
@@ -80,14 +80,14 @@ function TraineeDetail() {
           )}
         </div>
 
-        <h2 style={{ margin: "20px 0 10px" }}>🏅 Certificates</h2>
+        <h2 data-testid="admin-trainees-id-h2-2" style={{ margin: "20px 0 10px" }}>🏅 Certificates</h2>
         <div style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(auto-fill,minmax(min(300px,100%),1fr))" }}>
           {CERTS.map((c) => {
             const d = u.certs?.[c.k];
             const inner = (
               <>
                 <div className="row">
-                  <div className="grow"><h2 style={{ margin: 0, fontSize: 16 }}>{c.t}</h2><div className="mu">{c.s}</div></div>
+                  <div className="grow"><h2 data-testid={`trainee-cert-title-${c.k}`} style={{ margin: 0, fontSize: 16 }}>{c.t}</h2><div className="mu">{c.s}</div></div>
                   {d?.earned ? <span className="tag t">🏅 Earned</span> : <span className="tag" style={{ background: "var(--br)", color: "var(--mu)" }}>Not earned yet</span>}
                 </div>
                 {d?.earned && (

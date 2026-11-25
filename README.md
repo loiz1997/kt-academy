@@ -8,16 +8,28 @@ A learning and certification portal that helps manual testers move into test aut
 [![Supabase](https://img.shields.io/badge/Supabase-Postgres%20%2B%20Auth-3ecf8e?logo=supabase&logoColor=white)](https://supabase.com)
 [![Netlify](https://img.shields.io/badge/Deploy-Netlify-00c7b7?logo=netlify&logoColor=white)](docs/DEPLOY_NETLIFY.md)
 
-**Live site:** https://autotechteam-kt-academy.netlify.app
-**Try the demo:** open the demo site and click **As a trainee** or **As an admin** (no sign-up). See [docs/DEPLOY_NETLIFY.md](docs/DEPLOY_NETLIFY.md) to run your own copy.
+**Live demo:** https://YOUR-DEMO-SITE.netlify.app (click **As a trainee** or **As an admin**, no sign-up needed)
+**Run your own copy:** [docs/DEPLOY_NETLIFY.md](docs/DEPLOY_NETLIFY.md)
 
 ![Dashboard, light theme](docs/images/dashboard-light.png)
 ![Dashboard, dark theme](docs/images/dashboard-dark.png)
 
+## Why I built this
+
+I lead test automation and train manual testers to move into automation with Katalon. KT Academy is the portal I wished they had: short lessons, reviewed practice work, certificates and progress in one place. It is also a realistic **system under test** for web test automation (Katalon, Playwright and others), with stable locators, role-based access and real data flows.
+
+## Skills this project shows
+
+- **Test automation:** `data-testid` locators on every interactive element, a test case library ([XLSX](docs/KT_Academy_Test_Cases.xlsx)), predictable demo data you can reset in one script
+- **Full stack:** Next.js (App Router), TypeScript, Tailwind CSS, Supabase (Postgres, auth, row-level security)
+- **Security basics:** role-based access enforced in the database, no secret keys in the front end, shared demo accounts kept in a separate project
+- **Product and UX:** light and dark themes, responsive layout, accessible forms, loading and sign-in states
+- **Delivery:** zero-cost hosting on Netlify, environment-based demo mode, written deploy guide
+
 ## Features
 
 **Trainees**
-- 16 step-by-step lessons (Local Katalon, TestOps, Tools) and a video and document library
+- 17 step-by-step lessons (Local Katalon, TestOps, Tools) and a video and document library
 - 5 certification paths, clickable certificates
 - Work submission with Google Drive links, review feedback and score
 - Progress ring, score points, journey map and Top 5 leaderboard
@@ -86,6 +98,15 @@ Open Supabase > SQL Editor and run the files in `supabase/` in this order:
 
 To make yourself an admin, sign up once, then run:
 `update public.profiles set role = 'admin' where email = 'you@example.com';`
+
+## Test automation
+
+The app is built to be tested. Locators use `data-testid`, so tests do not break when styling changes.
+
+- Demo logins: one click for a trainee or an admin, or sign in with the accounts below
+- Reset the data any time with `supabase/demo-seed.sql`
+- Suggested flows: login (trainee and admin), mark a lesson done, submit work, review and score a submission, earn a certificate, switch theme, log out
+- Planned: Playwright end-to-end tests and a Katalon sample project, run in GitHub Actions
 
 ## Test locators
 

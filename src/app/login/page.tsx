@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { DEMO, DEMO_ADMIN, DEMO_TRAINEE } from "@/lib/demo";
+import { oauthTabHtml } from "@/lib/oauth-tab";
 import AuthCard, { authButton, authInput } from "@/components/AuthCard";
 import { hideLoading, showLoading } from "@/lib/overlay";
 import { createClient } from "@/lib/supabase/client";
@@ -146,7 +147,7 @@ export default function LoginPage() {
       if (error) fail(error.message);
       return;
     }
-    try { w.document.title = `Signing in with ${nm}`; w.document.body.innerHTML = `<p style="font:16px sans-serif;padding:28px;color:#444">Opening ${nm}…</p>`; } catch {}
+    try { w.document.open(); w.document.write(oauthTabHtml(nm)); w.document.close(); } catch {}
     waiting.current = true;
     showLoading(`Waiting for ${nm}…`, "Finish signing in in the new tab", 0, cancelOAuth);
     try { localStorage.setItem("kt2_oauth_tab", String(Date.now())); localStorage.removeItem("kt2_oauth_done"); } catch {}
@@ -256,7 +257,7 @@ export default function LoginPage() {
       )}
 
       {mode === "signup" && (
-        <label className="block text-sm font-medium text-slate-700">
+        <label data-testid="login-label-1" className="block text-sm font-medium text-slate-700">
           Name
           <input className={authInput} value={name} onChange={(e) => setName(e.target.value)} data-testid="signup-name-input" autoComplete="name" />
         </label>
@@ -264,12 +265,12 @@ export default function LoginPage() {
 
       {mode !== "verify" ? (
         <>
-          <label className="block text-sm font-medium text-slate-700">
+          <label data-testid="login-label-2" className="block text-sm font-medium text-slate-700">
             Work email
             <input className={authInput} type="email" placeholder="you@company.com" value={email} onChange={(e) => setEmail(e.target.value)} data-testid={`${p}-email-input`} autoComplete="email" />
           </label>
           <div className="block text-sm font-medium text-slate-700">
-            <label htmlFor={`${p}-pw`}>Password</label>
+            <label data-testid="login-label-3" htmlFor={`${p}-pw`}>Password</label>
             <div id={`${p}-pw`}><PasswordField id={p} value={password} onChange={setPassword} auto={mode === "login" ? "current-password" : "new-password"} /></div>
             {mode === "login" && (
               <div className="mt-1 text-right"><Link href="/forgot" data-testid="login-forgot-link" className="text-xs font-semibold text-indigo-600 underline">Forgot password?</Link></div>
@@ -277,7 +278,7 @@ export default function LoginPage() {
           </div>
         </>
       ) : (
-        <label className="block text-sm font-medium text-slate-700">
+        <label data-testid="login-label-4" className="block text-sm font-medium text-slate-700">
           Verification code
           <input className={`${authInput} text-center text-2xl tracking-[.35em]`} inputMode="numeric" autoComplete="one-time-code" maxLength={8} placeholder="123456" value={code} onChange={(e) => setCode(e.target.value)} data-testid="signup-code-input" />
         </label>
@@ -285,14 +286,14 @@ export default function LoginPage() {
 
       {mode === "signup" && (
         <>
-          <label className="block text-sm font-medium text-slate-700">
+          <label data-testid="login-label-5" className="block text-sm font-medium text-slate-700">
             Your tribe
             <select className={authInput} value={tribe} onChange={(e) => setTribe(e.target.value)} data-testid="signup-tribe-select">
               <option value="">Select your tribe</option>
               {ALL_TRIBES.map((t) => <option key={t}>{t}</option>)}
             </select>
           </label>
-          <label className="block text-sm font-medium text-slate-700">
+          <label data-testid="login-label-6" className="block text-sm font-medium text-slate-700">
             Track
             <select className={authInput} value={track} onChange={(e) => setTrack(e.target.value)} data-testid="signup-track-select">
               <option>Both</option>

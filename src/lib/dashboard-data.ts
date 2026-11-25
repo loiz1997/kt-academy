@@ -1,8 +1,16 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { fixDocs } from "./lessons";
 import type { Doc, Learner, Profile } from "./types";
+import { store } from "./session-cache";
 
 export type DashboardData = { me: Profile; docs: Doc[]; learners: Learner[] };
+
+// The last loaded data (if any), so a page can paint at once while the fresh copy loads.
+export const peekDashboard = (withLearners: boolean): DashboardData | null =>
+  store.dash && (!withLearners || store.dash.withLearners) ? store.dash : null;
+export const putDashboard = (d: DashboardData) => {
+  store.dash = { ...d, withLearners: store.dash?.withLearners ?? false };
+};
 
 // Loads everything the trainee dashboard needs. Returns null when nobody is logged in.
 export async function loadDashboard(supabase: SupabaseClient, withLearners = true): Promise<DashboardData | null> {
@@ -17,9 +25,12 @@ export async function loadDashboard(supabase: SupabaseClient, withLearners = tru
   ]);
   if (!p.data) return null;
 
-  return {
+  const prev = store.dash;
+  const fresh: DashboardData = {
     me: p.data as Profile,
     docs: fixDocs((d.data ?? []) as Doc[]),
-    learners: Array.isArray(l.data) ? (l.data as Learner[]) : [],
+    learners: withLearners ? (Array.isArray(l.data) ? (l.data as Learner[]) : []) : prev?.learners ?? [],
   };
+  store.dash = { ...fresh, withLearners: withLearners || !!prev?.withLearners };
+  return fresh;
 }

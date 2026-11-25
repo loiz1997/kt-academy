@@ -11,7 +11,7 @@ export default function Avatar({ name, size = 44, ring, src }: { name: string; s
   const style = { width: size, height: size, fontSize: size / 3.2, boxShadow: ring ? `0 0 0 2px #fff, 0 0 0 4px ${ring}` : undefined };
   if (src) {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img src={src} alt="" className="inline-block shrink-0 rounded-full object-cover" style={style} />;
+    return <img data-testid="avatar-image" src={src} alt="" className="inline-block shrink-0 rounded-full object-cover" style={style} />;
   }
   return (
     <span className="inline-grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-indigo-500 to-teal-400 font-bold text-white" style={style}>

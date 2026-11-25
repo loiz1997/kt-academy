@@ -97,11 +97,11 @@ export default function LessonView({
     return (
       <>
         {back}
-        <section className="border border-indigo-100 bg-gradient-to-br from-indigo-50 to-teal-50 p-6">
+        <section data-testid="lesson-lessonview-section-1" className="border border-indigo-100 bg-gradient-to-br from-indigo-50 to-teal-50 p-6">
           <span className="tag">{doc.c} · {doc.l}</span>
           <h1 className="mt-2 text-2xl font-extrabold" data-testid="lesson-title">{doc.t}</h1>
         </section>
-        <section className={`${box} mt-4`}>{doc.b || "No details have been added yet."}</section>
+        <section data-testid="lesson-lessonview-section-2" className={`${box} mt-4`}>{doc.b || "No details have been added yet."}</section>
         {submit}
         {footer}
       </>
@@ -123,7 +123,7 @@ export default function LessonView({
   return (
     <div onClick={onContentClick}>
       {back}
-      <section className="border border-indigo-100 bg-gradient-to-br from-indigo-50 via-white to-teal-50 p-5 shadow-lg shadow-indigo-200/40 sm:p-7">
+      <section data-testid="lesson-lessonview-section-3" className="border border-indigo-100 bg-gradient-to-br from-indigo-50 via-white to-teal-50 p-5 shadow-lg shadow-indigo-200/40 sm:p-7">
         <span className="tag">{doc.c} · {doc.l} · {total} steps</span>
         <h1 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl" data-testid="lesson-title">{doc.t}</h1>
         <p className="mt-2 max-w-2xl text-slate-700" dangerouslySetInnerHTML={html(L.intro)} />
@@ -145,7 +145,7 @@ export default function LessonView({
       </select>
 
       <div className="mt-4 grid gap-4 lg:grid-cols-[210px_minmax(0,1fr)]">
-        <aside className="sticky top-20 hidden self-start border border-slate-200 bg-white p-3 text-sm shadow-md lg:flex lg:flex-col lg:gap-0.5">
+        <aside data-testid="lesson-lessonview-aside-1" className="sticky top-20 hidden self-start border border-slate-200 bg-white p-3 text-sm shadow-md lg:flex lg:flex-col lg:gap-0.5">
           <b className="mb-1 text-xs tracking-wider text-slate-500">ON THIS PAGE</b>
           {sections.map(([id, label]) => (
             <button key={id} onClick={() => go(id)} data-testid={`lesson-nav-${id}`} className="px-2 py-1 text-left text-slate-700 hover:bg-indigo-50 hover:text-indigo-700">{label}</button>
@@ -154,20 +154,20 @@ export default function LessonView({
 
         <div className="min-w-0 space-y-4">
           {L.obj && (
-            <section id="lo" className={`${box} scroll-mt-20`}>
-              <h2 className="mb-2 text-lg font-bold">🎯 What you will learn</h2>
+            <section data-testid="lesson-lessonview-section-4" id="lo" className={`${box} scroll-mt-20`}>
+              <h2 data-testid="lesson-lessonview-h2-1" className="mb-2 text-lg font-bold">🎯 What you will learn</h2>
               {L.obj.map((x) => <div key={x} className="py-1" dangerouslySetInnerHTML={html(`✔ ${x}`)} />)}
             </section>
           )}
 
-          <section className={box}>
-            <h2 className="mb-2 text-lg font-bold">What you need</h2>
+          <section data-testid="lesson-lessonview-section-5" className={box}>
+            <h2 data-testid="lesson-lessonview-h2-2" className="mb-2 text-lg font-bold">What you need</h2>
             {L.need.map((x) => <div key={x} className="py-1" dangerouslySetInnerHTML={html(`• ${x}`)} />)}
           </section>
 
           {L.info && (
-            <section id="ln" className={`${box} scroll-mt-20`}>
-              <h2 className="mb-2 text-lg font-bold">🧠 The big idea</h2>
+            <section data-testid="lesson-lessonview-section-6" id="ln" className={`${box} scroll-mt-20`}>
+              <h2 data-testid="lesson-lessonview-h2-3" className="mb-2 text-lg font-bold">🧠 The big idea</h2>
               {L.info.map((x) => (
                 <div key={x.t} className="mt-3 border-t border-slate-200 pt-2">
                   <h3 className="mb-1 font-bold">{x.t}</h3>
@@ -180,8 +180,8 @@ export default function LessonView({
           )}
 
           {L.scn && (
-            <section id="ls" className={`${box} scroll-mt-20`}>
-              <h2 className="mb-2 text-lg font-bold">🧪 Practice scenario</h2>
+            <section data-testid="lesson-lessonview-section-7" id="ls" className={`${box} scroll-mt-20`}>
+              <h2 data-testid="lesson-lessonview-h2-4" className="mb-2 text-lg font-bold">🧪 Practice scenario</h2>
               <p className="text-sm text-slate-500"><b dangerouslySetInnerHTML={html(L.scn.t)} /><br />Before you start: <span dangerouslySetInnerHTML={html(L.scn.pre)} /></p>
               {L.scn.steps.map((x, i) => (
                 <div key={i} className="mt-3 flex gap-3 border border-slate-200 bg-slate-50 p-3">
@@ -199,7 +199,7 @@ export default function LessonView({
 
           {L.parts.map((p, i) => (
             <section key={p.t} id={`p${i}`} className={`${box} scroll-mt-20`} data-testid={`lesson-part-${i + 1}`}>
-              <h2 className="text-lg font-bold">Part {i + 1}: <span dangerouslySetInnerHTML={html(p.t)} /></h2>
+              <h2 data-testid={`lesson-part-title-${i + 1}`} className="text-lg font-bold">Part {i + 1}: <span dangerouslySetInnerHTML={html(p.t)} /></h2>
               <p className="text-sm text-slate-500" dangerouslySetInnerHTML={html(p.s)} />
               {p.steps.map((s, j) => {
                 const n = starts[i] + j + 1;
@@ -222,8 +222,8 @@ export default function LessonView({
           ))}
 
           {L.concepts && (
-            <section id="cc" className={`${box} scroll-mt-20`}>
-              <h2 className="mb-2 text-lg font-bold">📖 Key words</h2>
+            <section data-testid="lesson-lessonview-section-8" id="cc" className={`${box} scroll-mt-20`}>
+              <h2 data-testid="lesson-lessonview-h2-5" className="mb-2 text-lg font-bold">📖 Key words</h2>
               <div className="grid gap-2.5 sm:grid-cols-2">
                 {L.concepts.map((c) => (
                   <div key={c[0]} className="border border-slate-200 p-3 text-sm"><b className="block" dangerouslySetInnerHTML={html(c[0])} /><span dangerouslySetInnerHTML={html(c[1])} /></div>
@@ -232,30 +232,30 @@ export default function LessonView({
             </section>
           )}
 
-          <section id="lh" className={`${box} scroll-mt-20`}>
-            <h2 className="mb-2 text-lg font-bold">🛟 Need help?</h2>
+          <section data-testid="lesson-lessonview-section-9" id="lh" className={`${box} scroll-mt-20`}>
+            <h2 data-testid="lesson-lessonview-h2-6" className="mb-2 text-lg font-bold">🛟 Need help?</h2>
             {L.help.map((h) => (
               <details key={h[0]} className="py-1"><summary className="cursor-pointer font-semibold" dangerouslySetInnerHTML={html(h[0])} /><p className="mt-1.5 text-slate-600" dangerouslySetInnerHTML={html(h[1])} /></details>
             ))}
           </section>
 
-          <section id="lc" className={`${box} scroll-mt-20`}>
-            <h2 className="mb-2 text-lg font-bold">✅ Lesson checklist</h2>
+          <section data-testid="lesson-lessonview-section-10" id="lc" className={`${box} scroll-mt-20`}>
+            <h2 data-testid="lesson-lessonview-h2-7" className="mb-2 text-lg font-bold">✅ Lesson checklist</h2>
             {L.check.map((c, i) => (
-              <label key={c} className="flex items-center gap-2.5 py-1"><input type="checkbox" data-testid={`lesson-check-${i + 1}`} /> <span dangerouslySetInnerHTML={html(c)} /></label>
+              <label key={c} data-testid={`lesson-check-label-${i + 1}`} className="flex items-center gap-2.5 py-1"><input type="checkbox" data-testid={`lesson-check-${i + 1}`} /> <span dangerouslySetInnerHTML={html(c)} /></label>
             ))}
           </section>
 
           {L.done && (
-            <section id="ld" className={`${box} scroll-mt-20`}>
-              <h2 className="mb-2 text-lg font-bold">🏁 You are done when…</h2>
+            <section data-testid="lesson-lessonview-section-11" id="ld" className={`${box} scroll-mt-20`}>
+              <h2 data-testid="lesson-lessonview-h2-8" className="mb-2 text-lg font-bold">🏁 You are done when…</h2>
               {L.done.map((x) => <div key={x} className="py-1" dangerouslySetInnerHTML={html(`✅ ${x}`)} />)}
             </section>
           )}
 
           {L.res && (
-            <section id="lr" className={`${box} scroll-mt-20`}>
-              <h2 className="mb-2 text-lg font-bold">🔗 Resources</h2>
+            <section data-testid="lesson-lessonview-section-12" id="lr" className={`${box} scroll-mt-20`}>
+              <h2 data-testid="lesson-lessonview-h2-9" className="mb-2 text-lg font-bold">🔗 Resources</h2>
               {L.res.map((r, i) => <div key={r[1]} className="py-1"><a href={r[1]} target="_blank" rel="noopener noreferrer" data-testid={`lesson-resource-${i + 1}`} className="font-semibold text-indigo-600 underline">{r[0]} ↗</a></div>)}
               {L.next && <div className="tipb nt mt-3" dangerouslySetInnerHTML={html(`📝 ${L.next}`)} />}
             </section>
@@ -274,7 +274,7 @@ export default function LessonView({
               <button onClick={() => setShot(null)} data-testid="image-viewer-close" className="bg-indigo-50 px-3 py-1.5 text-indigo-700">✕ Close</button>
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={imgSrc(shot.key)} alt={shot.cap} className="block w-full border border-slate-200" />
+            <img data-testid="lesson-lessonview-img-1" src={imgSrc(shot.key)} alt={shot.cap} className="block w-full border border-slate-200" />
           </div>
         </div>
       )}

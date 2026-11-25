@@ -27,7 +27,7 @@ export default function LessonsPage() {
   return (
     <>
       <AppHeader active="/learn" />
-      <main>
+      <main data-testid="lessons-main-1">
         <Link href="/learn" className="btn g s" data-testid="lessons-back-link">← Learning &amp; Tools</Link>
         <h1 className="text-2xl font-extrabold" style={{ margin: "14px 0 4px" }} data-testid="lessons-title">📘 KT lessons</h1>
         <p className="mu" style={{ marginBottom: 16 }}>Step-by-step guides for getting started with Katalon.</p>
@@ -66,7 +66,7 @@ export default function LessonsPage() {
                   </div>
                   {off ? <span className="tag a">🚧 Coming soon</span> : ok ? <span className="tag t" data-testid={`lesson-done-badge-${n}`}>✓ Done</span> : null}
                 </div>
-                <h2 style={{ margin: "4px 0 0", fontSize: 16 }}>{d.t}</h2>
+                <h2 data-testid={`lesson-title-${n}`} style={{ margin: "4px 0 0", fontSize: 16 }}>{d.t}</h2>
                 <p className="mu">{off ? "This lesson is still in development." : sum}</p>
                 <div className="row" style={{ marginTop: "auto" }}>
                   <span className="grow mu">{R && !off ? "📷 Step-by-step with screenshots" : ""}</span>

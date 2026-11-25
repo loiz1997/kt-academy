@@ -58,9 +58,9 @@ function CertDetail() {
   return (
     <>
       <AppHeader active="/certifications" />
-      <main className="mx-auto max-w-2xl px-4 py-5">
+      <main data-testid="certifications-key-main-1" className="mx-auto max-w-2xl px-4 py-5">
         <Link href="/certifications" className="mb-3 inline-block bg-indigo-50 px-3 py-1.5 text-sm font-semibold text-indigo-700" data-testid="certs-back-link">← All certifications</Link>
-        <section className="border border-slate-200 bg-white p-5 shadow-md" style={{ borderTop: `4px solid ${cert.c}` }}>
+        <section data-testid="certifications-key-section-1" className="border border-slate-200 bg-white p-5 shadow-md" style={{ borderTop: `4px solid ${cert.c}` }}>
           <div className="flex items-start justify-between gap-3">
             <div>
               <h1 className="text-xl font-extrabold" data-testid="cert-title">{cert.t}</h1>
@@ -77,11 +77,11 @@ function CertDetail() {
           <details open={!earned} className="mt-4 border border-slate-200">
             <summary className="cursor-pointer p-3 font-semibold">{earned ? "Edit certificate" : "Add certificate"}</summary>
             <div className="grid gap-1.5 px-3 pb-3">
-              <label htmlFor="cd" className="text-sm font-semibold">Date earned</label>
+              <label data-testid="label-cd" htmlFor="cd" className="text-sm font-semibold">Date earned</label>
               <input id="cd" type="date" className={input} value={date} onChange={(e) => setDate(e.target.value)} data-testid="cert-date-input" />
-              <label htmlFor="cu" className="mt-1 text-sm font-semibold">Certificate link (from Katalon Academy)</label>
+              <label data-testid="label-cu" htmlFor="cu" className="mt-1 text-sm font-semibold">Certificate link (from Katalon Academy)</label>
               <input id="cu" className={input} placeholder="https://academy.katalon.com/…" value={url} onChange={(e) => setUrl(e.target.value)} data-testid="cert-link-input" />
-              <label htmlFor="ci" className="mt-1 text-sm font-semibold">Certificate ID (optional)</label>
+              <label data-testid="label-ci" htmlFor="ci" className="mt-1 text-sm font-semibold">Certificate ID (optional)</label>
               <input id="ci" className={input} value={cid} onChange={(e) => setCid(e.target.value)} data-testid="cert-id-input" />
               {msg && <p role="alert" className={`text-sm font-medium ${msg.startsWith("Saved") || msg.endsWith("removed.") ? "text-teal-700" : "text-red-600"}`} data-testid="cert-message">{msg}</p>}
               <div className="mt-1 flex flex-wrap gap-2">
